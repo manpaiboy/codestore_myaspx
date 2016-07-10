@@ -13,11 +13,11 @@ namespace WebUI
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
-            {
-                if (Session["CheckCode"] != null)
-                    yzmhiddle.Value = Session["CheckCode"].ToString();
-            }
+            //if (!IsPostBack)
+            //{
+            //    if (Session["CheckCode"] != null)
+            //        yzmhiddle.Value = Session["CheckCode"].ToString();
+            //}
         }
         protected void loginClick(object sender, EventArgs e)
         {
