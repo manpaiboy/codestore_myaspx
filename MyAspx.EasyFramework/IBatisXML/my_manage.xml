@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="my_manage" xmlns="http://ibatis.apache.org/mapping" xmlns:xls="http://www.w3.org/2001/XMLSchema-instance">
+<alias>
+   <typeAlias alias="my_manage"   type="MyAspx.EasyFramework.Model..my_manage, MyAspx.EasyFramework.BLL." />
+</alias>
+  <statements>
+    <insert id="Insertmy_manage" parameterClass="my_manage">
+          INSERT INTO my_manage
+          (adminid,
+          adminname,
+          adminpwd)
+          VALUES
+          ((SELECT ISNULL(MAX(adminid),0)+1 FROM my_manage),
+          #adminname#,
+          #adminpwd#)
+    </insert>
+    <update id="Updatemy_manage" parameterClass="my_manage">
+          UPDATE my_manage SET 
+          adminname=#adminname#,
+          adminpwd=#adminpwd#
+          WHERE
+          adminid=#adminid#
+    </update>
+    <delete id="Deletemy_manage" parameterclass="int">
+          DELETE FROM my_manage
+          WHERE
+          adminid=#adminid#
+    </delete>
+    <select id="Selectmy_manage"  resultClass="my_manage"  parameterClass="my_manage">
+          SELECT 
+            A.adminid,
+            A.adminname,
+            A.adminpwd
+          FROM my_manage A
+          <dynamic prepend="WHERE">
+            <isNotEqual prepend="and" property="adminid" compareValue="0">
+              A.adminid=#adminid#
+            </isNotEqual>
+            <isNotEmpty prepend="and" property="adminname">
+              A.adminname=#adminname#
+            </isNotEmpty>
+            <isNotEmpty prepend="and" property="adminpwd">
+              A.adminpwd=#adminpwd#
+            </isNotEmpty>
+          </dynamic>
+    </select>
+  </statements>
+</sqlMap>

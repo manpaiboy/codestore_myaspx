@@ -1,0 +1,234 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1F016B7C-D5AC-4CC4-8146-C93D4B3AA676}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MyAspx.Json</RootNamespace>
+    <AssemblyName>MyAspx.Json</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BufferedCharReader.cs" />
+    <Compile Include="Class1.cs" />
+    <Compile Include="Collections\KeyedCollection.cs" />
+    <Compile Include="Common\Mask.cs" />
+    <Compile Include="Configuration\DictionarySectionHandler.cs" />
+    <Compile Include="Configuration\ListSectionHandler.cs" />
+    <Compile Include="Configuration\TypeListSectionHandler.cs" />
+    <Compile Include="Conversion\AnyType.cs" />
+    <Compile Include="Conversion\Converters\AnyImporter.cs" />
+    <Compile Include="Conversion\Converters\ArrayImporter.cs" />
+    <Compile Include="Conversion\Converters\BooleanExporter.cs" />
+    <Compile Include="Conversion\Converters\BooleanImporter.cs" />
+    <Compile Include="Conversion\Converters\ByteArrayExporter.cs" />
+    <Compile Include="Conversion\Converters\ByteArrayImporter.cs" />
+    <Compile Include="Conversion\Converters\ComponentExporter.cs" />
+    <Compile Include="Conversion\Converters\ComponentImporter.cs" />
+    <Compile Include="Conversion\Converters\ControlExporter.cs" />
+    <Compile Include="Conversion\Converters\DataRowExporter.cs" />
+    <Compile Include="Conversion\Converters\DataRowViewExporter.cs" />
+    <Compile Include="Conversion\Converters\DataSetExporter.cs" />
+    <Compile Include="Conversion\Converters\DataTableExporter.cs" />
+    <Compile Include="Conversion\Converters\DataViewExporter.cs" />
+    <Compile Include="Conversion\Converters\DateTimeExporter.cs" />
+    <Compile Include="Conversion\Converters\DateTimeImporter.cs" />
+    <Compile Include="Conversion\Converters\DbDataRecordExporter.cs" />
+    <Compile Include="Conversion\Converters\DictionaryExporter.cs" />
+    <Compile Include="Conversion\Converters\DictionaryImporter.cs" />
+    <Compile Include="Conversion\Converters\EnumerableExporter.cs" />
+    <Compile Include="Conversion\Converters\EnumImporter.cs" />
+    <Compile Include="Conversion\Converters\ExpandoObjectExporter.cs" />
+    <Compile Include="Conversion\Converters\ExpandoObjectImporter.cs" />
+    <Compile Include="Conversion\Converters\ExportAwareExporter.cs" />
+    <Compile Include="Conversion\Converters\ExporterBase.cs" />
+    <Compile Include="Conversion\Converters\GuidImporter.cs" />
+    <Compile Include="Conversion\Converters\ImportAwareImporter.cs" />
+    <Compile Include="Conversion\Converters\ImporterBase.cs" />
+    <Compile Include="Conversion\Converters\JsonBufferExporter.cs" />
+    <Compile Include="Conversion\Converters\JsonBufferImporter.cs" />
+    <Compile Include="Conversion\Converters\JsonNumberExporter.cs" />
+    <Compile Include="Conversion\Converters\ListImporter.cs" />
+    <Compile Include="Conversion\Converters\NameValueCollectionExporter.cs" />
+    <Compile Include="Conversion\Converters\NameValueCollectionImporter.cs" />
+    <Compile Include="Conversion\Converters\NullableExporter.cs" />
+    <Compile Include="Conversion\Converters\NullableImporter.cs" />
+    <Compile Include="Conversion\Converters\NumberExporter.cs" />
+    <Compile Include="Conversion\Converters\NumberImporter.cs" />
+    <Compile Include="Conversion\Converters\StringExporter.cs" />
+    <Compile Include="Conversion\Converters\StringImporter.cs" />
+    <Compile Include="Conversion\Converters\TupleExporter.cs" />
+    <Compile Include="Conversion\Converters\TupleImporter.cs" />
+    <Compile Include="Conversion\Converters\UriImporter.cs" />
+    <Compile Include="Conversion\CustomTypeDescriptor.cs" />
+    <Compile Include="Conversion\ExportContext.cs" />
+    <Compile Include="Conversion\ExporterCollection.cs" />
+    <Compile Include="Conversion\ExporterListSectionHandler.cs" />
+    <Compile Include="Conversion\IExporter.cs" />
+    <Compile Include="Conversion\IImporter.cs" />
+    <Compile Include="Conversion\IJsonExportable.cs" />
+    <Compile Include="Conversion\IJsonImportable.cs" />
+    <Compile Include="Conversion\ImportContext.cs" />
+    <Compile Include="Conversion\ImporterCollection.cs" />
+    <Compile Include="Conversion\ImporterListSectionHandler.cs" />
+    <Compile Include="Conversion\INonObjectMemberImporter.cs" />
+    <Compile Include="Conversion\IObjectMemberExporter.cs" />
+    <Compile Include="Conversion\IObjectMemberImporter.cs" />
+    <Compile Include="Conversion\JsonConvert.cs" />
+    <Compile Include="Conversion\JsonDefaultValueAttribute.cs" />
+    <Compile Include="Conversion\JsonExportAttribue.cs" />
+    <Compile Include="Conversion\JsonIgnoreAttribute.cs" />
+    <Compile Include="Conversion\JsonMemberNameAttribute.cs" />
+    <Compile Include="Conversion\JsonMemberNamingConventionAttribute.cs" />
+    <Compile Include="Conversion\PropertyCustomization.cs" />
+    <Compile Include="Diagnostics\DebugString.cs" />
+    <Compile Include="Dynamic\DynamicMetaObject.cs" />
+    <Compile Include="EmptyJsonWriter.cs" />
+    <Compile Include="InvalidMemberException.cs" />
+    <Compile Include="JsonArray.cs" />
+    <Compile Include="JsonBoolean.cs" />
+    <Compile Include="JsonBuffer.cs" />
+    <Compile Include="JsonBufferReader.cs" />
+    <Compile Include="JsonBufferStorage.cs" />
+    <Compile Include="JsonBufferWriter.cs" />
+    <Compile Include="JsonException.cs" />
+    <Compile Include="JsonImportingWriter.cs" />
+    <Compile Include="JsonMember.cs" />
+    <Compile Include="JsonNull.cs" />
+    <Compile Include="JsonNumber.cs" />
+    <Compile Include="JsonObject.cs" />
+    <Compile Include="JsonReader.cs" />
+    <Compile Include="JsonReaderBase.cs" />
+    <Compile Include="JsonRecorder.cs" />
+    <Compile Include="JsonString.cs" />
+    <Compile Include="JsonText.cs" />
+    <Compile Include="JsonTextReader.cs" />
+    <Compile Include="JsonTextWriter.cs" />
+    <Compile Include="JsonToken.cs" />
+    <Compile Include="JsonTokenClass.cs" />
+    <Compile Include="JsonTokenWriterBase.cs" />
+    <Compile Include="JsonWriter.cs" />
+    <Compile Include="JsonWriterBase.cs" />
+    <Compile Include="JsonWriterBracket.cs" />
+    <Compile Include="NamedJsonBuffer.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reflection\Reflector.cs" />
+    <Compile Include="RPC\CaselessString.cs" />
+    <Compile Include="RPC\CollectionHelper.cs" />
+    <Compile Include="RPC\InvariantStringArray.cs" />
+    <Compile Include="RPC\JsonRpc\BadRequestException.cs" />
+    <Compile Include="RPC\JsonRpc\JsonRpcDispatcher.cs" />
+    <Compile Include="RPC\JsonRpc\JsonRpcDispatcherFactory.cs" />
+    <Compile Include="RPC\JsonRpc\JsonRpcError.cs" />
+    <Compile Include="RPC\JsonRpc\JsonRpcException.cs" />
+    <Compile Include="RPC\JsonRpc\JsonRpcHelpAttribute.cs" />
+    <Compile Include="RPC\JsonRpc\JsonRpcMethodAttribute.cs" />
+    <Compile Include="RPC\JsonRpc\JsonRpcService.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RPC\JsonRpc\JsonRpcServiceAttribute.cs" />
+    <Compile Include="RPC\JsonRpc\JsonRpcServiceReflector.cs" />
+    <Compile Include="RPC\JsonRpc\JsonRpcServices.cs" />
+    <Compile Include="RPC\JsonRpc\JsonRpcTrace.cs" />
+    <Compile Include="RPC\JsonRpc\Web\AppVars.cs" />
+    <Compile Include="RPC\JsonRpc\Web\HttpRequestSecurity.cs" />
+    <Compile Include="RPC\JsonRpc\Web\JsonRpcDispatchScope.cs" />
+    <Compile Include="RPC\JsonRpc\Web\JsonRpcExecutive.cs" />
+    <Compile Include="RPC\JsonRpc\Web\JsonRpcFeaturesSectionHandler.cs" />
+    <Compile Include="RPC\JsonRpc\Web\JsonRpcGetProtocol.cs" />
+    <Compile Include="RPC\JsonRpc\Web\JsonRpcHandler.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RPC\JsonRpc\Web\JsonRpcHelp.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RPC\JsonRpc\Web\JsonRpcMonadProxyGenerator.cs" />
+    <Compile Include="RPC\JsonRpc\Web\JsonRpcPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RPC\JsonRpc\Web\JsonRpcProxyGenerator.cs" />
+    <Compile Include="RPC\JsonRpc\Web\JsonRpcProxyGeneratorBase.cs" />
+    <Compile Include="RPC\JsonRpc\Web\JsonRpcPythonProxyGenerator.cs" />
+    <Compile Include="RPC\JsonRpc\Web\JsonRpcServiceFeature.cs" />
+    <Compile Include="RPC\JsonRpc\Web\JsonRpcTester.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RPC\JsonRpc\Web\JsonRpcWebTraceAdapter.cs" />
+    <Compile Include="RPC\Json\IAttributeAttachment.cs" />
+    <Compile Include="RPC\Json\IndentedTextWriter.cs" />
+    <Compile Include="RPC\Json\InternetDate.cs" />
+    <Compile Include="RPC\Json\JsonML\JsonMLCodec.cs" />
+    <Compile Include="RPC\Json\JsonML\JsonMLException.cs" />
+    <Compile Include="RPC\Json\JsonML\JsonMLForm.cs" />
+    <Compile Include="RPC\Services\DuplicateMethodException.cs" />
+    <Compile Include="RPC\Services\IMethodImpl.cs" />
+    <Compile Include="RPC\Services\InvocationException.cs" />
+    <Compile Include="RPC\Services\IService.cs" />
+    <Compile Include="RPC\Services\Method.cs" />
+    <Compile Include="RPC\Services\MethodBuilder.cs" />
+    <Compile Include="RPC\Services\MethodNotFoundException.cs" />
+    <Compile Include="RPC\Services\Modifiers.cs" />
+    <Compile Include="RPC\Services\Parameter.cs" />
+    <Compile Include="RPC\Services\ParameterBuilder.cs" />
+    <Compile Include="RPC\Services\Reflectors.cs" />
+    <Compile Include="RPC\Services\ServiceClass.cs" />
+    <Compile Include="RPC\Services\ServiceClassBuilder.cs" />
+    <Compile Include="RPC\Services\SynchronousAsyncResult.cs" />
+    <Compile Include="RPC\Services\TargetMethodException.cs" />
+    <Compile Include="RPC\Services\TypeMethodImpl.cs" />
+    <Compile Include="RPC\Services\WarpedMethodImpl.cs" />
+    <Compile Include="Util\BooleanObject.cs" />
+    <Compile Include="Util\DictionaryHelper.cs" />
+    <Compile Include="Util\TypeResolution.cs" />
+    <Compile Include="Util\UnixTime.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="obj\Debug\TempPE\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

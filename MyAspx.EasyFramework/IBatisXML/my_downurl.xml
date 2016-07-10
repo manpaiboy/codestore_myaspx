@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="my_downurl" xmlns="http://ibatis.apache.org/mapping" xmlns:xls="http://www.w3.org/2001/XMLSchema-instance">
+<alias>
+   <typeAlias alias="my_downurl"   type="MyAspx.EasyFramework.Model..my_downurl, MyAspx.EasyFramework.BLL." />
+</alias>
+  <statements>
+    <insert id="Insertmy_downurl" parameterClass="my_downurl">
+          INSERT INTO my_downurl
+          (downid,
+          downurl,
+          downsyseul,
+          downfileid)
+          VALUES
+          ((SELECT ISNULL(MAX(downid),0)+1 FROM my_downurl),
+          #downurl#,
+          #downsyseul#,
+          #downfileid#)
+    </insert>
+    <update id="Updatemy_downurl" parameterClass="my_downurl">
+          UPDATE my_downurl SET 
+          downurl=#downurl#,
+          downsyseul=#downsyseul#,
+          downfileid=#downfileid#
+          WHERE
+          downid=#downid#
+    </update>
+    <delete id="Deletemy_downurl" parameterclass="int">
+          DELETE FROM my_downurl
+          WHERE
+          downid=#downid#
+    </delete>
+    <select id="Selectmy_downurl"  resultClass="my_downurl"  parameterClass="my_downurl">
+          SELECT 
+            A.downid,
+            A.downurl,
+            A.downsyseul,
+            A.downfileid
+          FROM my_downurl A
+          <dynamic prepend="WHERE">
+            <isNotEqual prepend="and" property="downid" compareValue="0">
+              A.downid=#downid#
+            </isNotEqual>
+            <isNotEmpty prepend="and" property="downurl">
+              A.downurl=#downurl#
+            </isNotEmpty>
+            <isNotEmpty prepend="and" property="downsyseul">
+              A.downsyseul=#downsyseul#
+            </isNotEmpty>
+            <isNotEqual prepend="and" property="downfileid" compareValue="0">
+              A.downfileid=#downfileid#
+            </isNotEqual>
+          </dynamic>
+    </select>
+  </statements>
+</sqlMap>

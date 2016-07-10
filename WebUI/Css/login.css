@@ -1,0 +1,15 @@
+﻿body {
+       
+}
+#login{padding-top:12%;width:100px;height:300px;min-width:500px;min-height:300px;margin:0 auto;text-align:center;}
+.messpan{text-align:center;font-size:14px;color:black;font-family:微软雅黑;}
+.minwidthtext{max-width:225px;}
+.minwidthbutton{min-width:225px;margin-left:40px;}
+.textdiv{margin-bottom:5px;width:380px;float:left;}
+.textdiv input{width:330px;min-height:30px;}
+.textdiv .yzminput{width:155px;min-height:20px;margin-left:5px;}
+.textdiv ul li{float:left; list-style:none}
+/*.textdiv input,img{vertical-align:middle;}*/
+#login .button{float:left;}
+#rigrhtlogin{float:right;}
+.errormes{vertical-align:middle;padding-left:5px;color:red;}

@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="my_fileinfo" xmlns="http://ibatis.apache.org/mapping" xmlns:xls="http://www.w3.org/2001/XMLSchema-instance">
+<alias>
+   <typeAlias alias="my_fileinfo"   type="MyAspx.EasyFramework.Model..my_fileinfo, MyAspx.EasyFramework.BLL." />
+</alias>
+  <statements>
+    <insert id="Insertmy_fileinfo" parameterClass="my_fileinfo">
+          INSERT INTO my_fileinfo
+          (fileid,
+          fileclassid,
+          filevstype,
+          filedevlan,
+          downid,
+          fileremark,
+          filedownnum,
+          filepics)
+          VALUES
+          ((SELECT ISNULL(MAX(fileid),0)+1 FROM my_fileinfo),
+          #fileclassid#,
+          #filevstype#,
+          #filedevlan#,
+          #downid#,
+          #fileremark#,
+          #filedownnum#,
+          #filepics#)
+    </insert>
+    <update id="Updatemy_fileinfo" parameterClass="my_fileinfo">
+          UPDATE my_fileinfo SET 
+          fileclassid=#fileclassid#,
+          filevstype=#filevstype#,
+          filedevlan=#filedevlan#,
+          downid=#downid#,
+          fileremark=#fileremark#,
+          filedownnum=#filedownnum#,
+          filepics=#filepics#
+          WHERE
+          fileid=#fileid#
+    </update>
+    <delete id="Deletemy_fileinfo" parameterclass="int">
+          DELETE FROM my_fileinfo
+          WHERE
+          fileid=#fileid#
+    </delete>
+    <select id="Selectmy_fileinfo"  resultClass="my_fileinfo"  parameterClass="my_fileinfo">
+          SELECT 
+            A.fileid,
+            A.fileclassid,
+            A.filevstype,
+            A.filedevlan,
+            A.downid,
+            A.fileremark,
+            A.filedownnum,
+            A.filepics
+          FROM my_fileinfo A
+          <dynamic prepend="WHERE">
+            <isNotEqual prepend="and" property="fileid" compareValue="0">
+              A.fileid=#fileid#
+            </isNotEqual>
+            <isNotEqual prepend="and" property="fileclassid" compareValue="0">
+              A.fileclassid=#fileclassid#
+            </isNotEqual>
+            <isNotEmpty prepend="and" property="filevstype">
+              A.filevstype=#filevstype#
+            </isNotEmpty>
+            <isNotEmpty prepend="and" property="filedevlan">
+              A.filedevlan=#filedevlan#
+            </isNotEmpty>
+            <isNotEqual prepend="and" property="downid" compareValue="0">
+              A.downid=#downid#
+            </isNotEqual>
+            <isNotEmpty prepend="and" property="fileremark">
+              A.fileremark=#fileremark#
+            </isNotEmpty>
+            <isNotEqual prepend="and" property="filedownnum" compareValue="0">
+              A.filedownnum=#filedownnum#
+            </isNotEqual>
+            <isNotEmpty prepend="and" property="filepics">
+              A.filepics=#filepics#
+            </isNotEmpty>
+          </dynamic>
+    </select>
+  </statements>
+</sqlMap>

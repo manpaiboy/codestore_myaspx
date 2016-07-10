@@ -1,0 +1,157 @@
+﻿body {
+}
+#main {
+    color: #999;
+    font-size:13px;
+}
+#main .weibo {
+    float: left;
+
+}
+#main .login {
+    float: right;
+
+}
+.telphone {
+	color: #009933;
+	text-decoration: none;
+	text-align:left;
+	vertical-align:middle;
+	
+}
+.topgray {
+	color: #666;
+	text-decoration: none;
+	text-align:center;
+	vertical-align:middle;
+	
+}
+.weibo {
+	color: #666;
+	text-decoration: none;
+	text-align:left;
+	vertical-align:middle;
+	
+}
+html
+{
+	margin: 0 auto;
+	margin-top:0px;
+}
+.bebottomlineblack{
+border-bottom-color:#999999;
+border-bottom-width:0px;
+border-bottom-style:solid;
+}
+.toptag {
+	font-family: "黑体";
+	font-size: 15px;
+	color: #000;
+	 font-weight:bold;
+	text-align: center;
+	vertical-align: middle;
+}
+.taggray {
+	font-size: 11px;
+	font-style: normal;
+	color: #666666;
+	text-decoration: none;
+	text-align: center;
+	vertical-align: middle;
+}
+.banar {
+	font-family: "微软雅黑";
+	font-size: 16px;
+	font-weight: bold;
+	color: #000;
+	text-align: center;
+	vertical-align: middle;
+	background-color:#e8e8f0;
+	border-right-color:#cdd0d5;
+	border-right-style:solid;
+	border-right-width:1px;
+}
+.banarUp {
+	font-family: "微软雅黑";
+	font-size: 17px;
+	font-weight: bold;
+	color: #3bafda;
+	text-align: center;
+	vertical-align: middle;
+ 
+}body {
+	margin: 0px;
+	padding: 0px;
+}
+.topindexleft {
+	font-size: 12px;
+	color: #000000;
+	text-decoration: none;
+	vertical-align:middle;
+	text-align:center;
+	border-bottom-color:#000;
+	border-bottom-style:solid;
+	border-bottom-width:1px;
+	cursor:hand;
+}
+.topindex {
+background-color:#F3F3F3;
+float:left;
+}.splitcss {
+	font-size: 36px;
+	text-align:center;
+	vertical-align:middle;
+	color:#666666;
+}
+.topindexscress
+{
+    background-image:url(../pic/main_menudown.png);
+ 
+ 
+}
+.zjxz{
+text-align:left;
+background-color:#CCFDF2;
+font-size:14px;
+color:#666666;
+font-weight:thin;
+height:20px;
+vertical-align:middle;
+}
+.jqbgchang1 {
+ font-size:12px;
+ text-align:left;
+ }
+
+.jqbgchang1 a {
+ margin-right:5px;
+ text-align:left;
+ }
+.jqbgchang1 a:link{
+color:#030303;
+text-decoration:none;
+ 
+ }
+.jqbgchang1 a:visited{
+color:#030303;
+text-decoration:none;
+ 
+ }
+ .jqbgchang1 a:hover{
+color:#BC5A25;
+text-decoration:underline;
+ 
+ }
+ 
+  .jqbgchang1 a:active{
+color:#030303;
+text-decoration:none;
+ 
+ }
+ .indexad1{
+ float:left;
+ margin-left:5px;
+ margin-top:0px;}
+ #bannertable{
+     min-width:1005px;
+ }

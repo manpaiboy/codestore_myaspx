@@ -1,0 +1,30 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SiteUI.master.cs" Inherits="WebUI.MasterPage.UI.SiteUI" %>
+
+<%@ Register Src="~/Component/Head.ascx" TagPrefix="uc1" TagName="Head" %>
+<%@ Register Src="~/Component/Top.ascx" TagPrefix="uc1" TagName="Top" %>
+<%@ Register Src="~/Component/Footer.ascx" TagPrefix="uc1" TagName="Footer" %>
+
+
+
+<uc1:Head runat="server" ID="Head1" />
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <uc1:Top runat="server" ID="Top" />
+    <div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+
+        </asp:ContentPlaceHolder>
+    </div>
+        <uc1:Footer runat="server" ID="Footer" />
+    </form>
+</body>
+</html>

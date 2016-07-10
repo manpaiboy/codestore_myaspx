@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="my_siteconf" xmlns="http://ibatis.apache.org/mapping" xmlns:xls="http://www.w3.org/2001/XMLSchema-instance">
+<alias>
+   <typeAlias alias="my_siteconf"   type="MyAspx.EasyFramework.Model..my_siteconf, MyAspx.EasyFramework.BLL." />
+</alias>
+  <statements>
+    <insert id="Insertmy_siteconf" parameterClass="my_siteconf">
+          INSERT INTO my_siteconf
+          (siteid,
+          sitetitle,
+          sitekeywords,
+          sitedescription,
+          sitewriter,
+          siteremark)
+          VALUES
+          ((SELECT ISNULL(MAX(siteid),0)+1 FROM my_siteconf),
+          #sitetitle#,
+          #sitekeywords#,
+          #sitedescription#,
+          #sitewriter#,
+          #siteremark#)
+    </insert>
+    <update id="Updatemy_siteconf" parameterClass="my_siteconf">
+          UPDATE my_siteconf SET 
+          sitetitle=#sitetitle#,
+          sitekeywords=#sitekeywords#,
+          sitedescription=#sitedescription#,
+          sitewriter=#sitewriter#,
+          siteremark=#siteremark#
+          WHERE
+          siteid=#siteid#
+    </update>
+    <delete id="Deletemy_siteconf" parameterclass="int">
+          DELETE FROM my_siteconf
+          WHERE
+          siteid=#siteid#
+    </delete>
+    <select id="Selectmy_siteconf"  resultClass="my_siteconf"  parameterClass="my_siteconf">
+          SELECT 
+            A.siteid,
+            A.sitetitle,
+            A.sitekeywords,
+            A.sitedescription,
+            A.sitewriter,
+            A.siteremark
+          FROM my_siteconf A
+          <dynamic prepend="WHERE">
+            <isNotEqual prepend="and" property="siteid" compareValue="0">
+              A.siteid=#siteid#
+            </isNotEqual>
+            <isNotEmpty prepend="and" property="sitetitle">
+              A.sitetitle=#sitetitle#
+            </isNotEmpty>
+            <isNotEmpty prepend="and" property="sitekeywords">
+              A.sitekeywords=#sitekeywords#
+            </isNotEmpty>
+            <isNotEmpty prepend="and" property="sitedescription">
+              A.sitedescription=#sitedescription#
+            </isNotEmpty>
+            <isNotEmpty prepend="and" property="sitewriter">
+              A.sitewriter=#sitewriter#
+            </isNotEmpty>
+            <isNotEmpty prepend="and" property="siteremark">
+              A.siteremark=#siteremark#
+            </isNotEmpty>
+          </dynamic>
+    </select>
+  </statements>
+</sqlMap>

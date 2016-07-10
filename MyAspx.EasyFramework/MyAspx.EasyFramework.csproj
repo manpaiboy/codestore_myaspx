@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{51E2EE98-719E-4951-8A16-D5EE5237526F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MyAspx.EasyFramework</RootNamespace>
+    <AssemblyName>MyAspx.EasyFramework</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="IBatisNet.Common">
+      <HintPath>..\..\..\物价局\PriceBureau.Web\PriceBureau.Web\bin\IBatisNet.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="IBatisNet.Common.Logging.Log4Net">
+      <HintPath>..\..\..\物价局\PriceBureau.Web\PriceBureau.Web\bin\IBatisNet.Common.Logging.Log4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="IBatisNet.DataMapper">
+      <HintPath>..\..\..\物价局\PriceBureau.Web\PriceBureau.Web\bin\IBatisNet.DataMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\..\..\物价局\PriceBureau.Web\PriceBureau.Web\bin\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Microsoft Visual Studio 12.0\Blend\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DAL3\AdminDAL.cs" />
+    <Compile Include="DAL3\SeoDAL.cs" />
+    <Compile Include="DalBase.cs" />
+    <Compile Include="EasyFrameworkBase.cs" />
+    <Compile Include="EntityFramework\MyAspxEntities.Context.cs">
+      <DependentUpon>MyAspxEntities.Context.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="EntityFramework\MyAspxEntities.cs">
+      <DependentUpon>MyAspxEntities.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="EntityFramework\MyAspxEntities.Designer.cs">
+      <DependentUpon>MyAspxEntities.edmx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="EntityFramework\my_class.cs">
+      <DependentUpon>MyAspxEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\my_downurl.cs">
+      <DependentUpon>MyAspxEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\my_fileinfo.cs">
+      <DependentUpon>MyAspxEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\my_gold.cs">
+      <DependentUpon>MyAspxEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\my_manage.cs">
+      <DependentUpon>MyAspxEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\my_message.cs">
+      <DependentUpon>MyAspxEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\my_pay.cs">
+      <DependentUpon>MyAspxEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\my_role.cs">
+      <DependentUpon>MyAspxEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\my_siteconf.cs">
+      <DependentUpon>MyAspxEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\my_tag.cs">
+      <DependentUpon>MyAspxEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\my_users.cs">
+      <DependentUpon>MyAspxEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetSqlMapper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="IBatisXML\my_class.xml" />
+    <Content Include="IBatisXML\my_downurl.xml" />
+    <Content Include="IBatisXML\my_fileinfo.xml" />
+    <Content Include="IBatisXML\my_gold.xml" />
+    <Content Include="IBatisXML\my_manage.xml" />
+    <Content Include="IBatisXML\my_message.xml" />
+    <Content Include="IBatisXML\my_pay.xml" />
+    <Content Include="IBatisXML\my_role.xml" />
+    <Content Include="IBatisXML\my_siteconf.xml" />
+    <Content Include="IBatisXML\my_tag.xml" />
+    <Content Include="IBatisXML\my_users.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Config\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="EntityFramework\App.Config" />
+    <None Include="EntityFramework\MyAspxEntities.Context.tt">
+      <DependentUpon>MyAspxEntities.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>MyAspxEntities.Context.cs</LastGenOutput>
+    </None>
+    <None Include="EntityFramework\MyAspxEntities.edmx.diagram">
+      <DependentUpon>MyAspxEntities.edmx</DependentUpon>
+    </None>
+    <None Include="EntityFramework\MyAspxEntities.tt">
+      <DependentUpon>MyAspxEntities.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>MyAspxEntities.cs</LastGenOutput>
+    </None>
+    <None Include="EntityFramework\packages.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="EntityFramework\MyAspxEntities.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>MyAspxEntities.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MyAspx.Json\MyAspx.Json.csproj">
+      <Project>{c928461d-ed26-4cbc-90fc-ef55702ff1d7}</Project>
+      <Name>MyAspx.Json</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

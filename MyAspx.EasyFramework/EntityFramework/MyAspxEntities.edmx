@@ -1,0 +1,420 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="commyaspxdbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="my_class">
+          <Key>
+            <PropertyRef Name="classid" />
+          </Key>
+          <Property Name="classid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="classname" Type="nvarchar" MaxLength="50" />
+          <Property Name="pclassid" Type="int" />
+          <Property Name="classtype" Type="nvarchar" MaxLength="50" />
+          <Property Name="classdescription" Type="text" />
+        </EntityType>
+        <EntityType Name="my_downurl">
+          <Key>
+            <PropertyRef Name="downid" />
+          </Key>
+          <Property Name="downid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="downurl" Type="nvarchar" MaxLength="50" />
+          <Property Name="downsyseul" Type="nvarchar" MaxLength="50" />
+          <Property Name="downfileid" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="my_fileinfo">
+          <Key>
+            <PropertyRef Name="fileid" />
+          </Key>
+          <Property Name="fileid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fileclassid" Type="int" />
+          <Property Name="filevstype" Type="nvarchar" MaxLength="50" />
+          <Property Name="filedevlan" Type="nvarchar" MaxLength="50" />
+          <Property Name="downid" Type="int" />
+          <Property Name="fileremark" Type="text" />
+          <Property Name="filedownnum" Type="int" />
+          <Property Name="filepics" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="my_gold">
+          <Key>
+            <PropertyRef Name="goldid" />
+          </Key>
+          <Property Name="goldid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="goldnum" Type="money" />
+          <Property Name="golduserid" Type="int" />
+          <Property Name="goldpaynum" Type="int" />
+        </EntityType>
+        <EntityType Name="my_manage">
+          <Key>
+            <PropertyRef Name="adminid" />
+          </Key>
+          <Property Name="adminid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="adminname" Type="nvarchar" MaxLength="50" />
+          <Property Name="adminpwd" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="my_message">
+          <Key>
+            <PropertyRef Name="mesid" />
+          </Key>
+          <Property Name="mesid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="mescontext" Type="text" />
+          <Property Name="meshasguest" Type="int" />
+          <Property Name="meswriter" Type="nvarchar" MaxLength="50" />
+          <Property Name="mesdate" Type="nvarchar" MaxLength="50" />
+          <Property Name="mespid" Type="int" />
+        </EntityType>
+        <EntityType Name="my_pay">
+          <Key>
+            <PropertyRef Name="payid" />
+          </Key>
+          <Property Name="payid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="paydate" Type="nvarchar" MaxLength="50" />
+          <Property Name="paynum" Type="money" />
+          <Property Name="payuseid" Type="int" Nullable="false" />
+          <Property Name="payform" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="my_role">
+          <Key>
+            <PropertyRef Name="roleid" />
+          </Key>
+          <Property Name="roleid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="rolename" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="roleclose" Type="int" Nullable="false" />
+          <Property Name="rolekey" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="my_siteconf">
+          <Key>
+            <PropertyRef Name="siteid" />
+          </Key>
+          <Property Name="sitetitle" Type="varchar" MaxLength="50" />
+          <Property Name="sitekeywords" Type="varchar" MaxLength="50" />
+          <Property Name="sitedescription" Type="varchar" MaxLength="50" />
+          <Property Name="sitewriter" Type="varchar" MaxLength="50" />
+          <Property Name="siteremark" Type="text" />
+          <Property Name="siteaddtime" Type="datetime" />
+          <Property Name="siteid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="my_tag">
+          <Key>
+            <PropertyRef Name="tagid" />
+          </Key>
+          <Property Name="tagid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tagname" Type="varchar" MaxLength="50" />
+          <Property Name="tagcreatedate" Type="varchar" MaxLength="50" />
+          <Property Name="fileinfoid" Type="int" />
+        </EntityType>
+        <EntityType Name="my_users">
+          <Key>
+            <PropertyRef Name="userid" />
+          </Key>
+          <Property Name="userid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="useregname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="userpwd" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="userregip" Type="nvarchar" MaxLength="50" />
+          <Property Name="usercreatedate" Type="nvarchar" MaxLength="50" />
+          <Property Name="useraddress" Type="nvarchar" MaxLength="50" />
+          <Property Name="usersex" Type="int" Nullable="false" />
+          <Property Name="userremark" Type="text" />
+          <Property Name="uselogopic" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="commyaspxdbModelStoreContainer">
+          <EntitySet Name="my_class" EntityType="Self.my_class" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="my_downurl" EntityType="Self.my_downurl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="my_fileinfo" EntityType="Self.my_fileinfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="my_gold" EntityType="Self.my_gold" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="my_manage" EntityType="Self.my_manage" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="my_message" EntityType="Self.my_message" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="my_pay" EntityType="Self.my_pay" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="my_role" EntityType="Self.my_role" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="my_siteconf" EntityType="Self.my_siteconf" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="my_tag" EntityType="Self.my_tag" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="my_users" EntityType="Self.my_users" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="commyaspxdbModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+        <EntityType Name="my_class">
+          <Key>
+            <PropertyRef Name="classid" />
+          </Key>
+          <Property Name="classid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="classname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="pclassid" Type="Int32" />
+          <Property Name="classtype" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="classdescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="my_downurl">
+          <Key>
+            <PropertyRef Name="downid" />
+          </Key>
+          <Property Name="downid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="downurl" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="downsyseul" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="downfileid" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="my_fileinfo">
+          <Key>
+            <PropertyRef Name="fileid" />
+          </Key>
+          <Property Name="fileid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="fileclassid" Type="Int32" />
+          <Property Name="filevstype" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="filedevlan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="downid" Type="Int32" />
+          <Property Name="fileremark" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="filedownnum" Type="Int32" />
+          <Property Name="filepics" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="my_gold">
+          <Key>
+            <PropertyRef Name="goldid" />
+          </Key>
+          <Property Name="goldid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="goldnum" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="golduserid" Type="Int32" />
+          <Property Name="goldpaynum" Type="Int32" />
+        </EntityType>
+        <EntityType Name="my_manage">
+          <Key>
+            <PropertyRef Name="adminid" />
+          </Key>
+          <Property Name="adminid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="adminname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="adminpwd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="my_message">
+          <Key>
+            <PropertyRef Name="mesid" />
+          </Key>
+          <Property Name="mesid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="mescontext" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="meshasguest" Type="Int32" />
+          <Property Name="meswriter" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="mesdate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="mespid" Type="Int32" />
+        </EntityType>
+        <EntityType Name="my_pay">
+          <Key>
+            <PropertyRef Name="payid" />
+          </Key>
+          <Property Name="payid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="paydate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="paynum" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="payuseid" Type="Int32" Nullable="false" />
+          <Property Name="payform" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="my_role">
+          <Key>
+            <PropertyRef Name="roleid" />
+          </Key>
+          <Property Name="roleid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="rolename" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="roleclose" Type="Int32" Nullable="false" />
+          <Property Name="rolekey" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="my_siteconf">
+          <Key>
+            <PropertyRef Name="siteid" />
+          </Key>
+          <Property Name="siteid" Type="Int32" Nullable="false" />
+          <Property Name="sitetitle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="sitekeywords" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="sitedescription" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="sitewriter" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="siteremark" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="siteaddtime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="my_tag">
+          <Key>
+            <PropertyRef Name="tagid" />
+          </Key>
+          <Property Name="tagid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="tagname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="tagcreatedate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="fileinfoid" Type="Int32" />
+        </EntityType>
+        <EntityType Name="my_users">
+          <Key>
+            <PropertyRef Name="userid" />
+          </Key>
+          <Property Name="userid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="useregname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="userpwd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="userregip" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="usercreatedate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="useraddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="usersex" Type="Int32" Nullable="false" />
+          <Property Name="userremark" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="uselogopic" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="commyaspxdbEntities" annotation:LazyLoadingEnabled="true" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+          <EntitySet Name="my_class" EntityType="Self.my_class" />
+          <EntitySet Name="my_downurl" EntityType="Self.my_downurl" />
+          <EntitySet Name="my_fileinfo" EntityType="Self.my_fileinfo" />
+          <EntitySet Name="my_gold" EntityType="Self.my_gold" />
+          <EntitySet Name="my_manage" EntityType="Self.my_manage" />
+          <EntitySet Name="my_message" EntityType="Self.my_message" />
+          <EntitySet Name="my_pay" EntityType="Self.my_pay" />
+          <EntitySet Name="my_role" EntityType="Self.my_role" />
+          <EntitySet Name="my_siteconf" EntityType="Self.my_siteconf" />
+          <EntitySet Name="my_tag" EntityType="Self.my_tag" />
+          <EntitySet Name="my_users" EntityType="Self.my_users" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="commyaspxdbModelStoreContainer" CdmEntityContainer="commyaspxdbEntities">
+          <EntitySetMapping Name="my_class">
+            <EntityTypeMapping TypeName="commyaspxdbModel.my_class">
+              <MappingFragment StoreEntitySet="my_class">
+                <ScalarProperty Name="classid" ColumnName="classid" />
+                <ScalarProperty Name="classname" ColumnName="classname" />
+                <ScalarProperty Name="pclassid" ColumnName="pclassid" />
+                <ScalarProperty Name="classtype" ColumnName="classtype" />
+                <ScalarProperty Name="classdescription" ColumnName="classdescription" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="my_downurl">
+            <EntityTypeMapping TypeName="commyaspxdbModel.my_downurl">
+              <MappingFragment StoreEntitySet="my_downurl">
+                <ScalarProperty Name="downid" ColumnName="downid" />
+                <ScalarProperty Name="downurl" ColumnName="downurl" />
+                <ScalarProperty Name="downsyseul" ColumnName="downsyseul" />
+                <ScalarProperty Name="downfileid" ColumnName="downfileid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="my_fileinfo">
+            <EntityTypeMapping TypeName="commyaspxdbModel.my_fileinfo">
+              <MappingFragment StoreEntitySet="my_fileinfo">
+                <ScalarProperty Name="fileid" ColumnName="fileid" />
+                <ScalarProperty Name="fileclassid" ColumnName="fileclassid" />
+                <ScalarProperty Name="filevstype" ColumnName="filevstype" />
+                <ScalarProperty Name="filedevlan" ColumnName="filedevlan" />
+                <ScalarProperty Name="downid" ColumnName="downid" />
+                <ScalarProperty Name="fileremark" ColumnName="fileremark" />
+                <ScalarProperty Name="filedownnum" ColumnName="filedownnum" />
+                <ScalarProperty Name="filepics" ColumnName="filepics" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="my_gold">
+            <EntityTypeMapping TypeName="commyaspxdbModel.my_gold">
+              <MappingFragment StoreEntitySet="my_gold">
+                <ScalarProperty Name="goldid" ColumnName="goldid" />
+                <ScalarProperty Name="goldnum" ColumnName="goldnum" />
+                <ScalarProperty Name="golduserid" ColumnName="golduserid" />
+                <ScalarProperty Name="goldpaynum" ColumnName="goldpaynum" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="my_manage">
+            <EntityTypeMapping TypeName="commyaspxdbModel.my_manage">
+              <MappingFragment StoreEntitySet="my_manage">
+                <ScalarProperty Name="adminid" ColumnName="adminid" />
+                <ScalarProperty Name="adminname" ColumnName="adminname" />
+                <ScalarProperty Name="adminpwd" ColumnName="adminpwd" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="my_message">
+            <EntityTypeMapping TypeName="commyaspxdbModel.my_message">
+              <MappingFragment StoreEntitySet="my_message">
+                <ScalarProperty Name="mesid" ColumnName="mesid" />
+                <ScalarProperty Name="mescontext" ColumnName="mescontext" />
+                <ScalarProperty Name="meshasguest" ColumnName="meshasguest" />
+                <ScalarProperty Name="meswriter" ColumnName="meswriter" />
+                <ScalarProperty Name="mesdate" ColumnName="mesdate" />
+                <ScalarProperty Name="mespid" ColumnName="mespid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="my_pay">
+            <EntityTypeMapping TypeName="commyaspxdbModel.my_pay">
+              <MappingFragment StoreEntitySet="my_pay">
+                <ScalarProperty Name="payid" ColumnName="payid" />
+                <ScalarProperty Name="paydate" ColumnName="paydate" />
+                <ScalarProperty Name="paynum" ColumnName="paynum" />
+                <ScalarProperty Name="payuseid" ColumnName="payuseid" />
+                <ScalarProperty Name="payform" ColumnName="payform" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="my_role">
+            <EntityTypeMapping TypeName="commyaspxdbModel.my_role">
+              <MappingFragment StoreEntitySet="my_role">
+                <ScalarProperty Name="roleid" ColumnName="roleid" />
+                <ScalarProperty Name="rolename" ColumnName="rolename" />
+                <ScalarProperty Name="roleclose" ColumnName="roleclose" />
+                <ScalarProperty Name="rolekey" ColumnName="rolekey" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="my_siteconf">
+            <EntityTypeMapping TypeName="commyaspxdbModel.my_siteconf">
+              <MappingFragment StoreEntitySet="my_siteconf">
+                <ScalarProperty Name="siteaddtime" ColumnName="siteaddtime" />
+                <ScalarProperty Name="siteid" ColumnName="siteid" />
+                <ScalarProperty Name="sitetitle" ColumnName="sitetitle" />
+                <ScalarProperty Name="sitekeywords" ColumnName="sitekeywords" />
+                <ScalarProperty Name="sitedescription" ColumnName="sitedescription" />
+                <ScalarProperty Name="sitewriter" ColumnName="sitewriter" />
+                <ScalarProperty Name="siteremark" ColumnName="siteremark" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="my_tag">
+            <EntityTypeMapping TypeName="commyaspxdbModel.my_tag">
+              <MappingFragment StoreEntitySet="my_tag">
+                <ScalarProperty Name="tagid" ColumnName="tagid" />
+                <ScalarProperty Name="tagname" ColumnName="tagname" />
+                <ScalarProperty Name="tagcreatedate" ColumnName="tagcreatedate" />
+                <ScalarProperty Name="fileinfoid" ColumnName="fileinfoid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="my_users">
+            <EntityTypeMapping TypeName="commyaspxdbModel.my_users">
+              <MappingFragment StoreEntitySet="my_users">
+                <ScalarProperty Name="userid" ColumnName="userid" />
+                <ScalarProperty Name="useregname" ColumnName="useregname" />
+                <ScalarProperty Name="userpwd" ColumnName="userpwd" />
+                <ScalarProperty Name="userregip" ColumnName="userregip" />
+                <ScalarProperty Name="usercreatedate" ColumnName="usercreatedate" />
+                <ScalarProperty Name="useraddress" ColumnName="useraddress" />
+                <ScalarProperty Name="usersex" ColumnName="usersex" />
+                <ScalarProperty Name="userremark" ColumnName="userremark" />
+                <ScalarProperty Name="uselogopic" ColumnName="uselogopic" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer>
+    <edmx:Connection>
+      <edmx:DesignerInfoPropertySet>
+        <edmx:DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </edmx:DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <edmx:DesignerInfoPropertySet>
+        <edmx:DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <edmx:DesignerProperty Name="EnablePluralization" Value="false" />
+        <edmx:DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <edmx:DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <edmx:DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </edmx:DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams />
+  </edmx:Designer>
+</edmx:Edmx>

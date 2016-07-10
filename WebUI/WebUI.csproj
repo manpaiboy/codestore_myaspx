@@ -1,0 +1,1165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D86C8D0F-922E-49B0-A80A-C5C096CE12B1}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebUI</RootNamespace>
+    <AssemblyName>WebUI</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Users\wangxg\Desktop\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin\index.aspx" />
+    <Content Include="Admin\manage\add.aspx" />
+    <Content Include="Admin\seo\seomanage.aspx" />
+    <Content Include="Admin\UI\JQueryEasyUI\changelog.txt" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo-mobile\accordion\basic.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo-mobile\accordion\header.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo-mobile\accordion\_content.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo-mobile\animation\basic.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo-mobile\animation\fade.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo-mobile\animation\pop.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo-mobile\animation\slide.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo-mobile\badge\basic.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo-mobile\badge\button.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo-mobile\badge\list.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo-mobile\badge\tabs.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo-mobile\button\basic.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo-mobile\button\group.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo-mobile\button\style.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo-mobile\button\switch.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo-mobile\datagrid\basic.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo-mobile\datagrid\rowediting.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo-mobile\datalist\basic.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo-mobile\datalist\group.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo-mobile\datalist\selection.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo-mobile\dialog\basic.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo-mobile\dialog\message.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo-mobile\form\basic.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo-mobile\images\login1.jpg" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo-mobile\images\modem.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo-mobile\images\more.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo-mobile\images\pda.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo-mobile\images\scanner.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo-mobile\images\tablet.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo-mobile\input\numberspinner.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo-mobile\input\textbox.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo-mobile\layout\basic.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo-mobile\menu\basic.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo-mobile\menu\menubar.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo-mobile\panel\ajax.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo-mobile\panel\basic.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo-mobile\panel\nav.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo-mobile\panel\_content.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo-mobile\simplelist\basic.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo-mobile\simplelist\button.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo-mobile\simplelist\group.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo-mobile\simplelist\image.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo-mobile\simplelist\link.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo-mobile\tabs\basic.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo-mobile\tabs\nav.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo-mobile\tabs\pill.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo-mobile\toolbar\basic.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo-mobile\toolbar\button.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo-mobile\toolbar\menu.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo-mobile\tree\basic.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo-mobile\tree\dnd.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\accordion\actions.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\accordion\ajax.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\accordion\basic.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\accordion\expandable.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\accordion\fluid.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\accordion\multiple.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\accordion\tools.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\accordion\_content.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\calendar\basic.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\calendar\custom.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\calendar\disabledate.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\calendar\firstday.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\calendar\fluid.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\combobox\actions.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\combobox\basic.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\combobox\customformat.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\combobox\dynamicdata.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\combobox\fluid.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\combobox\group.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\combobox\icons.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\combobox\itemicon.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\combobox\multiline.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\combobox\multiple.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\combobox\navigation.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\combobox\remotedata.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\combobox\remotejsonp.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\combogrid\actions.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\combogrid\basic.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\combogrid\fluid.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\combogrid\initvalue.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\combogrid\multiple.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\combogrid\navigation.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\combogrid\setvalue.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\combotree\actions.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\combotree\basic.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\combotree\fluid.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\combotree\initvalue.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\combotree\multiple.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\combo\animation.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\combo\basic.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\datagrid\aligncolumns.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\datagrid\basic.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\datagrid\cacheeditor.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\datagrid\cellediting.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\datagrid\cellstyle.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\datagrid\checkbox.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\datagrid\clientpagination.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\datagrid\columngroup.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\datagrid\complextoolbar.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\datagrid\contextmenu.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\datagrid\custompager.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\datagrid\fluid.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\datagrid\footer.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\datagrid\formatcolumns.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\datagrid\frozencolumns.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\datagrid\frozenrows.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\datagrid\mergecells.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\datagrid\multisorting.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\datagrid\rowborder.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\datagrid\rowediting.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\datagrid\rowstyle.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\datagrid\selection.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\datagrid\simpletoolbar.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\datagrid\transform.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\datalist\basic.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\datalist\checkbox.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\datalist\group.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\datalist\multiselect.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\datalist\remotedata.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\datebox\basic.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\datebox\buttons.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\datebox\clone.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\datebox\dateformat.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\datebox\events.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\datebox\fluid.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\datebox\restrict.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\datebox\sharedcalendar.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\datebox\validate.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\datetimebox\basic.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\datetimebox\fluid.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\datetimebox\initvalue.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\datetimebox\showseconds.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\datetimespinner\basic.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\datetimespinner\clearicon.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\datetimespinner\fluid.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\datetimespinner\format.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\demo.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\dialog\basic.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\dialog\complextoolbar.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\dialog\fluid.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\dialog\toolbarbuttons.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\draggable\basic.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\draggable\constrain.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\draggable\snap.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\droppable\accept.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\droppable\basic.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\droppable\sort.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\easyloader\basic.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\filebox\basic.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\filebox\buttonalign.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\filebox\fluid.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\form\basic.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\form\load.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\form\validateonsubmit.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\layout\addremove.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\layout\autoheight.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\layout\basic.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\layout\collapsetitle.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\layout\complex.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\layout\customcollapsetitle.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\layout\fluid.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\layout\full.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\layout\nestedlayout.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\layout\nocollapsible.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\layout\_content.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\linkbutton\basic.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\linkbutton\fluid.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\linkbutton\group.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\linkbutton\iconalign.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\linkbutton\plain.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\linkbutton\size.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\linkbutton\style.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\linkbutton\toggle.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\menubutton\actions.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\menubutton\alignment.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\menubutton\basic.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\menubutton\nav.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\menu\basic.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\menu\customitem.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\menu\events.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\menu\inline.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\menu\nav.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\messager\alert.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\messager\basic.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\messager\interactive.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\messager\position.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\numberbox\basic.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\numberbox\fluid.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\numberbox\format.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\numberbox\range.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\numberspinner\basic.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\numberspinner\fluid.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\numberspinner\increment.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\numberspinner\range.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\pagination\attaching.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\pagination\basic.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\pagination\custombuttons.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\pagination\layout.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\pagination\links.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\pagination\simple.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\panel\basic.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\panel\customtools.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\panel\fluid.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\panel\footer.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\panel\loadcontent.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\panel\nestedpanel.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\panel\paneltools.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\panel\_content.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\progressbar\basic.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\progressbar\fluid.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\propertygrid\basic.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\propertygrid\customcolumns.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\propertygrid\groupformat.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\resizable\basic.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\searchbox\basic.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\searchbox\category.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\searchbox\fluid.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\slider\basic.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\slider\fluid.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\slider\formattip.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\slider\nonlinear.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\slider\range.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\slider\rule.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\slider\vertical.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\splitbutton\actions.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\splitbutton\basic.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\switchbutton\action.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\switchbutton\basic.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\tabs\autoheight.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\tabs\basic.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\tabs\dropdown.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\tabs\fixedwidth.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\tabs\fluid.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\tabs\hover.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\tabs\images\modem.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\tabs\images\pda.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\tabs\images\scanner.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\tabs\images\tablet.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\tabs\nestedtabs.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\tabs\striptools.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\tabs\style.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\tabs\tabimage.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\tabs\tabposition.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\tabs\tabstools.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\tabs\_content.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\textbox\basic.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\textbox\button.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\textbox\clearicon.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\textbox\custom.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\textbox\fluid.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\textbox\icons.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\textbox\multiline.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\textbox\size.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\timespinner\actions.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\timespinner\basic.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\timespinner\fluid.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\timespinner\range.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\tooltip\ajax.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\tooltip\basic.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\tooltip\customcontent.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\tooltip\customstyle.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\tooltip\position.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\tooltip\toolbar.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\tooltip\tooltipdialog.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\tooltip\_content.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\tooltip\_dialog.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\treegrid\actions.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\treegrid\basic.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\treegrid\checkbox.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\treegrid\clientpagination.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\treegrid\contextmenu.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\treegrid\customcheckbox.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\treegrid\editable.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\treegrid\fluid.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\treegrid\footer.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\treegrid\lines.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\treegrid\reports.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\tree\actions.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\tree\animation.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\tree\basic.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\tree\checkbox.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\tree\contextmenu.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\tree\customcheckbox.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\tree\dnd.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\tree\editable.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\tree\formatting.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\tree\icons.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\tree\lazyload.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\tree\lines.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\validatebox\basic.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\validatebox\customtooltip.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\validatebox\errorplacement.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\validatebox\validateonblur.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\window\basic.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\window\borderstyle.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\window\customtools.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\window\fluid.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\window\footer.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\window\inlinewindow.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\window\modalwindow.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\window\windowlayout.html" />
+    <Content Include="Admin\UI\JQueryEasyUI\easyloader.js" />
+    <Content Include="Admin\UI\JQueryEasyUI\jquery.easyui.min.js" />
+    <Content Include="Admin\UI\JQueryEasyUI\jquery.easyui.mobile.js" />
+    <Content Include="Admin\UI\JQueryEasyUI\jquery.min.js" />
+    <Content Include="Admin\UI\JQueryEasyUI\license_freeware.txt" />
+    <Content Include="Admin\UI\JQueryEasyUI\locale\easyui-lang-af.js" />
+    <Content Include="Admin\UI\JQueryEasyUI\locale\easyui-lang-am.js" />
+    <Content Include="Admin\UI\JQueryEasyUI\locale\easyui-lang-ar.js" />
+    <Content Include="Admin\UI\JQueryEasyUI\locale\easyui-lang-bg.js" />
+    <Content Include="Admin\UI\JQueryEasyUI\locale\easyui-lang-ca.js" />
+    <Content Include="Admin\UI\JQueryEasyUI\locale\easyui-lang-cs.js" />
+    <Content Include="Admin\UI\JQueryEasyUI\locale\easyui-lang-cz.js" />
+    <Content Include="Admin\UI\JQueryEasyUI\locale\easyui-lang-da.js" />
+    <Content Include="Admin\UI\JQueryEasyUI\locale\easyui-lang-de.js" />
+    <Content Include="Admin\UI\JQueryEasyUI\locale\easyui-lang-el.js" />
+    <Content Include="Admin\UI\JQueryEasyUI\locale\easyui-lang-en.js" />
+    <Content Include="Admin\UI\JQueryEasyUI\locale\easyui-lang-es.js" />
+    <Content Include="Admin\UI\JQueryEasyUI\locale\easyui-lang-fr.js" />
+    <Content Include="Admin\UI\JQueryEasyUI\locale\easyui-lang-it.js" />
+    <Content Include="Admin\UI\JQueryEasyUI\locale\easyui-lang-jp.js" />
+    <Content Include="Admin\UI\JQueryEasyUI\locale\easyui-lang-ko.js" />
+    <Content Include="Admin\UI\JQueryEasyUI\locale\easyui-lang-nl.js" />
+    <Content Include="Admin\UI\JQueryEasyUI\locale\easyui-lang-pl.js" />
+    <Content Include="Admin\UI\JQueryEasyUI\locale\easyui-lang-pt_BR.js" />
+    <Content Include="Admin\UI\JQueryEasyUI\locale\easyui-lang-ru.js" />
+    <Content Include="Admin\UI\JQueryEasyUI\locale\easyui-lang-sv_SE.js" />
+    <Content Include="Admin\UI\JQueryEasyUI\locale\easyui-lang-tr.js" />
+    <Content Include="Admin\UI\JQueryEasyUI\locale\easyui-lang-zh_CN.js" />
+    <Content Include="Admin\UI\JQueryEasyUI\locale\easyui-lang-zh_TW.js" />
+    <Content Include="Admin\UI\JQueryEasyUI\plugins\jquery.accordion.js" />
+    <Content Include="Admin\UI\JQueryEasyUI\plugins\jquery.calendar.js" />
+    <Content Include="Admin\UI\JQueryEasyUI\plugins\jquery.combo.js" />
+    <Content Include="Admin\UI\JQueryEasyUI\plugins\jquery.combobox.js" />
+    <Content Include="Admin\UI\JQueryEasyUI\plugins\jquery.combogrid.js" />
+    <Content Include="Admin\UI\JQueryEasyUI\plugins\jquery.combotree.js" />
+    <Content Include="Admin\UI\JQueryEasyUI\plugins\jquery.datagrid.js" />
+    <Content Include="Admin\UI\JQueryEasyUI\plugins\jquery.datalist.js" />
+    <Content Include="Admin\UI\JQueryEasyUI\plugins\jquery.datebox.js" />
+    <Content Include="Admin\UI\JQueryEasyUI\plugins\jquery.datetimebox.js" />
+    <Content Include="Admin\UI\JQueryEasyUI\plugins\jquery.datetimespinner.js" />
+    <Content Include="Admin\UI\JQueryEasyUI\plugins\jquery.dialog.js" />
+    <Content Include="Admin\UI\JQueryEasyUI\plugins\jquery.draggable.js" />
+    <Content Include="Admin\UI\JQueryEasyUI\plugins\jquery.droppable.js" />
+    <Content Include="Admin\UI\JQueryEasyUI\plugins\jquery.filebox.js" />
+    <Content Include="Admin\UI\JQueryEasyUI\plugins\jquery.form.js" />
+    <Content Include="Admin\UI\JQueryEasyUI\plugins\jquery.layout.js" />
+    <Content Include="Admin\UI\JQueryEasyUI\plugins\jquery.linkbutton.js" />
+    <Content Include="Admin\UI\JQueryEasyUI\plugins\jquery.menu.js" />
+    <Content Include="Admin\UI\JQueryEasyUI\plugins\jquery.menubutton.js" />
+    <Content Include="Admin\UI\JQueryEasyUI\plugins\jquery.messager.js" />
+    <Content Include="Admin\UI\JQueryEasyUI\plugins\jquery.mobile.js" />
+    <Content Include="Admin\UI\JQueryEasyUI\plugins\jquery.numberbox.js" />
+    <Content Include="Admin\UI\JQueryEasyUI\plugins\jquery.numberspinner.js" />
+    <Content Include="Admin\UI\JQueryEasyUI\plugins\jquery.pagination.js" />
+    <Content Include="Admin\UI\JQueryEasyUI\plugins\jquery.panel.js" />
+    <Content Include="Admin\UI\JQueryEasyUI\plugins\jquery.parser.js" />
+    <Content Include="Admin\UI\JQueryEasyUI\plugins\jquery.progressbar.js" />
+    <Content Include="Admin\UI\JQueryEasyUI\plugins\jquery.propertygrid.js" />
+    <Content Include="Admin\UI\JQueryEasyUI\plugins\jquery.resizable.js" />
+    <Content Include="Admin\UI\JQueryEasyUI\plugins\jquery.searchbox.js" />
+    <Content Include="Admin\UI\JQueryEasyUI\plugins\jquery.slider.js" />
+    <Content Include="Admin\UI\JQueryEasyUI\plugins\jquery.spinner.js" />
+    <Content Include="Admin\UI\JQueryEasyUI\plugins\jquery.splitbutton.js" />
+    <Content Include="Admin\UI\JQueryEasyUI\plugins\jquery.switchbutton.js" />
+    <Content Include="Admin\UI\JQueryEasyUI\plugins\jquery.tabs.js" />
+    <Content Include="Admin\UI\JQueryEasyUI\plugins\jquery.textbox.js" />
+    <Content Include="Admin\UI\JQueryEasyUI\plugins\jquery.timespinner.js" />
+    <Content Include="Admin\UI\JQueryEasyUI\plugins\jquery.tooltip.js" />
+    <Content Include="Admin\UI\JQueryEasyUI\plugins\jquery.tree.js" />
+    <Content Include="Admin\UI\JQueryEasyUI\plugins\jquery.treegrid.js" />
+    <Content Include="Admin\UI\JQueryEasyUI\plugins\jquery.validatebox.js" />
+    <Content Include="Admin\UI\JQueryEasyUI\plugins\jquery.window.js" />
+    <Content Include="Admin\UI\JQueryEasyUI\readme.txt" />
+    <Content Include="Admin\UI\JQueryEasyUI\src\easyloader.js" />
+    <Content Include="Admin\UI\JQueryEasyUI\src\jquery.accordion.js" />
+    <Content Include="Admin\UI\JQueryEasyUI\src\jquery.calendar.js" />
+    <Content Include="Admin\UI\JQueryEasyUI\src\jquery.combobox.js" />
+    <Content Include="Admin\UI\JQueryEasyUI\src\jquery.datebox.js" />
+    <Content Include="Admin\UI\JQueryEasyUI\src\jquery.draggable.js" />
+    <Content Include="Admin\UI\JQueryEasyUI\src\jquery.droppable.js" />
+    <Content Include="Admin\UI\JQueryEasyUI\src\jquery.form.js" />
+    <Content Include="Admin\UI\JQueryEasyUI\src\jquery.linkbutton.js" />
+    <Content Include="Admin\UI\JQueryEasyUI\src\jquery.menu.js" />
+    <Content Include="Admin\UI\JQueryEasyUI\src\jquery.parser.js" />
+    <Content Include="Admin\UI\JQueryEasyUI\src\jquery.progressbar.js" />
+    <Content Include="Admin\UI\JQueryEasyUI\src\jquery.propertygrid.js" />
+    <Content Include="Admin\UI\JQueryEasyUI\src\jquery.resizable.js" />
+    <Content Include="Admin\UI\JQueryEasyUI\src\jquery.slider.js" />
+    <Content Include="Admin\UI\JQueryEasyUI\src\jquery.tabs.js" />
+    <Content Include="Admin\UI\JQueryEasyUI\src\jquery.window.js" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\black\accordion.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\black\calendar.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\black\combo.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\black\combobox.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\black\datagrid.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\black\datalist.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\black\datebox.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\black\dialog.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\black\easyui.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\black\filebox.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\black\images\accordion_arrows.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\black\images\blank.gif" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\black\images\calendar_arrows.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\black\images\combo_arrow.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\black\images\datagrid_icons.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\black\images\datebox_arrow.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\black\images\layout_arrows.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\black\images\linkbutton_bg.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\black\images\loading.gif" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\black\images\menu_arrows.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\black\images\messager_icons.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\black\images\pagination_icons.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\black\images\panel_tools.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\black\images\searchbox_button.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\black\images\slider_handle.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\black\images\spinner_arrows.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\black\images\tabs_icons.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\black\images\tree_icons.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\black\images\validatebox_warning.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\black\layout.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\black\linkbutton.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\black\menu.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\black\menubutton.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\black\messager.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\black\numberbox.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\black\pagination.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\black\panel.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\black\progressbar.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\black\propertygrid.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\black\searchbox.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\black\slider.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\black\spinner.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\black\splitbutton.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\black\switchbutton.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\black\tabs.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\black\textbox.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\black\tooltip.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\black\tree.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\black\validatebox.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\black\window.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\bootstrap\accordion.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\bootstrap\calendar.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\bootstrap\combo.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\bootstrap\combobox.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\bootstrap\datagrid.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\bootstrap\datalist.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\bootstrap\datebox.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\bootstrap\dialog.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\bootstrap\easyui.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\bootstrap\filebox.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\bootstrap\images\accordion_arrows.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\bootstrap\images\blank.gif" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\bootstrap\images\calendar_arrows.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\bootstrap\images\combo_arrow.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\bootstrap\images\datagrid_icons.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\bootstrap\images\datebox_arrow.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\bootstrap\images\layout_arrows.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\bootstrap\images\linkbutton_bg.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\bootstrap\images\loading.gif" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\bootstrap\images\menu_arrows.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\bootstrap\images\messager_icons.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\bootstrap\images\pagination_icons.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\bootstrap\images\panel_tools.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\bootstrap\images\searchbox_button.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\bootstrap\images\slider_handle.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\bootstrap\images\spinner_arrows.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\bootstrap\images\tabs_icons.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\bootstrap\images\tree_icons.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\bootstrap\images\validatebox_warning.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\bootstrap\layout.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\bootstrap\linkbutton.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\bootstrap\menu.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\bootstrap\menubutton.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\bootstrap\messager.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\bootstrap\numberbox.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\bootstrap\pagination.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\bootstrap\panel.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\bootstrap\progressbar.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\bootstrap\propertygrid.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\bootstrap\searchbox.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\bootstrap\slider.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\bootstrap\spinner.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\bootstrap\splitbutton.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\bootstrap\switchbutton.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\bootstrap\tabs.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\bootstrap\textbox.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\bootstrap\tooltip.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\bootstrap\tree.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\bootstrap\validatebox.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\bootstrap\window.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\color.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\default\accordion.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\default\calendar.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\default\combo.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\default\combobox.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\default\datagrid.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\default\datalist.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\default\datebox.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\default\dialog.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\default\easyui.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\default\filebox.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\default\images\accordion_arrows.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\default\images\blank.gif" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\default\images\calendar_arrows.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\default\images\combo_arrow.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\default\images\datagrid_icons.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\default\images\datebox_arrow.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\default\images\layout_arrows.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\default\images\linkbutton_bg.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\default\images\loading.gif" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\default\images\menu_arrows.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\default\images\messager_icons.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\default\images\pagination_icons.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\default\images\panel_tools.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\default\images\searchbox_button.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\default\images\slider_handle.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\default\images\spinner_arrows.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\default\images\tabs_icons.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\default\images\tree_icons.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\default\images\validatebox_warning.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\default\layout.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\default\linkbutton.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\default\menu.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\default\menubutton.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\default\messager.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\default\numberbox.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\default\pagination.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\default\panel.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\default\progressbar.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\default\propertygrid.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\default\searchbox.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\default\slider.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\default\spinner.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\default\splitbutton.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\default\switchbutton.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\default\tabs.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\default\textbox.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\default\tooltip.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\default\tree.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\default\validatebox.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\default\window.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\gray\accordion.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\gray\calendar.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\gray\combo.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\gray\combobox.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\gray\datagrid.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\gray\datalist.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\gray\datebox.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\gray\dialog.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\gray\easyui.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\gray\filebox.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\gray\images\accordion_arrows.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\gray\images\blank.gif" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\gray\images\calendar_arrows.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\gray\images\combo_arrow.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\gray\images\datagrid_icons.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\gray\images\datebox_arrow.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\gray\images\layout_arrows.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\gray\images\linkbutton_bg.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\gray\images\loading.gif" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\gray\images\menu_arrows.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\gray\images\messager_icons.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\gray\images\pagination_icons.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\gray\images\panel_tools.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\gray\images\searchbox_button.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\gray\images\slider_handle.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\gray\images\spinner_arrows.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\gray\images\tabs_icons.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\gray\images\tree_icons.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\gray\images\validatebox_warning.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\gray\layout.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\gray\linkbutton.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\gray\menu.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\gray\menubutton.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\gray\messager.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\gray\numberbox.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\gray\pagination.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\gray\panel.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\gray\progressbar.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\gray\propertygrid.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\gray\searchbox.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\gray\slider.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\gray\spinner.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\gray\splitbutton.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\gray\switchbutton.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\gray\tabs.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\gray\textbox.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\gray\tooltip.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\gray\tree.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\gray\validatebox.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\gray\window.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\icon.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\icons\back.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\icons\blank.gif" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\icons\cancel.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\icons\clear.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\icons\cut.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\icons\edit_add.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\icons\edit_remove.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\icons\filesave.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\icons\filter.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\icons\help.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\icons\large_chart.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\icons\large_clipart.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\icons\large_picture.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\icons\large_shapes.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\icons\large_smartart.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\icons\lock.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\icons\man.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\icons\mini_add.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\icons\mini_edit.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\icons\mini_refresh.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\icons\more.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\icons\no.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\icons\ok.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\icons\pencil.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\icons\print.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\icons\redo.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\icons\reload.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\icons\search.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\icons\sum.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\icons\tip.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\icons\undo.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\material\accordion.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\material\calendar.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\material\combo.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\material\combobox.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\material\datagrid.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\material\datalist.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\material\datebox.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\material\dialog.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\material\easyui.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\material\filebox.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\material\images\accordion_arrows.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\material\images\blank.gif" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\material\images\calendar_arrows.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\material\images\combo_arrow.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\material\images\datagrid_icons.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\material\images\datebox_arrow.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\material\images\layout_arrows.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\material\images\linkbutton_bg.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\material\images\loading.gif" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\material\images\menu_arrows.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\material\images\messager_icons.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\material\images\pagination_icons.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\material\images\panel_tools.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\material\images\searchbox_button.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\material\images\slider_handle.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\material\images\spinner_arrows.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\material\images\tabs_icons.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\material\images\tree_icons.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\material\images\validatebox_warning.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\material\layout.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\material\linkbutton.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\material\menu.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\material\menubutton.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\material\messager.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\material\numberbox.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\material\pagination.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\material\panel.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\material\progressbar.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\material\propertygrid.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\material\searchbox.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\material\slider.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\material\spinner.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\material\splitbutton.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\material\switchbutton.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\material\tabs.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\material\textbox.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\material\tooltip.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\material\tree.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\material\validatebox.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\material\window.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\metro\accordion.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\metro\calendar.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\metro\combo.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\metro\combobox.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\metro\datagrid.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\metro\datalist.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\metro\datebox.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\metro\dialog.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\metro\easyui.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\metro\filebox.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\metro\images\accordion_arrows.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\metro\images\blank.gif" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\metro\images\calendar_arrows.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\metro\images\combo_arrow.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\metro\images\datagrid_icons.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\metro\images\datebox_arrow.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\metro\images\layout_arrows.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\metro\images\linkbutton_bg.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\metro\images\loading.gif" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\metro\images\menu_arrows.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\metro\images\messager_icons.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\metro\images\pagination_icons.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\metro\images\panel_tools.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\metro\images\searchbox_button.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\metro\images\slider_handle.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\metro\images\spinner_arrows.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\metro\images\tabs_icons.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\metro\images\tree_icons.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\metro\images\validatebox_warning.png" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\metro\layout.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\metro\linkbutton.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\metro\menu.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\metro\menubutton.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\metro\messager.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\metro\numberbox.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\metro\pagination.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\metro\panel.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\metro\progressbar.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\metro\propertygrid.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\metro\searchbox.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\metro\slider.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\metro\spinner.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\metro\splitbutton.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\metro\switchbutton.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\metro\tabs.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\metro\textbox.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\metro\tooltip.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\metro\tree.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\metro\validatebox.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\metro\window.css" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\mobile.css" />
+    <Content Include="BootFlat\.gitattributes" />
+    <Content Include="BootFlat\.gitignore" />
+    <Content Include="BootFlat\angularicons\angularicons.svg" />
+    <Content Include="BootFlat\bootflat\css\bootflat.css" />
+    <Content Include="BootFlat\bootflat\css\bootflat.min.css" />
+    <Content Include="BootFlat\bootflat\img\check_flat\default.png" />
+    <Content Include="BootFlat\bootflat\js\icheck.min.js" />
+    <Content Include="BootFlat\bootflat\js\jquery.fs.selecter.min.js" />
+    <Content Include="BootFlat\bootflat\js\jquery.fs.stepper.min.js" />
+    <Content Include="BootFlat\color-picker-blue.html" />
+    <Content Include="BootFlat\color-picker-gray.html" />
+    <Content Include="BootFlat\color-picker-green.html" />
+    <Content Include="BootFlat\color-picker-pink.html" />
+    <Content Include="BootFlat\color-picker-purple.html" />
+    <Content Include="BootFlat\color-picker-red.html" />
+    <Content Include="BootFlat\color-picker-yellow.html" />
+    <Content Include="BootFlat\color-picker.html" />
+    <Content Include="BootFlat\css\bootstrap.min.css" />
+    <Content Include="BootFlat\css\google\css1.css" />
+    <Content Include="BootFlat\css\site.css" />
+    <Content Include="BootFlat\css\site.min.css" />
+    <Content Include="BootFlat\documentation.html" />
+    <Content Include="BootFlat\favicon_16.ico" />
+    <Content Include="BootFlat\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="BootFlat\free-psd.html" />
+    <Content Include="BootFlat\getting-started.html" />
+    <Content Include="BootFlat\google45b338b882fada75.html" />
+    <Content Include="BootFlat\Gruntfile.js" />
+    <Content Include="BootFlat\img\ascii-logo.gif" />
+    <Content Include="BootFlat\img\bootflat-ui-kit.jpg" />
+    <Content Include="BootFlat\img\design.png" />
+    <Content Include="BootFlat\img\divider.png" />
+    <Content Include="BootFlat\img\fast.png" />
+    <Content Include="BootFlat\img\feature-bootstrap.png" />
+    <Content Include="BootFlat\img\feature-css.png" />
+    <Content Include="BootFlat\img\feature-lightweight.png" />
+    <Content Include="BootFlat\img\feature-mobile.png" />
+    <Content Include="BootFlat\img\footer-logo.png" />
+    <Content Include="BootFlat\img\github.png" />
+    <Content Include="BootFlat\img\index.png" />
+    <Content Include="BootFlat\img\Jumbotron.jpg" />
+    <Content Include="BootFlat\img\logo-index.png" />
+    <Content Include="BootFlat\img\logo.png" />
+    <Content Include="BootFlat\img\photo-1.jpg" />
+    <Content Include="BootFlat\img\photo-2.jpg" />
+    <Content Include="BootFlat\img\photo-3.jpg" />
+    <Content Include="BootFlat\img\photo-4.jpg" />
+    <Content Include="BootFlat\img\prototyping.png" />
+    <Content Include="BootFlat\img\share.gif" />
+    <Content Include="BootFlat\img\slider1.jpg" />
+    <Content Include="BootFlat\img\slider2.jpg" />
+    <Content Include="BootFlat\img\slider3.jpg" />
+    <Content Include="BootFlat\img\thumbnail-1.jpg" />
+    <Content Include="BootFlat\img\thumbnail-2.jpg" />
+    <Content Include="BootFlat\img\thumbnail-3.jpg" />
+    <Content Include="BootFlat\img\thumbnail-4.jpg" />
+    <Content Include="BootFlat\img\together.png" />
+    <Content Include="BootFlat\img\wild_flowers.png" />
+    <Content Include="BootFlat\index.html" />
+    <Content Include="BootFlat\js\application.js" />
+    <Content Include="BootFlat\js\bootstrap.min.js" />
+    <Content Include="BootFlat\js\html5shiv.js" />
+    <Content Include="BootFlat\js\jquery-1.10.1.min.js" />
+    <Content Include="BootFlat\js\respond.min.js" />
+    <Content Include="BootFlat\js\site.min.js" />
+    <Content Include="BootFlat\sitemap.xml" />
+    <Content Include="Component\Footer.ascx" />
+    <Content Include="Component\Head.ascx" />
+    <Content Include="Component\Top.ascx" />
+    <Content Include="Css\Base.css" />
+    <Content Include="Css\login.css" />
+    <Content Include="Css\Mix\Footer.css" />
+    <Content Include="Css\Mix\Top.css" />
+    <Content Include="Css\Third\51aspxBase.css" />
+    <Content Include="default.aspx" />
+    <Content Include="Form\BusinessCodes.aspx" />
+    <Content Include="Form\FreeCodes.aspx" />
+    <Content Include="Form\LastUpdateCodes.aspx" />
+    <Content Include="Form\ShareCodes.aspx" />
+    <Content Include="Form\ValidateCode.aspx" />
+    <Content Include="Images\admin\login-user-logo.png" />
+    <Content Include="Images\admin\login-user-pwd.png" />
+    <Content Include="index.aspx" />
+    <Content Include="login.aspx" />
+    <Content Include="packages.config" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\accordion\datagrid_data1.json" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\combobox\combobox_data1.json" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\combobox\combobox_data2.json" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\combogrid\datagrid_data1.json" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\combotree\tree_data1.json" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\datagrid\datagrid_data1.json" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\datagrid\datagrid_data2.json" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\datagrid\products.json" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\datalist\datalist_data1.json" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\form\form_data1.json" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\layout\datagrid_data1.json" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\layout\propertygrid_data1.json" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\layout\tree_data1.json" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\propertygrid\propertygrid_data1.json" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\tabs\tree_data1.json" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\treegrid\treegrid_data1.json" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\treegrid\treegrid_data2.json" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\treegrid\treegrid_data3.json" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\tree\tree_data1.json" />
+    <Content Include="Admin\UI\JQueryEasyUI\demo\tree\tree_data2.json" />
+    <Content Include="Admin\UI\JQueryEasyUI\themes\material\images\Thumbs.db" />
+    <Content Include="Admin\service\seo.ashx" />
+    <Content Include="Admin\service\Base.ashx" />
+    <None Include="Scripts\jquery-2.2.3.intellisense.js" />
+    <Content Include="Scripts\jquery-2.2.3.js" />
+    <Content Include="Scripts\jquery-2.2.3.min.js" />
+    <Content Include="Scripts\layer\layer.js" />
+    <Content Include="Scripts\layer\skin\default\icon-ext.png" />
+    <Content Include="Scripts\layer\skin\default\icon.png" />
+    <Content Include="Scripts\layer\skin\default\loading-0.gif" />
+    <Content Include="Scripts\layer\skin\default\loading-1.gif" />
+    <Content Include="Scripts\layer\skin\default\loading-2.gif" />
+    <Content Include="Scripts\layer\skin\layer.css" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Base\PageBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="App_Code\GlobalDictionary.cs" />
+    <Compile Include="Admin\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\manage\add.aspx.cs">
+      <DependentUpon>add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\manage\add.aspx.designer.cs">
+      <DependentUpon>add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\seo\seomanage.aspx.cs">
+      <DependentUpon>seomanage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\seo\seomanage.aspx.designer.cs">
+      <DependentUpon>seomanage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\service\Base.ashx.cs">
+      <DependentUpon>Base.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\service\seo.ashx.cs">
+      <DependentUpon>seo.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UI\AdminPageBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Base\Base.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Component\Footer.ascx.cs">
+      <DependentUpon>Footer.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Component\Footer.ascx.designer.cs">
+      <DependentUpon>Footer.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Component\Head.ascx.cs">
+      <DependentUpon>Head.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Component\Head.ascx.designer.cs">
+      <DependentUpon>Head.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Component\Top.ascx.cs">
+      <DependentUpon>Top.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Component\Top.ascx.designer.cs">
+      <DependentUpon>Top.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\BusinessCodes.aspx.cs">
+      <DependentUpon>BusinessCodes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\BusinessCodes.aspx.designer.cs">
+      <DependentUpon>BusinessCodes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FreeCodes.aspx.cs">
+      <DependentUpon>FreeCodes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\FreeCodes.aspx.designer.cs">
+      <DependentUpon>FreeCodes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\LastUpdateCodes.aspx.cs">
+      <DependentUpon>LastUpdateCodes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\LastUpdateCodes.aspx.designer.cs">
+      <DependentUpon>LastUpdateCodes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\ShareCodes.aspx.cs">
+      <DependentUpon>ShareCodes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\ShareCodes.aspx.designer.cs">
+      <DependentUpon>ShareCodes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\ValidateCode.aspx.cs">
+      <DependentUpon>ValidateCode.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\ValidateCode.aspx.designer.cs">
+      <DependentUpon>ValidateCode.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPage\UI\SiteUI.Master.cs">
+      <DependentUpon>SiteUI.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPage\UI\SiteUI.Master.designer.cs">
+      <DependentUpon>SiteUI.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BootFlat\.travis.yml" />
+    <Content Include="BootFlat\angularicons\angularicons.eot" />
+    <Content Include="BootFlat\angularicons\angularicons.ttf" />
+    <Content Include="BootFlat\angularicons\angularicons.woff" />
+    <Content Include="BootFlat\bootflat\css\bootflat.css.map" />
+    <Content Include="BootFlat\bootflat\img\check_flat\default.psd" />
+    <Content Include="BootFlat\bootflat\scss\.csscomb.json" />
+    <Content Include="BootFlat\bootflat\scss\.csslintrc" />
+    <Content Include="BootFlat\bootflat\scss\bootflat.scss" />
+    <Content Include="BootFlat\bootflat\scss\bootflat\_accordion.scss" />
+    <Content Include="BootFlat\bootflat\scss\bootflat\_alert.scss" />
+    <Content Include="BootFlat\bootflat\scss\bootflat\_breadcrumb.scss" />
+    <Content Include="BootFlat\bootflat\scss\bootflat\_button.scss" />
+    <Content Include="BootFlat\bootflat\scss\bootflat\_button_group.scss" />
+    <Content Include="BootFlat\bootflat\scss\bootflat\_calendar.scss" />
+    <Content Include="BootFlat\bootflat\scss\bootflat\_checkbox_radio.scss" />
+    <Content Include="BootFlat\bootflat\scss\bootflat\_dropdown.scss" />
+    <Content Include="BootFlat\bootflat\scss\bootflat\_footer.scss" />
+    <Content Include="BootFlat\bootflat\scss\bootflat\_form.scss" />
+    <Content Include="BootFlat\bootflat\scss\bootflat\_global.scss" />
+    <Content Include="BootFlat\bootflat\scss\bootflat\_jumbotron.scss" />
+    <Content Include="BootFlat\bootflat\scss\bootflat\_label_badge.scss" />
+    <Content Include="BootFlat\bootflat\scss\bootflat\_list.scss" />
+    <Content Include="BootFlat\bootflat\scss\bootflat\_media_list.scss" />
+    <Content Include="BootFlat\bootflat\scss\bootflat\_modal.scss" />
+    <Content Include="BootFlat\bootflat\scss\bootflat\_navbar.scss" />
+    <Content Include="BootFlat\bootflat\scss\bootflat\_pager.scss" />
+    <Content Include="BootFlat\bootflat\scss\bootflat\_pagination.scss" />
+    <Content Include="BootFlat\bootflat\scss\bootflat\_panel.scss" />
+    <Content Include="BootFlat\bootflat\scss\bootflat\_pill.scss" />
+    <Content Include="BootFlat\bootflat\scss\bootflat\_popover.scss" />
+    <Content Include="BootFlat\bootflat\scss\bootflat\_pricing.scss" />
+    <Content Include="BootFlat\bootflat\scss\bootflat\_progress.scss" />
+    <Content Include="BootFlat\bootflat\scss\bootflat\_selecter.scss" />
+    <Content Include="BootFlat\bootflat\scss\bootflat\_stepper.scss" />
+    <Content Include="BootFlat\bootflat\scss\bootflat\_tab.scss" />
+    <Content Include="BootFlat\bootflat\scss\bootflat\_thumbnail.scss" />
+    <Content Include="BootFlat\bootflat\scss\bootflat\_timeline.scss" />
+    <Content Include="BootFlat\bootflat\scss\bootflat\_toggle.scss" />
+    <Content Include="BootFlat\bootflat\scss\bootflat\_tooltip.scss" />
+    <Content Include="BootFlat\bootflat\scss\bootflat\_typography.scss" />
+    <Content Include="BootFlat\bootflat\scss\bootflat\_well.scss" />
+    <Content Include="BootFlat\bower.json" />
+    <Content Include="BootFlat\composer.json" />
+    <Content Include="BootFlat\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="BootFlat\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="BootFlat\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="BootFlat\js\site.min.map" />
+    <Content Include="BootFlat\LICENSE" />
+    <Content Include="BootFlat\package.json" />
+    <Content Include="BootFlat\README.markdown" />
+    <Content Include="BootFlat\_config.yml" />
+    <Content Include="MasterPage\UI\SiteUI.Master" />
+    <Content Include="Scripts\jquery-2.2.3.min.map" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Form\CodesOperate\" />
+    <Folder Include="MasterPage\Admin\" />
+    <Folder Include="Scripts\Core\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MyAspx.DataCommon\MyAspx.DataCommon.csproj">
+      <Project>{e4ca44fb-1b37-454d-b1fc-259c798ed4ae}</Project>
+      <Name>MyAspx.DataCommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MyAspx.EasyFramework\MyAspx.EasyFramework.csproj">
+      <Project>{51e2ee98-719e-4951-8a16-d5ee5237526f}</Project>
+      <Name>MyAspx.EasyFramework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MyAspx.Framework.Common\MyAspx.Framework.Common.csproj">
+      <Project>{678291d1-3f86-4ff6-9eeb-1c8eb0c4b67f}</Project>
+      <Name>MyAspx.Framework.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MyAspx.Framework.WebUnit\MyAspx.Framework.WebUnit.csproj">
+      <Project>{4895a23b-455e-412f-812a-404c7a03d6b3}</Project>
+      <Name>MyAspx.Framework.WebUnit</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MyAspx.Json\MyAspx.Json.csproj">
+      <Project>{c928461d-ed26-4cbc-90fc-ef55702ff1d7}</Project>
+      <Name>MyAspx.Json</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin\manage\App_LocalResources\add.aspx.resx" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>7672</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:7672/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

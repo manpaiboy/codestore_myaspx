@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="my_pay" xmlns="http://ibatis.apache.org/mapping" xmlns:xls="http://www.w3.org/2001/XMLSchema-instance">
+<alias>
+   <typeAlias alias="my_pay"   type="MyAspx.EasyFramework.Model..my_pay, MyAspx.EasyFramework.BLL." />
+</alias>
+  <statements>
+    <insert id="Insertmy_pay" parameterClass="my_pay">
+          INSERT INTO my_pay
+          (payid,
+          paydate,
+          paynum,
+          payuseid,
+          payform)
+          VALUES
+          ((SELECT ISNULL(MAX(payid),0)+1 FROM my_pay),
+          #paydate#,
+          #paynum#,
+          #payuseid#,
+          #payform#)
+    </insert>
+    <update id="Updatemy_pay" parameterClass="my_pay">
+          UPDATE my_pay SET 
+          paydate=#paydate#,
+          paynum=#paynum#,
+          payuseid=#payuseid#,
+          payform=#payform#
+          WHERE
+          payid=#payid#
+    </update>
+    <delete id="Deletemy_pay" parameterclass="int">
+          DELETE FROM my_pay
+          WHERE
+          payid=#payid#
+    </delete>
+    <select id="Selectmy_pay"  resultClass="my_pay"  parameterClass="my_pay">
+          SELECT 
+            A.payid,
+            A.paydate,
+            A.paynum,
+            A.payuseid,
+            A.payform
+          FROM my_pay A
+          <dynamic prepend="WHERE">
+            <isNotEqual prepend="and" property="payid" compareValue="0">
+              A.payid=#payid#
+            </isNotEqual>
+            <isNotEmpty prepend="and" property="paydate">
+              A.paydate=#paydate#
+            </isNotEmpty>
+            <isNotEmpty prepend="and" property="paynum">
+              A.paynum=#paynum#
+            </isNotEmpty>
+            <isNotEqual prepend="and" property="payuseid" compareValue="0">
+              A.payuseid=#payuseid#
+            </isNotEqual>
+            <isNotEmpty prepend="and" property="payform">
+              A.payform=#payform#
+            </isNotEmpty>
+          </dynamic>
+    </select>
+  </statements>
+</sqlMap>

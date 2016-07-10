@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="my_users" xmlns="http://ibatis.apache.org/mapping" xmlns:xls="http://www.w3.org/2001/XMLSchema-instance">
+<alias>
+   <typeAlias alias="my_users"   type="MyAspx.EasyFramework.Model..my_users, MyAspx.EasyFramework.BLL." />
+</alias>
+  <statements>
+    <insert id="Insertmy_users" parameterClass="my_users">
+          INSERT INTO my_users
+          (userid,
+          useregname,
+          userpwd,
+          userregip,
+          usercreatedate,
+          useraddress,
+          usersex,
+          userremark,
+          uselogopic)
+          VALUES
+          ((SELECT ISNULL(MAX(userid),0)+1 FROM my_users),
+          #useregname#,
+          #userpwd#,
+          #userregip#,
+          #usercreatedate#,
+          #useraddress#,
+          #usersex#,
+          #userremark#,
+          #uselogopic#)
+    </insert>
+    <update id="Updatemy_users" parameterClass="my_users">
+          UPDATE my_users SET 
+          useregname=#useregname#,
+          userpwd=#userpwd#,
+          userregip=#userregip#,
+          usercreatedate=#usercreatedate#,
+          useraddress=#useraddress#,
+          usersex=#usersex#,
+          userremark=#userremark#,
+          uselogopic=#uselogopic#
+          WHERE
+          userid=#userid#
+    </update>
+    <delete id="Deletemy_users" parameterclass="int">
+          DELETE FROM my_users
+          WHERE
+          userid=#userid#
+    </delete>
+    <select id="Selectmy_users"  resultClass="my_users"  parameterClass="my_users">
+          SELECT 
+            A.userid,
+            A.useregname,
+            A.userpwd,
+            A.userregip,
+            A.usercreatedate,
+            A.useraddress,
+            A.usersex,
+            A.userremark,
+            A.uselogopic
+          FROM my_users A
+          <dynamic prepend="WHERE">
+            <isNotEqual prepend="and" property="userid" compareValue="0">
+              A.userid=#userid#
+            </isNotEqual>
+            <isNotEmpty prepend="and" property="useregname">
+              A.useregname=#useregname#
+            </isNotEmpty>
+            <isNotEmpty prepend="and" property="userpwd">
+              A.userpwd=#userpwd#
+            </isNotEmpty>
+            <isNotEmpty prepend="and" property="userregip">
+              A.userregip=#userregip#
+            </isNotEmpty>
+            <isNotEmpty prepend="and" property="usercreatedate">
+              A.usercreatedate=#usercreatedate#
+            </isNotEmpty>
+            <isNotEmpty prepend="and" property="useraddress">
+              A.useraddress=#useraddress#
+            </isNotEmpty>
+            <isNotEqual prepend="and" property="usersex" compareValue="0">
+              A.usersex=#usersex#
+            </isNotEqual>
+            <isNotEmpty prepend="and" property="userremark">
+              A.userremark=#userremark#
+            </isNotEmpty>
+            <isNotEmpty prepend="and" property="uselogopic">
+              A.uselogopic=#uselogopic#
+            </isNotEmpty>
+          </dynamic>
+    </select>
+  </statements>
+</sqlMap>

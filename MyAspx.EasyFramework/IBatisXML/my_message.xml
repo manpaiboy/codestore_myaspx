@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="my_message" xmlns="http://ibatis.apache.org/mapping" xmlns:xls="http://www.w3.org/2001/XMLSchema-instance">
+<alias>
+   <typeAlias alias="my_message"   type="MyAspx.EasyFramework.Model..my_message, MyAspx.EasyFramework.BLL." />
+</alias>
+  <statements>
+    <insert id="Insertmy_message" parameterClass="my_message">
+          INSERT INTO my_message
+          (mesid,
+          mescontext,
+          meshasguest,
+          meswriter,
+          mesdate,
+          mespid)
+          VALUES
+          ((SELECT ISNULL(MAX(mesid),0)+1 FROM my_message),
+          #mescontext#,
+          #meshasguest#,
+          #meswriter#,
+          #mesdate#,
+          #mespid#)
+    </insert>
+    <update id="Updatemy_message" parameterClass="my_message">
+          UPDATE my_message SET 
+          mescontext=#mescontext#,
+          meshasguest=#meshasguest#,
+          meswriter=#meswriter#,
+          mesdate=#mesdate#,
+          mespid=#mespid#
+          WHERE
+          mesid=#mesid#
+    </update>
+    <delete id="Deletemy_message" parameterclass="int">
+          DELETE FROM my_message
+          WHERE
+          mesid=#mesid#
+    </delete>
+    <select id="Selectmy_message"  resultClass="my_message"  parameterClass="my_message">
+          SELECT 
+            A.mesid,
+            A.mescontext,
+            A.meshasguest,
+            A.meswriter,
+            A.mesdate,
+            A.mespid
+          FROM my_message A
+          <dynamic prepend="WHERE">
+            <isNotEqual prepend="and" property="mesid" compareValue="0">
+              A.mesid=#mesid#
+            </isNotEqual>
+            <isNotEmpty prepend="and" property="mescontext">
+              A.mescontext=#mescontext#
+            </isNotEmpty>
+            <isNotEqual prepend="and" property="meshasguest" compareValue="0">
+              A.meshasguest=#meshasguest#
+            </isNotEqual>
+            <isNotEmpty prepend="and" property="meswriter">
+              A.meswriter=#meswriter#
+            </isNotEmpty>
+            <isNotEmpty prepend="and" property="mesdate">
+              A.mesdate=#mesdate#
+            </isNotEmpty>
+            <isNotEqual prepend="and" property="mespid" compareValue="0">
+              A.mespid=#mespid#
+            </isNotEqual>
+          </dynamic>
+    </select>
+  </statements>
+</sqlMap>

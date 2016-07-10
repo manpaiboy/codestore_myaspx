@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="my_class" xmlns="http://ibatis.apache.org/mapping" xmlns:xls="http://www.w3.org/2001/XMLSchema-instance">
+<alias>
+   <typeAlias alias="my_class"   type="MyAspx.EasyFramework.Model..my_class, MyAspx.EasyFramework.BLL." />
+</alias>
+  <statements>
+    <insert id="Insertmy_class" parameterClass="my_class">
+          INSERT INTO my_class
+          (classid,
+          classname,
+          pclassid,
+          classtype,
+          classdescription)
+          VALUES
+          ((SELECT ISNULL(MAX(classid),0)+1 FROM my_class),
+          #classname#,
+          #pclassid#,
+          #classtype#,
+          #classdescription#)
+    </insert>
+    <update id="Updatemy_class" parameterClass="my_class">
+          UPDATE my_class SET 
+          classname=#classname#,
+          pclassid=#pclassid#,
+          classtype=#classtype#,
+          classdescription=#classdescription#
+          WHERE
+          classid=#classid#
+    </update>
+    <delete id="Deletemy_class" parameterclass="int">
+          DELETE FROM my_class
+          WHERE
+          classid=#classid#
+    </delete>
+    <select id="Selectmy_class"  resultClass="my_class"  parameterClass="my_class">
+          SELECT 
+            A.classid,
+            A.classname,
+            A.pclassid,
+            A.classtype,
+            A.classdescription
+          FROM my_class A
+          <dynamic prepend="WHERE">
+            <isNotEqual prepend="and" property="classid" compareValue="0">
+              A.classid=#classid#
+            </isNotEqual>
+            <isNotEmpty prepend="and" property="classname">
+              A.classname=#classname#
+            </isNotEmpty>
+            <isNotEqual prepend="and" property="pclassid" compareValue="0">
+              A.pclassid=#pclassid#
+            </isNotEqual>
+            <isNotEmpty prepend="and" property="classtype">
+              A.classtype=#classtype#
+            </isNotEmpty>
+            <isNotEmpty prepend="and" property="classdescription">
+              A.classdescription=#classdescription#
+            </isNotEmpty>
+          </dynamic>
+    </select>
+  </statements>
+</sqlMap>

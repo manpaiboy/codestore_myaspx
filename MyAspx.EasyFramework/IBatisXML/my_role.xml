@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="my_role" xmlns="http://ibatis.apache.org/mapping" xmlns:xls="http://www.w3.org/2001/XMLSchema-instance">
+<alias>
+   <typeAlias alias="my_role"   type="MyAspx.EasyFramework.Model..my_role, MyAspx.EasyFramework.BLL." />
+</alias>
+  <statements>
+    <insert id="Insertmy_role" parameterClass="my_role">
+          INSERT INTO my_role
+          (roleid,
+          rolename,
+          roleclose,
+          rolekey)
+          VALUES
+          ((SELECT ISNULL(MAX(roleid),0)+1 FROM my_role),
+          #rolename#,
+          #roleclose#,
+          #rolekey#)
+    </insert>
+    <update id="Updatemy_role" parameterClass="my_role">
+          UPDATE my_role SET 
+          rolename=#rolename#,
+          roleclose=#roleclose#,
+          rolekey=#rolekey#
+          WHERE
+          roleid=#roleid#
+    </update>
+    <delete id="Deletemy_role" parameterclass="int">
+          DELETE FROM my_role
+          WHERE
+          roleid=#roleid#
+    </delete>
+    <select id="Selectmy_role"  resultClass="my_role"  parameterClass="my_role">
+          SELECT 
+            A.roleid,
+            A.rolename,
+            A.roleclose,
+            A.rolekey
+          FROM my_role A
+          <dynamic prepend="WHERE">
+            <isNotEqual prepend="and" property="roleid" compareValue="0">
+              A.roleid=#roleid#
+            </isNotEqual>
+            <isNotEmpty prepend="and" property="rolename">
+              A.rolename=#rolename#
+            </isNotEmpty>
+            <isNotEqual prepend="and" property="roleclose" compareValue="0">
+              A.roleclose=#roleclose#
+            </isNotEqual>
+            <isNotEmpty prepend="and" property="rolekey">
+              A.rolekey=#rolekey#
+            </isNotEmpty>
+          </dynamic>
+    </select>
+  </statements>
+</sqlMap>

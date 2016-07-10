@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="my_gold" xmlns="http://ibatis.apache.org/mapping" xmlns:xls="http://www.w3.org/2001/XMLSchema-instance">
+<alias>
+   <typeAlias alias="my_gold"   type="MyAspx.EasyFramework.Model..my_gold, MyAspx.EasyFramework.BLL." />
+</alias>
+  <statements>
+    <insert id="Insertmy_gold" parameterClass="my_gold">
+          INSERT INTO my_gold
+          (goldid,
+          goldnum,
+          golduserid,
+          goldpaynum)
+          VALUES
+          ((SELECT ISNULL(MAX(goldid),0)+1 FROM my_gold),
+          #goldnum#,
+          #golduserid#,
+          #goldpaynum#)
+    </insert>
+    <update id="Updatemy_gold" parameterClass="my_gold">
+          UPDATE my_gold SET 
+          goldnum=#goldnum#,
+          golduserid=#golduserid#,
+          goldpaynum=#goldpaynum#
+          WHERE
+          goldid=#goldid#
+    </update>
+    <delete id="Deletemy_gold" parameterclass="int">
+          DELETE FROM my_gold
+          WHERE
+          goldid=#goldid#
+    </delete>
+    <select id="Selectmy_gold"  resultClass="my_gold"  parameterClass="my_gold">
+          SELECT 
+            A.goldid,
+            A.goldnum,
+            A.golduserid,
+            A.goldpaynum
+          FROM my_gold A
+          <dynamic prepend="WHERE">
+            <isNotEqual prepend="and" property="goldid" compareValue="0">
+              A.goldid=#goldid#
+            </isNotEqual>
+            <isNotEmpty prepend="and" property="goldnum">
+              A.goldnum=#goldnum#
+            </isNotEmpty>
+            <isNotEqual prepend="and" property="golduserid" compareValue="0">
+              A.golduserid=#golduserid#
+            </isNotEqual>
+            <isNotEqual prepend="and" property="goldpaynum" compareValue="0">
+              A.goldpaynum=#goldpaynum#
+            </isNotEqual>
+          </dynamic>
+    </select>
+  </statements>
+</sqlMap>

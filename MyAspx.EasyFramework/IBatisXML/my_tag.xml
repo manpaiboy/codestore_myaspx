@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sqlMap namespace="my_tag" xmlns="http://ibatis.apache.org/mapping" xmlns:xls="http://www.w3.org/2001/XMLSchema-instance">
+<alias>
+   <typeAlias alias="my_tag"   type="MyAspx.EasyFramework.Model..my_tag, MyAspx.EasyFramework.BLL." />
+</alias>
+  <statements>
+    <insert id="Insertmy_tag" parameterClass="my_tag">
+          INSERT INTO my_tag
+          (tagid,
+          tagname,
+          tagcreatedate,
+          fileinfoid)
+          VALUES
+          ((SELECT ISNULL(MAX(tagid),0)+1 FROM my_tag),
+          #tagname#,
+          #tagcreatedate#,
+          #fileinfoid#)
+    </insert>
+    <update id="Updatemy_tag" parameterClass="my_tag">
+          UPDATE my_tag SET 
+          tagname=#tagname#,
+          tagcreatedate=#tagcreatedate#,
+          fileinfoid=#fileinfoid#
+          WHERE
+          tagid=#tagid#
+    </update>
+    <delete id="Deletemy_tag" parameterclass="int">
+          DELETE FROM my_tag
+          WHERE
+          tagid=#tagid#
+    </delete>
+    <select id="Selectmy_tag"  resultClass="my_tag"  parameterClass="my_tag">
+          SELECT 
+            A.tagid,
+            A.tagname,
+            A.tagcreatedate,
+            A.fileinfoid
+          FROM my_tag A
+          <dynamic prepend="WHERE">
+            <isNotEqual prepend="and" property="tagid" compareValue="0">
+              A.tagid=#tagid#
+            </isNotEqual>
+            <isNotEmpty prepend="and" property="tagname">
+              A.tagname=#tagname#
+            </isNotEmpty>
+            <isNotEmpty prepend="and" property="tagcreatedate">
+              A.tagcreatedate=#tagcreatedate#
+            </isNotEmpty>
+            <isNotEqual prepend="and" property="fileinfoid" compareValue="0">
+              A.fileinfoid=#fileinfoid#
+            </isNotEqual>
+          </dynamic>
+    </select>
+  </statements>
+</sqlMap>
