@@ -866,7 +866,6 @@
     <Content Include="Css\Mix\Footer.css" />
     <Content Include="Css\Mix\Top.css" />
     <Content Include="Css\Third\51aspxBase.css" />
-    <Content Include="default_bak.aspx" />
     <Content Include="Form\BusinessCodes.aspx" />
     <Content Include="Form\FreeCodes.aspx" />
     <Content Include="Form\LastUpdateCodes.aspx" />
@@ -972,13 +971,6 @@
     </Compile>
     <Compile Include="Component\Top.ascx.designer.cs">
       <DependentUpon>Top.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="default_bak.aspx.cs">
-      <DependentUpon>default_bak.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="default_bak.aspx.designer.cs">
-      <DependentUpon>default_bak.aspx</DependentUpon>
     </Compile>
     <Compile Include="Form\BusinessCodes.aspx.cs">
       <DependentUpon>BusinessCodes.aspx</DependentUpon>
