@@ -1,0 +1,10 @@
+﻿body {
+}
+
+
+#content {
+    width: 1005px;
+    margin: 0 auto;
+}
+#topNav{ width: 1005px;margin: 0 auto;margin-top: 10px;margin-bottom: 10px;}
+.labelinfo { margin-right: 5px;}

@@ -192,7 +192,8 @@ CRM专题博客空间专题
               <div id="topright1">
               <div class="panel">
 
-                  sdfsd
+                  最近交易记录
+                  <hr />
               </div>
               </div>
         </div>

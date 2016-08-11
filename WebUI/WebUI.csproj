@@ -862,10 +862,13 @@
     <Content Include="Component\Head.ascx" />
     <Content Include="Component\Top.ascx" />
     <Content Include="Css\Base.css" />
+    <Content Include="Css\codelist.css" />
     <Content Include="Css\login.css" />
     <Content Include="Css\Mix\Footer.css" />
     <Content Include="Css\Mix\Top.css" />
     <Content Include="Css\Third\51aspxBase.css" />
+    <Content Include="Css\Third\51aspxList.css" />
+    <Content Include="default.aspx" />
     <Content Include="Form\BusinessCodes.aspx" />
     <Content Include="Form\FreeCodes.aspx" />
     <Content Include="Form\LastUpdateCodes.aspx" />
@@ -900,6 +903,7 @@
     <Content Include="Admin\service\seo.ashx" />
     <Content Include="Admin\service\Base.ashx" />
     <None Include="Scripts\jquery-2.2.3.intellisense.js" />
+    <Content Include="Scripts\51aspx\51codelistbase.js" />
     <Content Include="Scripts\jquery-2.2.3.js" />
     <Content Include="Scripts\jquery-2.2.3.min.js" />
     <Content Include="Scripts\layer\layer.js" />
@@ -971,6 +975,13 @@
     </Compile>
     <Compile Include="Component\Top.ascx.designer.cs">
       <DependentUpon>Top.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Form\BusinessCodes.aspx.cs">
       <DependentUpon>BusinessCodes.aspx</DependentUpon>
