@@ -1,10 +1,11 @@
 ﻿body {
 }
 
-
-#content {
-    width: 1005px;
-    margin: 0 auto;
-}
+#content {width:1005px;min-width: 1005px;margin: 0 auto;}
 #topNav{ width: 1005px;margin: 0 auto;margin-top: 10px;margin-bottom: 10px;}
 .labelinfo { margin-right: 5px;}
+#content ul li span{cursor:pointer;}
+#content .panel-body span{cursor:pointer;}
+#content ul #speli{display:block;}
+#content ul #speli span{margin-bottom:3px;letter-spacing:0.0em;clear:both;}
+#content ul #speli div{margin-top:7px;margin-left:59px;}
