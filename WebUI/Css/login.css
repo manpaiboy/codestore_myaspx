@@ -4,6 +4,7 @@
 #login{padding-top:12%;width:718px;
 height:300px;min-width:500px;min-height:300px;margin:0 auto;text-align:center;
 }
+.textdiv{margin: 0 auto; margin-left:16%; margin-right:auto;}
 .messpan{text-align:center;font-size:14px;color:black;font-family:微软雅黑;}
 .minwidthtext{max-width:225px;}
 .minwidthbutton{min-width:225px;margin-left:40px;}

@@ -48,7 +48,7 @@
                  //iconCls: 'icon-save',
                  collapsible: false,
                  width: "auto", //自動寬度
-                 height: "100%",  //固定高度
+                 height: "450PX",  //固定高度
                  singleSelect: true,
                  remoteSort: false,
                  sortName: 'siteid',
@@ -56,7 +56,7 @@
                  nowrap: true,
                  fitColumns: true,  
                  loadMsg: '正在加载数据...',
-                 method:'get',
+                 method:'POST',
                  url: '../service/seo.ashx',
                  frozenColumns: [[
                      { field: 'ck', checkbox: true }

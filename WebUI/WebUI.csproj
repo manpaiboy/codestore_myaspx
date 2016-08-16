@@ -65,6 +65,131 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ACE\assets\avatars\avatar.png" />
+    <Content Include="ACE\assets\avatars\avatar1.png" />
+    <Content Include="ACE\assets\avatars\avatar2.png" />
+    <Content Include="ACE\assets\avatars\avatar3.png" />
+    <Content Include="ACE\assets\avatars\avatar4.png" />
+    <Content Include="ACE\assets\avatars\avatar5.png" />
+    <Content Include="ACE\assets\avatars\profile-pic.jpg" />
+    <Content Include="ACE\assets\avatars\user.jpg" />
+    <Content Include="ACE\assets\css\ace-ie.min.css" />
+    <Content Include="ACE\assets\css\ace-rtl.min.css" />
+    <Content Include="ACE\assets\css\ace-skins.min.css" />
+    <Content Include="ACE\assets\css\ace.min.css" />
+    <Content Include="ACE\assets\css\bootstrap-editable.css" />
+    <Content Include="ACE\assets\css\bootstrap-timepicker.css" />
+    <Content Include="ACE\assets\css\bootstrap.min.css" />
+    <Content Include="ACE\assets\css\chosen.css" />
+    <Content Include="ACE\assets\css\colorbox.css" />
+    <Content Include="ACE\assets\css\colorpicker.css" />
+    <Content Include="ACE\assets\css\datepicker.css" />
+    <Content Include="ACE\assets\css\daterangepicker.css" />
+    <Content Include="ACE\assets\css\dropzone.css" />
+    <Content Include="ACE\assets\css\font-awesome-ie7.min.css" />
+    <Content Include="ACE\assets\css\font-awesome.min.css" />
+    <Content Include="ACE\assets\css\fullcalendar.css" />
+    <Content Include="ACE\assets\css\images\loading.gif" />
+    <Content Include="ACE\assets\css\jquery-ui-1.10.3.custom.min.css" />
+    <Content Include="ACE\assets\css\jquery-ui-1.10.3.full.min.css" />
+    <Content Include="ACE\assets\css\jquery.gritter.css" />
+    <Content Include="ACE\assets\css\select2.css" />
+    <Content Include="ACE\assets\css\ui.jqgrid.css" />
+    <Content Include="ACE\assets\images\gallery\image-1.jpg" />
+    <Content Include="ACE\assets\images\gallery\image-2.jpg" />
+    <Content Include="ACE\assets\images\gallery\image-3.jpg" />
+    <Content Include="ACE\assets\images\gallery\image-4.jpg" />
+    <Content Include="ACE\assets\images\gallery\image-5.jpg" />
+    <Content Include="ACE\assets\images\gallery\image-6.jpg" />
+    <Content Include="ACE\assets\images\gallery\thumb-1.jpg" />
+    <Content Include="ACE\assets\images\gallery\thumb-2.jpg" />
+    <Content Include="ACE\assets\images\gallery\thumb-3.jpg" />
+    <Content Include="ACE\assets\images\gallery\thumb-4.jpg" />
+    <Content Include="ACE\assets\images\gallery\thumb-5.jpg" />
+    <Content Include="ACE\assets\images\gallery\thumb-6.jpg" />
+    <Content Include="ACE\assets\js\ace-elements.min.js" />
+    <Content Include="ACE\assets\js\ace-extra.min.js" />
+    <Content Include="ACE\assets\js\ace.min.js" />
+    <Content Include="ACE\assets\js\additional-methods.min.js" />
+    <Content Include="ACE\assets\js\bootbox.min.js" />
+    <Content Include="ACE\assets\js\bootstrap-colorpicker.min.js" />
+    <Content Include="ACE\assets\js\bootstrap-tag.min.js" />
+    <Content Include="ACE\assets\js\bootstrap-wysiwyg.min.js" />
+    <Content Include="ACE\assets\js\bootstrap.min.js" />
+    <Content Include="ACE\assets\js\chosen.jquery.min.js" />
+    <Content Include="ACE\assets\js\date-time\bootstrap-datepicker.min.js" />
+    <Content Include="ACE\assets\js\date-time\bootstrap-timepicker.min.js" />
+    <Content Include="ACE\assets\js\date-time\daterangepicker.min.js" />
+    <Content Include="ACE\assets\js\date-time\moment.min.js" />
+    <Content Include="ACE\assets\js\dropzone.min.js" />
+    <Content Include="ACE\assets\js\excanvas.min.js" />
+    <Content Include="ACE\assets\js\flot\jquery.flot.min.js" />
+    <Content Include="ACE\assets\js\flot\jquery.flot.pie.min.js" />
+    <Content Include="ACE\assets\js\flot\jquery.flot.resize.min.js" />
+    <Content Include="ACE\assets\js\fuelux\data\fuelux.tree-sampledata.js" />
+    <Content Include="ACE\assets\js\fuelux\fuelux.spinner.min.js" />
+    <Content Include="ACE\assets\js\fuelux\fuelux.tree.min.js" />
+    <Content Include="ACE\assets\js\fuelux\fuelux.wizard.min.js" />
+    <Content Include="ACE\assets\js\fullcalendar.min.js" />
+    <Content Include="ACE\assets\js\html5shiv.js" />
+    <Content Include="ACE\assets\js\jqGrid\i18n\grid.locale-en.js" />
+    <Content Include="ACE\assets\js\jqGrid\jquery.jqGrid.min.js" />
+    <Content Include="ACE\assets\js\jquery-1.10.2.min.js" />
+    <Content Include="ACE\assets\js\jquery-2.0.3.min.js" />
+    <Content Include="ACE\assets\js\jquery-ui-1.10.3.custom.min.js" />
+    <Content Include="ACE\assets\js\jquery-ui-1.10.3.full.min.js" />
+    <Content Include="ACE\assets\js\jquery.autosize.min.js" />
+    <Content Include="ACE\assets\js\jquery.colorbox-min.js" />
+    <Content Include="ACE\assets\js\jquery.dataTables.bootstrap.js" />
+    <Content Include="ACE\assets\js\jquery.dataTables.min.js" />
+    <Content Include="ACE\assets\js\jquery.easy-pie-chart.min.js" />
+    <Content Include="ACE\assets\js\jquery.gritter.min.js" />
+    <Content Include="ACE\assets\js\jquery.hotkeys.min.js" />
+    <Content Include="ACE\assets\js\jquery.inputlimiter.1.3.1.min.js" />
+    <Content Include="ACE\assets\js\jquery.knob.min.js" />
+    <Content Include="ACE\assets\js\jquery.maskedinput.min.js" />
+    <Content Include="ACE\assets\js\jquery.mobile.custom.min.js" />
+    <Content Include="ACE\assets\js\jquery.nestable.min.js" />
+    <Content Include="ACE\assets\js\jquery.slimscroll.min.js" />
+    <Content Include="ACE\assets\js\jquery.sparkline.min.js" />
+    <Content Include="ACE\assets\js\jquery.ui.touch-punch.min.js" />
+    <Content Include="ACE\assets\js\jquery.validate.min.js" />
+    <Content Include="ACE\assets\js\markdown\bootstrap-markdown.min.js" />
+    <Content Include="ACE\assets\js\markdown\markdown.min.js" />
+    <Content Include="ACE\assets\js\respond.min.js" />
+    <Content Include="ACE\assets\js\select2.min.js" />
+    <Content Include="ACE\assets\js\typeahead-bs2.min.js" />
+    <Content Include="ACE\assets\js\x-editable\ace-editable.min.js" />
+    <Content Include="ACE\assets\js\x-editable\bootstrap-editable.min.js" />
+    <Content Include="ACE\blank.html" />
+    <Content Include="ACE\buttons.html" />
+    <Content Include="ACE\calendar.html" />
+    <Content Include="ACE\dropzone.html" />
+    <Content Include="ACE\elements.html" />
+    <Content Include="ACE\error-404.html" />
+    <Content Include="ACE\error-500.html" />
+    <Content Include="ACE\faq.html" />
+    <Content Include="ACE\form-elements.html" />
+    <Content Include="ACE\form-wizard.html" />
+    <Content Include="ACE\gallery.html" />
+    <Content Include="ACE\grid.html" />
+    <Content Include="ACE\inbox.html" />
+    <Content Include="ACE\index.htm" />
+    <Content Include="ACE\index.html" />
+    <Content Include="ACE\invoice.html" />
+    <Content Include="ACE\jqgrid.html" />
+    <Content Include="ACE\jquery-ui.html" />
+    <Content Include="ACE\login.html" />
+    <Content Include="ACE\nestable-list.html" />
+    <Content Include="ACE\pricing.html" />
+    <Content Include="ACE\profile.html" />
+    <Content Include="ACE\tables.html" />
+    <Content Include="ACE\timeline.html" />
+    <Content Include="ACE\treeview.html" />
+    <Content Include="ACE\typography.html" />
+    <Content Include="ACE\widgets.html" />
+    <Content Include="ACE\wysiwyg.html" />
+    <Content Include="Admin\code\codesadd.aspx" />
     <Content Include="Admin\index.aspx" />
     <Content Include="Admin\manage\add.aspx" />
     <Content Include="Admin\seo\seomanage.aspx" />
@@ -864,6 +989,8 @@
     <Content Include="Component\Footer.ascx" />
     <Content Include="Component\Head.ascx" />
     <Content Include="Component\Top.ascx" />
+    <Content Include="Css\Admin\Code\Base.css" />
+    <Content Include="Css\Admin\Code\CodeAdd.css" />
     <Content Include="Css\Base.css" />
     <Content Include="Css\codelist.css" />
     <Content Include="Css\login.css" />
@@ -905,6 +1032,10 @@
     <Content Include="Admin\UI\JQueryEasyUI\themes\material\images\Thumbs.db" />
     <Content Include="Admin\service\seo.ashx" />
     <Content Include="Admin\service\Base.ashx" />
+    <Content Include="ACE\assets\avatars\Thumbs.db" />
+    <Content Include="ACE\assets\css\images\Thumbs.db" />
+    <Content Include="ACE\assets\font\fontawesome-webfont.woff" />
+    <Content Include="Admin\UI\AdminUiBase.Master" />
     <None Include="Scripts\jquery-2.2.3.intellisense.js" />
     <Content Include="Scripts\51aspx\51codelistbase.js" />
     <Content Include="Scripts\jquery-2.2.3.js" />
@@ -926,6 +1057,13 @@
       <SubType>ASPXCodeBehind</SubType>
     </Content>
     <Content Include="App_Code\GlobalDictionary.cs" />
+    <Compile Include="Admin\code\codesadd.aspx.cs">
+      <DependentUpon>codesadd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\code\codesadd.aspx.designer.cs">
+      <DependentUpon>codesadd.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -955,6 +1093,13 @@
     </Compile>
     <Compile Include="Admin\UI\AdminPageBase.cs">
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\UI\AdminUiBase.Master.cs">
+      <DependentUpon>AdminUiBase.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\UI\AdminUiBase.Master.designer.cs">
+      <DependentUpon>AdminUiBase.Master</DependentUpon>
     </Compile>
     <Compile Include="Base\Base.cs">
       <SubType>ASPXCodeBehind</SubType>

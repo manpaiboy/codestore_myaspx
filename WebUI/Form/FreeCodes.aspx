@@ -68,13 +68,13 @@
             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:commyaspxdbConnectionString %>" SelectCommand="SELECT * FROM [my_fileinfo]"></asp:SqlDataSource>
         <div class="col-md-12 " id="page">
                 <ul class="pagination">
-                  <li class="active"><a href="#">PREV</a></li>
+                  <li class="active gray"><a href="#">上一页</a></li>
                   <li><a href="#">1</a></li>
-                  <li class="active"><a href="#">2</a></li>
+                  <li class="active gray"><a href="#">2</a></li>
                   <li><a href="#">3</a></li>
                   <li><a href="#">4</a></li>
                   <li class="disabled"><a href="#">5</a></li>
-                  <li class="active"><a href="#">NEXT</a></li>
+                  <li class="active gray"><a href="#">下一页</a></li>
                 </ul>
               </div>
         </div>
