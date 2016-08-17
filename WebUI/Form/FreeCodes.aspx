@@ -13,10 +13,11 @@
     <div id="content">
     <div class="panel panel-default">
               <div class="panel-heading">您已选择:</div>
-              <div class="panel-body">
-               <SPAN class="labelinfo">开发语言:</SPAN>  <span class="label label-info">C#</span> <span class="label label-info">VB.NET</span>  
-              </div>
+           <%--   <div class="panel-body">
+      
+              </div>--%>
               <ul class="list-group">
+                  <li class="list-group-item"><SPAN class="labelinfo">开发语言:</SPAN>  <span class="label label-info">C#</span> <span class="label label-info">VB.NET</span>  </li>
                 <li class="list-group-item"><SPAN class="labelinfo">源码类型:</SPAN>  <span class="label label-primary">WebForm</span> <span class="label label-primary">WinForm</span>  <span class="label label-primary">WinPhone</span>  </li>
                 <li class="list-group-item"><SPAN class="labelinfo">授权类型:</SPAN>  <span class="label label-success">免费</span> <span class="label label-warning">共享</span>  <span class="label label-danger">商业</span> </li>
                 
@@ -42,6 +43,35 @@
                              }
                          });
                      </script>
+                   <script>
+                       $("li .label").click(function () {
+                           //if ($(this).hasClass("label")) {
+                               var curhtml = $(this).html();
+                           //alert(curhtml);
+                           /* <div class="checkbox">
+                               <div class="icheckbox_flat checked" style="position: relative;"><input type="checkbox" id="flat-checkbox-2" checked="" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);"></ins></div>
+                               <label for="flat-checkbox-2" class="">checked</label>
+                             </div>*/
+                               var addhtml = "<div class=\"checkbox\"><div class=\"icheckbox_flat checked\" style=\"position: relative;\"><input type=\"checkbox\" id=\"flat-checkbox-2\" style=\"position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);\"><ins class=\"iCheck-helper\" style=\"position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);\"></ins></div><label for=\"flat-checkbox-2\">" + curhtml + "</label></div>"
+                               var addhtml2 = "<div class=\"alert-success alert-dismissable\" style=\"width:150px;height:20px;\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">×</button>"+curhtml+"</div>";
+                               var addhtml3= "<span class=\"tag\">"+curhtml+"<button type=\"button\" class=\"close\">×</button></span>";
+                               var addhtml4 = "<span class=\"label addspan\">" + curhtml +"  ×"+ "</span>";
+                               //alert($(".panel-heading").html());
+                               var html = $(".panel-heading").html().toString();
+                               //alert(html);
+                               //$(".panel-heading").html($(".panel-heading").html() + addhtml4);
+                               if (html.indexOf(curhtml)<=0) {
+                                   
+                                   $(".panel-heading").html($(".panel-heading").html() + addhtml4);
+                               }
+                           //}
+                       });
+
+                       $(".addspan").click(function () {
+                           //alert("d");
+                           $(this).slideUp();
+                       });
+                   </script>
               </ul>
             </div>
         <div id="list">
@@ -56,12 +86,12 @@
                 <asp:Repeater ID="RepeaterCodeLists" runat="server" DataSourceID="SqlDataSource1" >
                     <ItemTemplate>
                         <div class="listcontent">
-                        <img src="../Upfiles/CodeThumbnail/codea.jpg" />
+                        <img src=" <%#Eval("filepics")%> " width="195" height="200" />
                         <br />
-                        <strong>企业ERP</strong>
-                        <small>一款简单的erp系统</small>
+                        <strong><%#Eval("fileremark")%> </strong>
+                        <%--<small>一款简单的erp系统</small>--%>
                         <br />
-                        下载次数：92
+                        下载次数：<%#Eval("filedownnum")%>
                             </div>
                     </ItemTemplate>
                 </asp:Repeater>

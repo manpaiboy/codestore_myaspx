@@ -82,7 +82,7 @@
 																 
 
 													<hr />
-                                                         <div id="upfile" class="row-fluid wizard-actions" >
+                                                         <div id="upfilenext" class="row-fluid wizard-actions" >
 														<button class="btn btn-success btn-next" >
 												 
 															下一步

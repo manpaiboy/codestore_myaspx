@@ -1047,7 +1047,13 @@
     <Content Include="Scripts\layer\skin\default\loading-1.gif" />
     <Content Include="Scripts\layer\skin\default\loading-2.gif" />
     <Content Include="Scripts\layer\skin\layer.css" />
+    <Content Include="Upfiles\CodeThumbnail\23.jpg" />
+    <Content Include="Upfiles\CodeThumbnail\B2.jpg" />
+    <Content Include="Upfiles\CodeThumbnail\C1.jpg" />
+    <Content Include="Upfiles\CodeThumbnail\c2.jpg" />
+    <Content Include="Upfiles\CodeThumbnail\C4.jpg" />
     <Content Include="Upfiles\CodeThumbnail\codea.jpg" />
+    <Content Include="Upfiles\CodeThumbnail\v2.jpg" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
