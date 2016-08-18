@@ -1036,8 +1036,10 @@
     <Content Include="ACE\assets\css\images\Thumbs.db" />
     <Content Include="ACE\assets\font\fontawesome-webfont.woff" />
     <Content Include="Admin\UI\AdminUiBase.Master" />
+    <Content Include="Admin\service\FileHandler.ashx" />
     <None Include="Scripts\jquery-2.2.3.intellisense.js" />
     <Content Include="Scripts\51aspx\51codelistbase.js" />
+    <Content Include="Scripts\ajaxfileupload.js" />
     <Content Include="Scripts\jquery-2.2.3.js" />
     <Content Include="Scripts\jquery-2.2.3.min.js" />
     <Content Include="Scripts\layer\layer.js" />
@@ -1093,6 +1095,9 @@
     </Compile>
     <Compile Include="Admin\service\Base.ashx.cs">
       <DependentUpon>Base.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\service\FileHandler.ashx.cs">
+      <DependentUpon>FileHandler.ashx</DependentUpon>
     </Compile>
     <Compile Include="Admin\service\seo.ashx.cs">
       <DependentUpon>seo.ashx</DependentUpon>

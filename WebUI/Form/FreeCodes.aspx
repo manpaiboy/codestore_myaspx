@@ -17,13 +17,14 @@
       
               </div>--%>
               <ul class="list-group">
-                  <li class="list-group-item"><SPAN class="labelinfo">开发语言:</SPAN>  <span class="label label-info">C#</span> <span class="label label-info">VB.NET</span>  </li>
-                <li class="list-group-item"><SPAN class="labelinfo">源码类型:</SPAN>  <span class="label label-primary">WebForm</span> <span class="label label-primary">WinForm</span>  <span class="label label-primary">WinPhone</span>  </li>
-                <li class="list-group-item"><SPAN class="labelinfo">授权类型:</SPAN>  <span class="label label-success">免费</span> <span class="label label-warning">共享</span>  <span class="label label-danger">商业</span> </li>
+                  <li class="list-group-item fitlan"><SPAN class="labelinfo">开发语言:</SPAN>  <span class="label label-info">C#</span> <span class="label label-info">VB.NET</span>  </li>
+                <li class="list-group-item fittype"><SPAN class="labelinfo">源码类型:</SPAN>  <span class="label label-primary">WebForm</span> <span class="label label-primary">WinForm</span>  <span class="label label-primary">WinPhone</span>  </li>
+                <li class="list-group-item fitlis"><SPAN class="labelinfo">授权类型:</SPAN>  <span class="label label-success">免费</span> <span class="label label-warning">共享</span>  <span class="label label-danger">商业</span> </li>
                 
-                <li class="list-group-item showtogg"><SPAN class="labelinfo">你的水平:</SPAN>  <span class="label">菜鸟</span> <span class="label">进阶</span>  <span class="label">高手</span> <span class="label">研究</span></li>
-                <li class="list-group-item showtogg"><SPAN class="labelinfo">&nbsp;&nbsp;&nbsp;&nbsp;数据库:</SPAN>  <span class="label label-danger">SQL2012</span> <span class="label">SQL2008R2</span>  <span class="label label-danger">SQL2008</span> <span class="label">SQL2005</span> <span class="label label-warning">SQL2000</span>  <span class="label label-success">Access</span>  <span class="label label-danger">MySql</span>  <span class="label label-success">SQLite</span>  <span class="label label-danger">Oracle</span>  <span class="label label-success">XML</span>  <span class="label">其他</span>  <span class="label label-default">无数据库</span></li>
-                <li class="list-group-item showtogg" id="speli"><SPAN class="labelinfo">源码类型:</SPAN>
+                <li class="list-group-item fityourlever showtogg"><SPAN class="labelinfo">你的水平:</SPAN>  <span class="label">菜鸟</span> <span class="label">进阶</span>  <span class="label">高手</span> <span class="label">研究</span></li>
+                <li class="list-group-item fitdevtool showtogg"><SPAN class="labelinfo">开发工具:</SPAN> <span class="label label-success">VS2015</span> <span class="label label-danger">VS2013</span> <span class="label label-success">VS2012</span> <span class="label label-success">VS2011</span> <span class="label label-danger">VS2010</span> <span class="label label-danger">VS2008</span> <span class="label label-success">VS2005</span> <span class="label label-success">VS2003</span> <span class="label label-success">WinPhone SDK</span> <span class="label label-success">其他</span> </li>
+                  <li class="list-group-item fitdbtype showtogg"><SPAN class="labelinfo">&nbsp;&nbsp;&nbsp;&nbsp;数据库:</SPAN>  <span class="label label-danger">SQL2012</span> <span class="label">SQL2008R2</span>  <span class="label label-danger">SQL2008</span> <span class="label">SQL2005</span> <span class="label label-warning">SQL2000</span>  <span class="label label-success">Access</span>  <span class="label label-danger">MySql</span>  <span class="label label-success">SQLite</span>  <span class="label label-danger">Oracle</span>  <span class="label label-success">XML</span>  <span class="label">其他</span>  <span class="label label-default">无数据库</span></li>
+                <li class="list-group-item fitclasstype showtogg" id="speli"><SPAN class="labelinfo">源码类别:</SPAN>
                      <div> <span class="label label-default">企业网站</span>  <span class="label label-default">新闻文章</span>  <span class="label label-default">博客空间</span>  <span class="label label-default">影音娱乐</span>  <span class="label label-default">上传下载</span>  <span class="label label-default">留言本类</span>  <span class="label label-default">投票调查</span>  <span class="label label-default">聊天计数</span>  <span class="label label-default">尚未分类</span>  <span class="label label-default">电子商务</span>  <span class="label label-default">控件应用</span>  <span class="label label-default">新知实践</span>  <span class="label label-default">商务办公</span> </div><div> <span class="label label-default">会员交友</span>  <span class="label label-default">论坛社区</span>  <span class="label label-default">学教实践</span>  <span class="label label-default">企业办公</span> <span class="label label-default">网络应用</span>  <span class="label label-default">开发辅助</span>  <span class="label label-default">仓储物流</span>  <span class="label label-default">游戏娱乐</span>  <span class="label label-default">酒店餐饮</span>  <span class="label label-default">门户综合</span>  <span class="label label-default">行业软件</span>  <span class="label label-default">系统工具</span>  <span class="label label-default">实验作品</span> <span class="label label-default">其他类别</span> </div>
                 </li>
                   <li class="list-group-item toggli">
@@ -54,23 +55,44 @@
                              </div>*/
                                var addhtml = "<div class=\"checkbox\"><div class=\"icheckbox_flat checked\" style=\"position: relative;\"><input type=\"checkbox\" id=\"flat-checkbox-2\" style=\"position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);\"><ins class=\"iCheck-helper\" style=\"position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);\"></ins></div><label for=\"flat-checkbox-2\">" + curhtml + "</label></div>"
                                var addhtml2 = "<div class=\"alert-success alert-dismissable\" style=\"width:150px;height:20px;\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">×</button>"+curhtml+"</div>";
-                               var addhtml3= "<span class=\"tag\">"+curhtml+"<button type=\"button\" class=\"close\">×</button></span>";
-                               var addhtml4 = "<span class=\"label addspan\">" + curhtml +"  ×"+ "</span>";
+                               var addhtml3 = "<span class=\"tag\">" + curhtml + "<button type=\"button\" class=\"close\">×</button></span>";
+                           //获取父元素class
+                               var curspanpar = $(this).parent();
+                               if ($(curspanpar).is("div")) { curspanpar = $(curspanpar).parent(); }
+                               var parclassname = $(curspanpar).attr("class");
+                               parclassname = parclassname.split(" ")[1];
+                     
+                               var addhtml4 = "<span class=\"label addspan " + parclassname + "\" onclick=\"hide(this)\">" + curhtml + "  ×" + "</span>";
                                //alert($(".panel-heading").html());
                                var html = $(".panel-heading").html().toString();
+                            
                                //alert(html);
                                //$(".panel-heading").html($(".panel-heading").html() + addhtml4);
                                if (html.indexOf(curhtml)<=0) {
+                                   if (!$(".panel-heading span").hasClass(parclassname)) {
+                                       $(".panel-heading").html($(".panel-heading").html() + addhtml4);
+                                   }
                                    
-                                   $(".panel-heading").html($(".panel-heading").html() + addhtml4);
                                }
                            //}
                        });
 
-                       $(".addspan").click(function () {
-                           //alert("d");
-                           $(this).slideUp();
+                       //$("[class='label addspan']").click(function () {
+                       //    //alert("d");
+                       //    //$(““);
+                       //    $(this).html($(this).html()+"w");
+                       //});
+                       $(document).ready(function () {
+                           $(".addspan").on("click", function () {
+                               alert("s");
+                               $(this).hide();
+                           });
                        });
+                       function hide(obj)
+                       {
+                           $(obj).remove();
+                       }
+    
                    </script>
               </ul>
             </div>
