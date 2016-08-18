@@ -22,7 +22,7 @@ namespace WebUI
         protected void loginClick(object sender, EventArgs e)
         {
             string yzmstr = Session["CheckCode"] == null ? "" : Session["CheckCode"].ToString();
-            if (yzm.Value != yzmstr)
+            if (yzm.Value.ToUpper() != yzmstr)
             {
                 //Response.Write("<script>layer.alert('验证码不对！')</script>");
                 //return "验证码不对！";

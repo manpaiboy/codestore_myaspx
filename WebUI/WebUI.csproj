@@ -1040,6 +1040,7 @@
     <None Include="Scripts\jquery-2.2.3.intellisense.js" />
     <Content Include="Scripts\51aspx\51codelistbase.js" />
     <Content Include="Scripts\ajaxfileupload.js" />
+    <Content Include="Scripts\jquery-1.7.1.js" />
     <Content Include="Scripts\jquery-2.2.3.js" />
     <Content Include="Scripts\jquery-2.2.3.min.js" />
     <Content Include="Scripts\layer\layer.js" />

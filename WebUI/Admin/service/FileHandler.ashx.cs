@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-
+using System.IO;
 namespace WebUI.Admin.service
 {
     /// <summary>
     /// FileHandler 的摘要说明
     /// </summary>
-    public class FileHandler : IHttpHandler
+    public class FileHandler : IHttpHandler, System.Web.SessionState.IRequiresSessionState
     {
 
         public void ProcessRequest(HttpContext context)
@@ -26,9 +26,13 @@ namespace WebUI.Admin.service
                 //设置文件名
                 fileNewName = DateTime.Now.ToString("yyyyMMddHHmmssff") + "_" + System.IO.Path.GetFileName(files[0].FileName);
                 //保存文件
-                files[0].SaveAs(context.Server.MapPath("~/Upfiles/CodeFiles/" + fileNewName));
+                if (!Directory.Exists(context.Server.MapPath("~/Upfiles/CodeFiles/" + context.Session["myaspxadminuser"])))
+                {
+                    Directory.CreateDirectory(context.Server.MapPath("~/Upfiles/CodeFiles/" + context.Session["myaspxadminuser"]));
+                }
+                files[0].SaveAs(context.Server.MapPath("~/Upfiles/CodeFiles/" + context.Session["myaspxadminuser"] + "/" + fileNewName));
                 msg = "文件上传成功！";
-                result = "{msg:'" + msg + "',filenewname:'" + fileNewName + "'}";
+                result = fileNewName ;
             }
             else
             {

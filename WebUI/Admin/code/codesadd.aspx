@@ -1,13 +1,14 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/UI/AdminUiBase.Master" AutoEventWireup="true" CodeBehind="codesadd.aspx.cs" Inherits="WebUI.Admin.code.codesadd" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
    
-    <script src="../../ACE/assets/js/jquery-2.0.3.min.js"></script>
+    <script src="../../Scripts/jquery-1.7.1.js"></script>
+    <script src="../../Scripts/ajaxfileupload.js"></script>
     <script src="../../ACE/assets/js/ace-extra.min.js"></script>
     <link href="../../ACE/assets/css/select2.css" rel="stylesheet" />
     <script src="../../ACE/assets/js/jquery.validate.min.js"></script>
     <script src="../../ACE/assets/js/select2.min.js"></script>
     <link href="../../Css/Admin/Code/CodeAdd.css" rel="stylesheet" />
-    <script src="../../Scripts/ajaxfileupload.js"></script>
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
@@ -139,7 +140,7 @@
                                                             <span style="display:block;" class="hidecodeupurl">请输入源码下载地址: <input type="text" value=""  id="txtCodeUpUrl" /> <label class="errtooptip" id="e3"></label></span>
                                                             <span style="display:none;" class="hidecodeuprar">
 
-                                                                 <span>选择文件：</span><input id="txt_filePath" type="text" readonly="readonly"/>
+                                                                 <span>选择文件：</span><input id="txt_filePath" style="width:380px; text-align:right;" type="text" readonly="readonly"/>
                                                                  <span class="file"><input id="txtCodeUpRar" name="txtCodeUpRar" type="file"/>浏览</span>
                                                                <%-- <input type="file" value=""  id="txtCodeUpRar" /> --%>
                                                                 <label class="errtooptip" id="e4"></label>
@@ -149,19 +150,24 @@
                                                                         //选择文件
                                                                         $(".file").on("change", "input[type='file']", function () {
                                                                             var filePath = $(this).val();
+                                                                            //var formdata = new FormData();
+                                                                            var formData = new FormData($("#form1")[0]);
                                                                             //alert(filePath); return;
                                                                             //设置上传文件类型
                                                                             if (filePath.indexOf("rar") != -1 || filePath.indexOf("zip") != -1) {
                                                                                 //上传文件
-                                                                                $.ajaxFileUpload({
+                                                                                $.ajax({
                                                                                     url: '../service/FileHandler.ashx',
-                                                                                    secureuri: false,
-                                                                                    fileElementId: 'txtCodeUpRar',
-                                                                                    dataType: 'json',
-                                                                                    success: function (data, status) {
+                                                                                    type: 'POST',
+                                                                                    data: formData,
+                                                                                    async: false,
+                                                                                    cache: false,
+                                                                                    contentType: false,
+                                                                                    processData: false,
+                                                                                    success: function (data) {
                                                                                         //获取上传文件路径
-                                                                                        $("#txt_filePath").val(data.filenewname);
-                                                                                        alert("文件上传成功！");
+                                                                                        $("#txt_filePath").val(data);
+                                                                                        alert("文件上传成功！" );
                                                                                     },
                                                                                     error: function (data, status, e) {
                                                                                         alert(e);
