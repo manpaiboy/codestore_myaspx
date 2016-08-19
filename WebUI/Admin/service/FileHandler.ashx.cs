@@ -32,7 +32,7 @@ namespace WebUI.Admin.service
                 }
                 files[0].SaveAs(context.Server.MapPath("~/Upfiles/CodeFiles/" + context.Session["myaspxadminuser"] + "/" + fileNewName));
                 msg = "文件上传成功！";
-                result = fileNewName ;
+                result = "~/Upfiles/CodeFiles/" + context.Session["myaspxadminuser"] + "/" + fileNewName;
             }
             else
             {

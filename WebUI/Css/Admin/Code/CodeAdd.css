@@ -10,10 +10,15 @@ text-align:left;
 #step1 >span  {display:block; margin-bottom:15px; vertical-align:middle; font-size:14px; }
 #step2  {margin-bottom:5px; margin-left:25%;}
 #step2 >span  {display:block; margin-bottom:15px; vertical-align:middle; font-size:14px; }
-#step3  {margin-bottom:5px; margin-left:25%;}
+#step3  {margin-bottom:5px; margin-left:0%;}
 #step3 >span  {display:block; margin-bottom:15px; vertical-align:middle; font-size:14px; }
 #step4  {margin-bottom:5px; margin-left:25%;}
 #step4 >span  {display:block; margin-bottom:15px; vertical-align:middle; font-size:14px; }
+#step4 p{  font-size:14px; }
+#step4 p .label2{  margin-right:53px; }
+#step4 p .label4{  margin-right:25px; }
+#step4 p .label5{  margin-right:10px; }
+#step4 p div{  float:left; }
 #step5  {margin-bottom:5px; margin-left:25%;}
 #step5 >span  {display:block; margin-bottom:15px; vertical-align:middle; font-size:14px; }
 
@@ -44,6 +49,42 @@ text-align:left;
    border: none;
    border-radius: 3px;         
 }
+.uppic{
+   position: relative;
+   background-color: #b32b1b;
+   border: 1px solid #ddd;
+   width: 68px;
+   height: 25px;
+   display: inline-block;
+   text-decoration: none;
+   text-indent: 0;
+   line-height: 25px;
+   font-size: 14px;
+   color: #fff;
+   margin: 0 auto;
+   cursor: pointer;
+   text-align: center;
+   border: none;
+   border-radius: 3px;         
+}
+.fileimg{
+   position: relative;
+   background-color: #0094ff;
+   border: 1px solid #ddd;
+   width: 68px;
+   height: 25px;
+   display: inline-block;
+   text-decoration: none;
+   text-indent: 0;
+   line-height: 25px;
+   font-size: 14px;
+   color: #fff;
+   margin: 0 auto;
+   cursor: pointer;
+   text-align: center;
+   border: none;
+   border-radius: 3px;         
+}
 .file input{
    position: absolute;
    top: 0;
@@ -52,6 +93,23 @@ text-align:left;
    width: 68px;
    cursor:pointer; 
 }
+.uppic input{
+   position: absolute;
+   top: 0;
+   left: -2px;
+   opacity: 0;
+   width: 68px;
+   cursor:pointer; 
+}
+
+.upimgspanel{ font-size:12px; color:gray; margin:0 auto;font-family:微软雅黑; margin-left:40%;}
+
 #txtCodeUpRar{ cursor:pointer; }
 .file a:hover{cursor:pointer; color:white;}
 .file a:link{cursor:pointer; color:white;}
+
+/*进度条*/
+.progress{z-index: 2000} 
+.mask{position: fixed;top: 0;right: 0;bottom: 0;left: 0; z-index: 1000; background-color: #2F2F2F}
+
+/*.btnupimgs {margin-left:25%}*/
