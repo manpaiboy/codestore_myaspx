@@ -27,10 +27,10 @@ namespace WebUI.Admin.UI
             Page.Header.Controls.Add(CssGrayEasyuiExt);
             //加载公共easyui的js
             
-            HtmlGenericControl jsJquery = new HtmlGenericControl("script");
-            jsJquery.Attributes["type"] = "text/javascript";
-            jsJquery.Attributes["src"] = "../../Admin/UI/JQueryEasyUI/jquery.min.js";
-            Page.Header.Controls.Add(jsJquery);
+            //HtmlGenericControl jsJquery = new HtmlGenericControl("script");
+            //jsJquery.Attributes["type"] = "text/javascript";
+            //jsJquery.Attributes["src"] = "../../Scripts/jquery-2.2.3.js";
+            //Page.Header.Controls.Add(jsJquery);
             HtmlGenericControl jsEasyUI = new HtmlGenericControl("script");
             jsEasyUI.Attributes["type"] = "text/javascript";
             jsEasyUI.Attributes["src"] = "../../Admin/UI/JQueryEasyUI/jquery.easyui.min.js";

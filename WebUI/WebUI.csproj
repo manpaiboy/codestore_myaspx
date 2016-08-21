@@ -190,9 +190,11 @@
     <Content Include="ACE\widgets.html" />
     <Content Include="ACE\wysiwyg.html" />
     <Content Include="Admin\code\codesadd.aspx" />
+    <Content Include="Admin\code\onetest.aspx" />
     <Content Include="Admin\index.aspx" />
     <Content Include="Admin\manage\add.aspx" />
     <Content Include="Admin\seo\seomanage.aspx" />
+    <Content Include="Admin\service\xhediterUpImgs.aspx" />
     <Content Include="Admin\UI\JQueryEasyUI\changelog.txt" />
     <Content Include="Admin\UI\JQueryEasyUI\demo-mobile\accordion\basic.html" />
     <Content Include="Admin\UI\JQueryEasyUI\demo-mobile\accordion\header.html" />
@@ -1039,6 +1041,23 @@
     <Content Include="Admin\UI\AdminUiBase.Master" />
     <Content Include="Admin\service\FileHandler.ashx" />
     <Content Include="Admin\service\PicHandler.ashx" />
+    <Content Include="Upfiles\CodePics\333\2016081923212256_Picture 24552.jpg" />
+    <Content Include="Upfiles\CodePics\333\2016081923214024_Picture 29304.jpg" />
+    <Content Include="Upfiles\CodePics\333\2016081923263583_Picture 144464.jpg" />
+    <Content Include="Upfiles\CodePics\333\2016081923264259_Picture 161616.jpg" />
+    <Content Include="Upfiles\CodePics\333\2016081923275919_Picture 1372728.jpg" />
+    <Content Include="Upfiles\CodePics\333\2016081923283271_Picture 3928400.jpg" />
+    <Content Include="Upfiles\CodePics\333\2016081923394533_Picture 151272.jpg" />
+    <Content Include="Upfiles\CodePics\333\2016081923400026_Picture 150832.jpg" />
+    <Content Include="Upfiles\CodePics\admin\2016081922532447_Picture 58336.jpg" />
+    <Content Include="Upfiles\CodePics\admin\2016081922534669_Picture 59592.jpg" />
+    <Content Include="Upfiles\CodePics\admin\2016081923040417_Picture 14920.jpg" />
+    <Content Include="Upfiles\CodePics\admin\2016081923041298_Picture 156992.jpg" />
+    <Content Include="Upfiles\CodePics\admin\2016081923051291_Picture 21024.jpg" />
+    <Content Include="Upfiles\CodePics\admin\2016081923051598_Picture 22920.jpg" />
+    <Content Include="Upfiles\CodePics\admin\2016081923165063_Picture 159808.jpg" />
+    <Content Include="Upfiles\CodePics\admin\2016081923165734_Picture 160312.jpg" />
+    <Content Include="Upfiles\CodePics\admin\2016082010595581_Picture 161632.jpg" />
     <Content Include="xheditor-1.2.2\demos\ckfinder\changelog.txt" />
     <Content Include="xheditor-1.2.2\demos\ckfinder\ckfinder.html" />
     <Content Include="xheditor-1.2.2\demos\ckfinder\ckfinder.js" />
@@ -1474,6 +1493,7 @@
     <Content Include="xheditor-1.2.2\xheditor_skin\vista\img\wmp.gif" />
     <Content Include="xheditor-1.2.2\xheditor_skin\vista\img\wordimg.gif" />
     <Content Include="xheditor-1.2.2\xheditor_skin\vista\ui.css" />
+    <Content Include="Admin\service\xhediterImgs.ashx" />
     <None Include="Scripts\jquery-2.2.3.intellisense.js" />
     <Content Include="Scripts\51aspx\51codelistbase.js" />
     <Content Include="Scripts\ajaxfileupload.js" />
@@ -1573,6 +1593,13 @@
     <Compile Include="Admin\code\codesadd.aspx.designer.cs">
       <DependentUpon>codesadd.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\code\onetest.aspx.cs">
+      <DependentUpon>onetest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\code\onetest.aspx.designer.cs">
+      <DependentUpon>onetest.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1605,6 +1632,16 @@
     </Compile>
     <Compile Include="Admin\service\seo.ashx.cs">
       <DependentUpon>seo.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\service\xhediterImgs.ashx.cs">
+      <DependentUpon>xhediterImgs.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\service\xhediterUpImgs.aspx.cs">
+      <DependentUpon>xhediterUpImgs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\service\xhediterUpImgs.aspx.designer.cs">
+      <DependentUpon>xhediterUpImgs.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\UI\AdminPageBase.cs">
       <SubType>ASPXCodeBehind</SubType>
@@ -1760,6 +1797,23 @@
     <Content Include="BootFlat\_config.yml" />
     <Content Include="MasterPage\UI\SiteUI.Master" />
     <Content Include="Scripts\jquery-2.2.3.min.map" />
+    <Content Include="Upfiles\CodeFiles\333\2016081900023530_moban1.rar" />
+    <Content Include="Upfiles\CodeFiles\333\2016081900040252_收费岗亭20150120.rar" />
+    <Content Include="Upfiles\CodeFiles\333\2016081900082177_MoblieInv.BLL.rar" />
+    <Content Include="Upfiles\CodeFiles\333\2016081900093952_2014访谈记录单.rar" />
+    <Content Include="Upfiles\CodeFiles\333\2016081900122192_临时全局共享.rar" />
+    <Content Include="Upfiles\CodeFiles\333\2016081900143019_临时全局共享88.rar" />
+    <Content Include="Upfiles\CodeFiles\333\2016081900161770_2014访谈记录单.rar" />
+    <Content Include="Upfiles\CodeFiles\333\2016081923211532_Picture 6960104.rar" />
+    <Content Include="Upfiles\CodeFiles\333\2016081923262491_Picture 6960104.rar" />
+    <Content Include="Upfiles\CodeFiles\333\2016081923393337_Picture 6960104.rar" />
+    <Content Include="Upfiles\CodeFiles\admin\2016081823250807_WebSite1.rar" />
+    <Content Include="Upfiles\CodeFiles\admin\2016081922523111_JJWeb.AccountCenter.rar" />
+    <Content Include="Upfiles\CodeFiles\admin\2016081923030959_FeCar.Sdbd.Ext.Crm.Web.rar" />
+    <Content Include="Upfiles\CodeFiles\admin\2016081923045648_Picture 6960104.rar" />
+    <Content Include="Upfiles\CodeFiles\admin\2016081923050746_Picture 6960104.rar" />
+    <Content Include="Upfiles\CodeFiles\admin\2016081923163490_Picture 6960104.rar" />
+    <Content Include="Upfiles\CodeFiles\admin\2016082010594277_Picture 6960104.rar" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1771,6 +1825,7 @@
     <Folder Include="Form\CodesOperate\" />
     <Folder Include="MasterPage\Admin\" />
     <Folder Include="Scripts\Core\" />
+    <Folder Include="Upfiles\xheditorPics\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MyAspx.DataCommon\MyAspx.DataCommon.csproj">

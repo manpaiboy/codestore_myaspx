@@ -31,10 +31,10 @@ protected void Page_Load(object sender, EventArgs e)
 
 	// 初始化一大堆变量
 	string inputname = "filedata";//表单文件域name
-    string attachdir = "upload";     // 上传文件保存路径，结尾不要带/
+    string attachdir = @"../../Upfiles/xheditorPics";     // 上传文件保存路径，结尾不要带/
     int dirtype = 1;                 // 1:按天存入目录 2:按月存入目录 3:按扩展名存目录  建议使用按天存
     int maxattachsize = 2097152;     // 最大上传大小，默认是2M
-    string upext = "txt,rar,zip,jpg,jpeg,gif,png,swf,wmv,avi,wma,mp3,mid";    // 上传扩展名
+    string upext = "jpg,jpeg,gif,png";    // 上传扩展名
     int msgtype = 2;                 //返回上传参数的格式：1，只返回url，2，返回参数数组
 	string immediate = Request.QueryString["immediate"];//立即上传模式，仅为演示用
     byte[] file;                     // 统一转换为byte数组处理
@@ -67,19 +67,19 @@ protected void Page_Load(object sender, EventArgs e)
 
         filecollection = null;
     }
-    
-    if (file.Length == 0)err = "无数据提交";
+
+    if (file.Length == 0) { err = "无数据提交"; }
     else
     {
-        if (file.Length > maxattachsize)err = "文件大小超过" + maxattachsize + "字节";
+        if (file.Length > maxattachsize) err = "文件大小超过" + maxattachsize + "字节";
         else
         {
             string attach_dir, attach_subdir, filename, extension, target;
 
             // 取上载文件后缀名
             extension = GetFileExt(localname);
-            
-            if (("," + upext + ",").IndexOf("," + extension + ",") < 0)err = "上传文件扩展名必需为：" + upext;
+
+            if (("," + upext + ",").IndexOf("," + extension + ",") < 0) err = "上传文件扩展名必需为：" + upext;
             else
             {
                 switch (dirtype)
@@ -117,8 +117,8 @@ protected void Page_Load(object sender, EventArgs e)
 
                 // 立即模式判断
                 if (immediate == "1") target = "!" + target;
-				target=jsonString(target);
-				if(msgtype==1)msg = "'"+target+"'";
+                target = jsonString(target);
+                if (msgtype == 1) msg = "'" + target + "'";
                 else msg = "{'url':'" + target + "','localname':'" + jsonString(localname) + "','id':'1'}";
             }
         }
