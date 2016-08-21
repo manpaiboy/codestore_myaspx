@@ -13,8 +13,12 @@
     <script src="../../ACE/assets/js/bootstrap-wysiwyg.min.js"></script>
     <script src="../../ACE/assets/js/jquery.hotkeys.min.js"></script>
     <script>
-         $(function () {
-             $('#preview').xheditor({ tools: 'simple', skin: 'nostyle', upImgUrl: "../service/xhediterImgs.aspx", upImgExt: "jpg,jpeg,gif,png", width: '700', height: '195' });
+        function pageInit() {
+
+        }
+
+        $(document).ready(function () {
+             $('#preview').xheditor({ tools: 'simple', skin: 'nostyle', upImgUrl: "../service/xhediterUpImgs.aspx", upImgExt: "jpg,jpeg,gif,png", width: '700', height: '195' });
                        });
     </script>
 </asp:Content>
