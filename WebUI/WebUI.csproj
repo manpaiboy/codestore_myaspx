@@ -194,6 +194,8 @@
     <Content Include="Admin\index.aspx" />
     <Content Include="Admin\manage\add.aspx" />
     <Content Include="Admin\seo\seomanage.aspx" />
+    <Content Include="Admin\service\up.aspx" />
+    <Content Include="Admin\service\upload.aspx" />
     <Content Include="Admin\service\xhediterUpImgs.aspx" />
     <Content Include="Admin\UI\JQueryEasyUI\changelog.txt" />
     <Content Include="Admin\UI\JQueryEasyUI\demo-mobile\accordion\basic.html" />
@@ -1632,6 +1634,13 @@
     </Compile>
     <Compile Include="Admin\service\seo.ashx.cs">
       <DependentUpon>seo.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\service\up.aspx.cs">
+      <DependentUpon>up.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\service\up.aspx.designer.cs">
+      <DependentUpon>up.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\service\xhediterImgs.ashx.cs">
       <DependentUpon>xhediterImgs.ashx</DependentUpon>

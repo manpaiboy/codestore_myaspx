@@ -18,7 +18,7 @@
         }
 
         $(document).ready(function () {
-             $('#preview').xheditor({ tools: 'simple', skin: 'nostyle', upImgUrl: "../service/xhediterUpImgs.aspx", upImgExt: "jpg,jpeg,gif,png", width: '700', height: '195' });
+             $('#preview').xheditor({ tools: 'simple', skin: 'nostyle', upImgUrl: "../service/up.aspx", upImgExt: "jpg,jpeg,gif,png", width: '700', height: '195' });
                        });
     </script>
 </asp:Content>
