@@ -1584,6 +1584,9 @@
     <Content Include="xheditor-1.2.2\TODO.md" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Services\Core\SendCodeInfoHandler.ashx.cs">
+      <DependentUpon>SendCodeInfoHandler.ashx</DependentUpon>
+    </Compile>
     <Content Include="Base\PageBase.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Content>
@@ -1823,6 +1826,7 @@
     <Content Include="Upfiles\CodeFiles\admin\2016081923050746_Picture 6960104.rar" />
     <Content Include="Upfiles\CodeFiles\admin\2016081923163490_Picture 6960104.rar" />
     <Content Include="Upfiles\CodeFiles\admin\2016082010594277_Picture 6960104.rar" />
+    <Content Include="Services\Core\SendCodeInfoHandler.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/UI/AdminUiBase.Master" AutoEventWireup="true" CodeBehind="codesadd.aspx.cs" Inherits="WebUI.Admin.code.codesadd" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/UI/AdminUiBase.Master" AutoEventWireup="true" ValidateRequest="false" CodeBehind="codesadd.aspx.cs" Inherits="WebUI.Admin.code.codesadd" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
    
    <%-- <script src="../../Scripts/jquery-2.2.3.js"></script>--%>
@@ -18,7 +18,7 @@
         }
 
         $(document).ready(function () {
-             $('#preview').xheditor({ tools: 'simple', skin: 'nostyle', upImgUrl: "../service/up.aspx", upImgExt: "jpg,jpeg,gif,png", width: '700', height: '195' });
+            var editer =  $('#preview').xheditor({ tools: 'simple', skin: 'nostyle', upImgUrl: "../service/up.aspx", upImgExt: "jpg,jpeg,gif,png", width: '700', height: '195' });
                        });
     </script>
 </asp:Content>
@@ -357,7 +357,21 @@
                         }).prev().addClass('wysiwyg-style2');
                     </script>--%>
                      <p><textarea id="preview" name="preview" rows="8" cols="120"></textarea></p>
+                     <%--<p><span><input type="button" value="编辑器源码" id="previewHtml" /></span>
+
+                         <script>
+                             $("#previewHtml").click(function () {
+                                 alert($("#preview").val());
+                             });
+                         </script>
+                     </p>--%>
+                     <p><span class="err-red-out"></span></p>
                                                         </div>
+                                                         <div class="step-pane" id="step5">
+                                                             <span class="suc-info-mes">
+                                                                 继续点击下面按钮提交。
+                                                             </span>
+                                                             </div>
                                                         <!-- /widget-main --> 
 
                                                          <div id="upfilenext" class="row-fluid wizard-actions" >
@@ -403,20 +417,87 @@
                                                                 $("#step2").removeClass("active");
                                                                 $("#step3").removeClass("active");
                                                                 $("#step4").addClass("active");
+
+                                                                //step5 
+                                                                var mesindex = -1;
+                                                                if ($("#CodeTypeId").val().indexOf('请选择') > 0
+                                                                     || $("#DevelopToolId").val().indexOf('请选择') > 0
+                                                                     || $("#LanguageId").val().indexOf('请选择') > 0
+                                                                     || $("#LanguageId").val().indexOf('请选择') > 0
+                                                                     || $("#DatabaseId").val().indexOf('请选择') > 0
+                                                                     || $("#FrameworkId").val().indexOf('请选择') > 0
+                                                                     || $("#Contract").val() == ""
+                                                                     || $("#preview").val() == ""
+                                                                    ) {
+                                                                    $(".err-red-out").html("*资料请填写完整，除了 【标签】，【相关链接】，【源码作者】可以不填，其他都是必填项。");
+                                                                    $(".err-red-out").css("display", "block");
+                                                                    return;
+                                                                }
+                                                                $(".err-red-out").html("");
+                                                                $(".err-red-out").css("display", "none");
+                                                                $("#dstep5").addClass("active");
+                                                                $("#step1").removeClass("active");
+                                                                $("#step2").removeClass("active");
+                                                                $("#step3").removeClass("active");
+                                                                $("#step4").removeClass("active");
+                                                                $("#step5").addClass("active");
+                                                                //显示提交按钮
+                                                                $("#upfile").css("display", "block");
+                                                                $("#btnnextsetp").css("display", "none");
                                                             });
                                                         </script>
 											 
 													</div>
 													<div id="upfile" class="row-fluid wizard-actions" style="display:none;">
-														<button class="btn btn-success btn-next" >
+														<button class="btn btn-success btn-next" id="submitSendCode" >
 												 
 															提交
 														</button>
 
 														<button class="btn btn-prev" data-last="Finish ">
-															重置
+															放弃
 															 
 														</button>
+                                                        <script>
+                                                            $("#submitSendCode").click(function () {
+                                                                //获取上传源码的相关信息
+                                                                var codedatax = {
+                                                                    name: $("#txtCodeName").val(),
+                                                                    paynub: $("#txtCodePayNub").val(),
+                                                                    codeserverurl: $("#txt_filePath").val(),
+                                                                    codepics: $(".upimgspanel").html(),
+                                                                    //5
+                                                                    CodeType: $("#CodeTypeId").val(),
+                                                                    DevelopTool: $("#DevelopToolId").val(),
+                                                                    Language: $("#LanguageId").val(),
+                                                                    Database: $("#DatabaseId").val(),
+                                                                    Framework: $("#FrameworkId").val(),
+                                                                    Tags: $("#Tags").val(),
+                                                                    LinkUrl: $("#LinkUrl").val(),
+                                                                    Author: $("#Author").val(),
+                                                                    Contract: $("#Contract").val(),
+                                                                    UserMsg: $("#UserMsg").val(),
+                                                                    preview: $("#preview").val()
+
+                                                                };
+                                                                $.ajax({
+                                                                    url: '../../Services/Core/SendCodeInfoHandler.ashx',
+                                                                    type: 'POST',
+                                                                    //data: ,
+                                                                    data:{codedata:JSON.stringify(codedatax)},
+                                                                    async: false,
+                                                                    cache: false,
+                                                                    contentType: false,
+                                                                    processData: false,
+                                                                    success: function (data) {
+                                                                        //$(".upimgspanel").html($(".upimgspanel").html() + "<br>" + data);
+                                                                    },
+                                                                    error: function (data, status, e) {
+                                                                        alert(e);
+                                                                    }
+                                                                });
+                                                            });
+                                                        </script>
 													</div>
 											</div>
             </div></div>

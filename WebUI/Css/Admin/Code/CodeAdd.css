@@ -113,3 +113,6 @@ text-align:left;
 .mask{position: fixed;top: 0;right: 0;bottom: 0;left: 0; z-index: 1000; background-color: #2F2F2F}
 
 /*.btnupimgs {margin-left:25%}*/
+
+.err-red-out{color:red;font-size:13px; font-weight:bold;font-family:微软雅黑;display:none;}
+.suc-info-mes{color:green;font-size:16px; font-weight:bold;font-family:微软雅黑;}
