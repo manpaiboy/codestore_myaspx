@@ -461,7 +461,7 @@
                                                         <script>
                                                             $("#submitSendCode").click(function () {
                                                                 //获取上传源码的相关信息
-                                                                var codedatax = {
+                                                                var codedata = {
                                                                     name: $("#txtCodeName").val(),
                                                                     paynub: $("#txtCodePayNub").val(),
                                                                     codeserverurl: $("#txt_filePath").val(),
@@ -484,11 +484,18 @@
                                                                     url: '../../Services/Core/SendCodeInfoHandler.ashx',
                                                                     type: 'POST',
                                                                     //data: ,
-                                                                    data:{codedata:JSON.stringify(codedatax)},
+                                                                    data: {
+                                                                        "name": codedata.name, "paynub": codedata.paynub, "codeserverurl": codedata.codeserverurl, "codepics": codedata.codepics, "codetype": codedata.CodeType,
+                                                                        "developtool": codedata.DevelopTool, "language": codedata.Language, "database": codedata.Database, "framework": codedata.Framework, "tags": codedata.Tags,
+                                                                        "linkurl": codedata.LinkUrl, "author": codedata.Author, "contract": codedata.Contract, "usermsg": codedata.UserMsg, "preview": codedata.preview
+
+                                                                        //"codedata":JSON.stringify(codedata)
+                                                                    },
+                                                                    dataType: "json",
                                                                     async: false,
                                                                     cache: false,
-                                                                    contentType: false,
-                                                                    processData: false,
+                                                                    //contentType: false,
+                                                                    //processData: false,
                                                                     success: function (data) {
                                                                         //$(".upimgspanel").html($(".upimgspanel").html() + "<br>" + data);
                                                                     },
