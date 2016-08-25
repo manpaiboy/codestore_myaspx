@@ -66,6 +66,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAL3\AdminDAL.cs" />
+    <Compile Include="DAL3\CodeDAL.cs" />
     <Compile Include="DAL3\SeoDAL.cs" />
     <Compile Include="DalBase.cs" />
     <Compile Include="EasyFrameworkBase.cs" />

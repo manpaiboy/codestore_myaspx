@@ -20,19 +20,43 @@ public partial class my_fileinfo
 
     public int fileid { get; set; }
 
-    public Nullable<int> fileclassid { get; set; }
+    public int fileclassid { get; set; }
 
     public string filevstype { get; set; }
 
     public string filedevlan { get; set; }
 
-    public Nullable<int> downid { get; set; }
+    public int downid { get; set; }
 
     public string fileremark { get; set; }
 
     public Nullable<int> filedownnum { get; set; }
 
     public string filepics { get; set; }
+
+    public string filename { get; set; }
+
+    public int goldid { get; set; }
+
+    public string codeplftype { get; set; }
+
+    public string devtool { get; set; }
+
+    public string filedatabase { get; set; }
+
+    public string frameworkversion { get; set; }
+
+    public int tagid { get; set; }
+
+    public string linkurl { get; set; }
+
+    public string createuser { get; set; }
+
+    public string contract { get; set; }
+
+    public string usermsg { get; set; }
+
+    public string codedes { get; set; }
 
 }
 

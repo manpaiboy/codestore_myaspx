@@ -29,13 +29,25 @@
             <PropertyRef Name="fileid" />
           </Key>
           <Property Name="fileid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="fileclassid" Type="int" />
+          <Property Name="fileclassid" Type="int" Nullable="false" />
           <Property Name="filevstype" Type="nvarchar" MaxLength="50" />
           <Property Name="filedevlan" Type="nvarchar" MaxLength="50" />
-          <Property Name="downid" Type="int" />
+          <Property Name="downid" Type="int" Nullable="false" />
           <Property Name="fileremark" Type="text" />
           <Property Name="filedownnum" Type="int" />
           <Property Name="filepics" Type="nvarchar" MaxLength="50" />
+          <Property Name="filename" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="goldid" Type="int" Nullable="false" />
+          <Property Name="codeplftype" Type="varchar" MaxLength="50" />
+          <Property Name="devtool" Type="varchar" MaxLength="50" />
+          <Property Name="filedatabase" Type="varchar" MaxLength="50" />
+          <Property Name="frameworkversion" Type="varchar" MaxLength="20" />
+          <Property Name="tagid" Type="int" Nullable="false" />
+          <Property Name="linkurl" Type="varchar" MaxLength="50" />
+          <Property Name="createuser" Type="varchar" MaxLength="50" />
+          <Property Name="contract" Type="varchar" MaxLength="50" />
+          <Property Name="usermsg" Type="varchar" MaxLength="50" />
+          <Property Name="codedes" Type="text" />
         </EntityType>
         <EntityType Name="my_gold">
           <Key>
@@ -160,13 +172,25 @@
             <PropertyRef Name="fileid" />
           </Key>
           <Property Name="fileid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
-          <Property Name="fileclassid" Type="Int32" />
+          <Property Name="fileclassid" Type="Int32" Nullable="false" />
           <Property Name="filevstype" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="filedevlan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="downid" Type="Int32" />
+          <Property Name="downid" Type="Int32" Nullable="false" />
           <Property Name="fileremark" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="filedownnum" Type="Int32" />
           <Property Name="filepics" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="filename" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="goldid" Type="Int32" Nullable="false" />
+          <Property Name="codeplftype" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="devtool" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="filedatabase" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="frameworkversion" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="tagid" Type="Int32" Nullable="false" />
+          <Property Name="linkurl" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="createuser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="contract" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="usermsg" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="codedes" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="my_gold">
           <Key>
@@ -293,6 +317,18 @@
           <EntitySetMapping Name="my_fileinfo">
             <EntityTypeMapping TypeName="commyaspxdbModel.my_fileinfo">
               <MappingFragment StoreEntitySet="my_fileinfo">
+                <ScalarProperty Name="codedes" ColumnName="codedes" />
+                <ScalarProperty Name="usermsg" ColumnName="usermsg" />
+                <ScalarProperty Name="contract" ColumnName="contract" />
+                <ScalarProperty Name="createuser" ColumnName="createuser" />
+                <ScalarProperty Name="linkurl" ColumnName="linkurl" />
+                <ScalarProperty Name="tagid" ColumnName="tagid" />
+                <ScalarProperty Name="frameworkversion" ColumnName="frameworkversion" />
+                <ScalarProperty Name="filedatabase" ColumnName="filedatabase" />
+                <ScalarProperty Name="devtool" ColumnName="devtool" />
+                <ScalarProperty Name="codeplftype" ColumnName="codeplftype" />
+                <ScalarProperty Name="goldid" ColumnName="goldid" />
+                <ScalarProperty Name="filename" ColumnName="filename" />
                 <ScalarProperty Name="fileid" ColumnName="fileid" />
                 <ScalarProperty Name="fileclassid" ColumnName="fileclassid" />
                 <ScalarProperty Name="filevstype" ColumnName="filevstype" />

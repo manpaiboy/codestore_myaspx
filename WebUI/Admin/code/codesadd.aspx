@@ -230,66 +230,66 @@
                     <label for="CodeTypeId" class="title label4">源码类型：</label>
                     <select id="CodeTypeId" name="CodeTypeId" data-val-required="The 源码类型 field is required." data-val-number="The field 源码类型 must be a number." data-val="true">
                         <option value="0" selected="selected">==请选择==</option>
-                        <option value="1">WebForm</option>
-                        <option value="2">WinForm</option>
-                        <option value="3">WinPhone</option>
+                        <option value="WebForm">WebForm</option>
+                        <option value="WinForm">WinForm</option>
+                        <option value="WinPhone">WinPhone</option>
                     </select>
                 </p>
                 <p>
                     <label for="DevelopToolId" class="title label4">开发工具：</label>
                     <select id="DevelopToolId" name="DevelopToolId" data-val-required="The 开发工具 field is required." data-val-number="The field 开发工具 must be a number." data-val="true">
                         <option value="0" selected="selected">==请选择==</option>
-                        <option value="16">VS2015</option>
-                        <option value="15">VS2013</option>
-                        <option value="13">VS2012</option>
-                        <option value="5">VS2011</option>
-                        <option value="4">VS2010</option>
-                        <option value="3">VS2008</option>
-                        <option value="2">VS2005</option>
-                        <option value="1">VS2003</option>
-                        <option value="8">WinPhone SDK</option>
-                        <option value="10">其他</option>
+                        <option value="VS2015">VS2015</option>
+                        <option value="VS2013">VS2013</option>
+                        <option value="VS2012">VS2012</option>
+                        <option value="VS2011">VS2011</option>
+                        <option value="VS2010">VS2010</option>
+                        <option value="VS2008">VS2008</option>
+                        <option value="VS2005">VS2005</option>
+                        <option value="VS2003">VS2003</option>
+                        <option value="WinPhone SDK">WinPhone SDK</option>
+                        <option value="其他">其他</option>
                     </select>
                 </p>
                 <p>
                     <label for="LanguageId" class="title label4">开发语言：</label>
                     <select id="LanguageId" name="LanguageId" data-val-required="The 开发语言 field is required." data-val-number="The field 开发语言 must be a number." data-val="true">
                         <option value="0" selected="selected">==请选择==</option>
-                        <option value="1">C#</option>
-                        <option value="2">VB.net</option>
+                        <option value="C#">C#</option>
+                        <option value="VB.net">VB.net</option>
                     </select>
                 </p>
                 <p>
                     <label for="DatabaseId" class="title  label5">数据库类型：</label>
                     <select id="DatabaseId" name="DatabaseId" data-val-required="The 数据库类型 field is required." data-val-number="The field 数据库类型 must be a number." data-val="true">
                         <option value="0" selected="selected">==请选择==</option>
-                        <option value="19">SQL2014</option>
-                        <option value="14">SQL2012</option>
-                        <option value="7">SQL2008R2</option>
-                        <option value="6">SQL2008</option>
-                        <option value="5">SQL2005</option>
-                        <option value="4">SQL2000</option>
-                        <option value="3">Access</option>
-                        <option value="8">MySql</option>
-                        <option value="2">SQLite</option>
-                        <option value="16">SqlCE</option>
-                        <option value="9">Oracle</option>
-                        <option value="1">XML</option>
-                        <option value="18">其他</option>
-                        <option value="15">无数据库</option>
+                        <option value="SQL2014">SQL2014</option>
+                        <option value="SQL2012">SQL2012</option>
+                        <option value="SQL2008R2">SQL2008R2</option>
+                        <option value="SQL2008">SQL2008</option>
+                        <option value="SQL2005">SQL2005</option>
+                        <option value="SQL2000">SQL2000</option>
+                        <option value="Access">Access</option>
+                        <option value="MySql">MySql</option>
+                        <option value="SQLite">SQLite</option>
+                        <option value="SqlCE">SqlCE</option>
+                        <option value="Oracle">Oracle</option>
+                        <option value="XML">XML</option>
+                        <option value="其他">其他</option>
+                        <option value="无数据库">无数据库</option>
                     </select>
                 </p>
                 <p>
                     <label for="FrameworkId" class="title label4">框架版本：</label>
                     <select id="FrameworkId" name="FrameworkId" data-val-required="The 框架版本 field is required." data-val-number="The field 框架版本 must be a number." data-val="true">
                         <option value="0" selected="selected">==请选择==</option>
-                        <option value="2">V2.0</option>
-                        <option value="6">V4.5</option>
-                        <option value="5">V4.0</option>
-                        <option value="4">V3.5</option>
-                        <option value="1">V1.1</option>
-                        <option value="3">V3.0</option>
-                        <option value="7">其它</option>
+                        <option value="V2.0">V2.0</option>
+                        <option value="V4.5">V4.5</option>
+                        <option value="V4.0">V4.0</option>
+                        <option value="V3.5">V3.5</option>
+                        <option value="V1.1">V1.1</option>
+                        <option value="V3.0">V3.0</option>
+                        <option value="其它">其它</option>
                     </select>
                 </p>
                 <p>
