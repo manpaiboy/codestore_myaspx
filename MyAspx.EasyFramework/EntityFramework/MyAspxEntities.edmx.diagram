@@ -4,10 +4,9 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="9ad08943e3334e0cb3ba82b5fcc7d486" Name="Diagram1">
+      <Diagram DiagramId="9ad08943e3334e0cb3ba82b5fcc7d486" Name="Diagram1" ZoomLevel="93">
         <EntityTypeShape EntityType="commyaspxdbModel.my_class" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="commyaspxdbModel.my_downurl" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="commyaspxdbModel.my_fileinfo" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="commyaspxdbModel.my_gold" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="commyaspxdbModel.my_manage" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="commyaspxdbModel.my_message" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
@@ -16,6 +15,9 @@
         <EntityTypeShape EntityType="commyaspxdbModel.my_siteconf" Width="1.5" PointX="6.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="commyaspxdbModel.my_tag" Width="1.5" PointX="4.75" PointY="6.75" IsExpanded="true" />
         <EntityTypeShape EntityType="commyaspxdbModel.my_users" Width="1.5" PointX="6.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="commyaspxdbModel.my_filecost" Width="1.5" PointX="9.75" PointY="0.75" />
+        <EntityTypeShape EntityType="commyaspxdbModel.my_saletype" Width="1.5" PointX="0.75" PointY="9.75" />
+        <EntityTypeShape EntityType="commyaspxdbModel.my_fileinfo" Width="1.5" PointX="0.875" PointY="4.25" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

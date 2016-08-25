@@ -92,6 +92,7 @@
     <Compile Include="DEncrypt\DESEncrypt.cs" />
     <Compile Include="DEncrypt\HashEncode.cs" />
     <Compile Include="DEncrypt\RSACryption.cs" />
+    <Compile Include="FileOnlyName.cs" />
     <Compile Include="HttpHelper.cs" />
     <Compile Include="HttpProc.cs" />
     <Compile Include="INIFile.cs" />

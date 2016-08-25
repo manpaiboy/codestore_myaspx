@@ -1,4 +1,5 @@
 ﻿using MyAspx.EasyFramework.EntityFramework;
+using MyAspx.Framework.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,16 +34,28 @@ namespace MyAspx.EasyFramework.DAL3
               //                                                      Contract: $("#Contract").val(),
               //                                                      UserMsg: $("#UserMsg").val(),
               //                                                      preview: $("#preview").val()
-            var name = _my_fileinfo.filename;
-            var paynub = _myaspxentities.my_gold.Select(s=>s.goldid == );
-            if (_myaspxentities.my_manage.Count(SELECT => SELECT.adminname == pUser) > 0)
+            //var name = _my_fileinfo.filename;
+            //if (_myaspxentities.my_fileinfo.Count(SELECT => SELECT.adminname == pUser) > 0)
+            //{
+            //    return -1;
+            //}
+
+
+            _myaspxentities.my_fileinfo.Add(new MyAspx.EasyFramework.EntityFramework.my_fileinfo()
             {
-                return -1;
-            }
-            _myaspxentities.my_manage.Add(new MyAspx.EasyFramework.EntityFramework.my_manage()
-            {
-                adminname = pUser,
-                adminpwd = pPwd
+                 fileid = FileOnlyName.GetName(),
+                 filename = _my_fileinfo.filename,
+                 filepics = _my_fileinfo.filepics,
+                 codeplftype = _my_fileinfo.codeplftype,
+                 devtool = _my_fileinfo.devtool,
+                 codelang = _my_fileinfo.codelang,
+                 filedatabase =_my_fileinfo.filedatabase,
+                 frameworkversion = _my_fileinfo.frameworkversion,
+                 linkurl = _my_fileinfo.linkurl,
+                 createuser = _my_fileinfo.createuser,
+                 contract = _my_fileinfo.contract,
+                 usermsg = _my_fileinfo.usermsg,
+                 codedes = _my_fileinfo.codedes
             });
             _myaspxentities.SaveChanges();
             return 1;

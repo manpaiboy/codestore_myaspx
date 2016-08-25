@@ -36,8 +36,6 @@ public partial class commyaspxdbEntities : DbContext
 
     public DbSet<my_downurl> my_downurl { get; set; }
 
-    public DbSet<my_fileinfo> my_fileinfo { get; set; }
-
     public DbSet<my_gold> my_gold { get; set; }
 
     public DbSet<my_manage> my_manage { get; set; }
@@ -53,6 +51,12 @@ public partial class commyaspxdbEntities : DbContext
     public DbSet<my_tag> my_tag { get; set; }
 
     public DbSet<my_users> my_users { get; set; }
+
+    public DbSet<my_filecost> my_filecost { get; set; }
+
+    public DbSet<my_saletype> my_saletype { get; set; }
+
+    public DbSet<my_fileinfo> my_fileinfo { get; set; }
 
 }
 

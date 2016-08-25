@@ -13,7 +13,7 @@
           <Property Name="classname" Type="nvarchar" MaxLength="50" />
           <Property Name="pclassid" Type="int" />
           <Property Name="classtype" Type="nvarchar" MaxLength="50" />
-          <Property Name="classdescription" Type="text" />
+          <Property Name="classdescription" Type="varchar(max)" />
         </EntityType>
         <EntityType Name="my_downurl">
           <Key>
@@ -24,20 +24,27 @@
           <Property Name="downsyseul" Type="nvarchar" MaxLength="50" />
           <Property Name="downfileid" Type="int" Nullable="false" />
         </EntityType>
+        <EntityType Name="my_filecost">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fileid" Type="int" Nullable="false" />
+          <Property Name="score" Type="float" Nullable="false" />
+        </EntityType>
         <EntityType Name="my_fileinfo">
           <Key>
             <PropertyRef Name="fileid" />
           </Key>
-          <Property Name="fileid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fileid" Type="varchar" MaxLength="50" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="saletypeid" Type="int" Nullable="false" />
           <Property Name="fileclassid" Type="int" Nullable="false" />
           <Property Name="filevstype" Type="nvarchar" MaxLength="50" />
           <Property Name="filedevlan" Type="nvarchar" MaxLength="50" />
           <Property Name="downid" Type="int" Nullable="false" />
-          <Property Name="fileremark" Type="text" />
           <Property Name="filedownnum" Type="int" />
-          <Property Name="filepics" Type="nvarchar" MaxLength="50" />
+          <Property Name="filepics" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="filename" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="goldid" Type="int" Nullable="false" />
           <Property Name="codeplftype" Type="varchar" MaxLength="50" />
           <Property Name="devtool" Type="varchar" MaxLength="50" />
           <Property Name="filedatabase" Type="varchar" MaxLength="50" />
@@ -47,14 +54,15 @@
           <Property Name="createuser" Type="varchar" MaxLength="50" />
           <Property Name="contract" Type="varchar" MaxLength="50" />
           <Property Name="usermsg" Type="varchar" MaxLength="50" />
-          <Property Name="codedes" Type="text" />
+          <Property Name="codedes" Type="varchar(max)" />
+          <Property Name="codelang" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="my_gold">
           <Key>
             <PropertyRef Name="goldid" />
           </Key>
           <Property Name="goldid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="goldnum" Type="money" />
+          <Property Name="goldnum" Type="decimal" Precision="19" Scale="4" />
           <Property Name="golduserid" Type="int" />
           <Property Name="goldpaynum" Type="int" />
         </EntityType>
@@ -71,7 +79,7 @@
             <PropertyRef Name="mesid" />
           </Key>
           <Property Name="mesid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="mescontext" Type="text" />
+          <Property Name="mescontext" Type="varchar(max)" />
           <Property Name="meshasguest" Type="int" />
           <Property Name="meswriter" Type="nvarchar" MaxLength="50" />
           <Property Name="mesdate" Type="nvarchar" MaxLength="50" />
@@ -83,7 +91,7 @@
           </Key>
           <Property Name="payid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="paydate" Type="nvarchar" MaxLength="50" />
-          <Property Name="paynum" Type="money" />
+          <Property Name="paynum" Type="decimal" Precision="19" Scale="4" />
           <Property Name="payuseid" Type="int" Nullable="false" />
           <Property Name="payform" Type="nvarchar" MaxLength="20" />
         </EntityType>
@@ -96,17 +104,26 @@
           <Property Name="roleclose" Type="int" Nullable="false" />
           <Property Name="rolekey" Type="nvarchar" MaxLength="50" />
         </EntityType>
+        <EntityType Name="my_saletype">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="saletype" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="createdate" Type="datetime" />
+          <Property Name="createmanage" Type="varchar" MaxLength="50" />
+        </EntityType>
         <EntityType Name="my_siteconf">
           <Key>
             <PropertyRef Name="siteid" />
           </Key>
+          <Property Name="siteid" Type="int" Nullable="false" />
           <Property Name="sitetitle" Type="varchar" MaxLength="50" />
           <Property Name="sitekeywords" Type="varchar" MaxLength="50" />
           <Property Name="sitedescription" Type="varchar" MaxLength="50" />
           <Property Name="sitewriter" Type="varchar" MaxLength="50" />
-          <Property Name="siteremark" Type="text" />
+          <Property Name="siteremark" Type="varchar(max)" />
           <Property Name="siteaddtime" Type="datetime" />
-          <Property Name="siteid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
         <EntityType Name="my_tag">
           <Key>
@@ -128,18 +145,20 @@
           <Property Name="usercreatedate" Type="nvarchar" MaxLength="50" />
           <Property Name="useraddress" Type="nvarchar" MaxLength="50" />
           <Property Name="usersex" Type="int" Nullable="false" />
-          <Property Name="userremark" Type="text" />
+          <Property Name="userremark" Type="varchar(max)" />
           <Property Name="uselogopic" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityContainer Name="commyaspxdbModelStoreContainer">
           <EntitySet Name="my_class" EntityType="Self.my_class" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="my_downurl" EntityType="Self.my_downurl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="my_filecost" EntityType="Self.my_filecost" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="my_fileinfo" EntityType="Self.my_fileinfo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="my_gold" EntityType="Self.my_gold" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="my_manage" EntityType="Self.my_manage" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="my_message" EntityType="Self.my_message" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="my_pay" EntityType="Self.my_pay" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="my_role" EntityType="Self.my_role" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="my_saletype" EntityType="Self.my_saletype" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="my_siteconf" EntityType="Self.my_siteconf" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="my_tag" EntityType="Self.my_tag" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="my_users" EntityType="Self.my_users" Schema="dbo" store:Type="Tables" />
@@ -166,31 +185,6 @@
           <Property Name="downurl" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="downsyseul" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="downfileid" Type="Int32" Nullable="false" />
-        </EntityType>
-        <EntityType Name="my_fileinfo">
-          <Key>
-            <PropertyRef Name="fileid" />
-          </Key>
-          <Property Name="fileid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
-          <Property Name="fileclassid" Type="Int32" Nullable="false" />
-          <Property Name="filevstype" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="filedevlan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="downid" Type="Int32" Nullable="false" />
-          <Property Name="fileremark" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="filedownnum" Type="Int32" />
-          <Property Name="filepics" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="filename" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="goldid" Type="Int32" Nullable="false" />
-          <Property Name="codeplftype" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="devtool" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="filedatabase" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="frameworkversion" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="tagid" Type="Int32" Nullable="false" />
-          <Property Name="linkurl" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="createuser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="contract" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="usermsg" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="codedes" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="my_gold">
           <Key>
@@ -277,7 +271,6 @@
         <EntityContainer Name="commyaspxdbEntities" annotation:LazyLoadingEnabled="true" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
           <EntitySet Name="my_class" EntityType="Self.my_class" />
           <EntitySet Name="my_downurl" EntityType="Self.my_downurl" />
-          <EntitySet Name="my_fileinfo" EntityType="Self.my_fileinfo" />
           <EntitySet Name="my_gold" EntityType="Self.my_gold" />
           <EntitySet Name="my_manage" EntityType="Self.my_manage" />
           <EntitySet Name="my_message" EntityType="Self.my_message" />
@@ -286,7 +279,52 @@
           <EntitySet Name="my_siteconf" EntityType="Self.my_siteconf" />
           <EntitySet Name="my_tag" EntityType="Self.my_tag" />
           <EntitySet Name="my_users" EntityType="Self.my_users" />
+          <EntitySet Name="my_filecost" EntityType="commyaspxdbModel.my_filecost" />
+          <EntitySet Name="my_saletype" EntityType="commyaspxdbModel.my_saletype" />
+          <EntitySet Name="my_fileinfo" EntityType="commyaspxdbModel.my_fileinfo" />
         </EntityContainer>
+        <EntityType Name="my_filecost">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fileid" Type="Int32" Nullable="false" />
+          <Property Name="score" Type="Double" Nullable="false" />
+        </EntityType>
+        <EntityType Name="my_saletype">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="saletype" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="createdate" Type="DateTime" Precision="3" />
+          <Property Name="createmanage" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="my_fileinfo">
+          <Key>
+            <PropertyRef Name="fileid" />
+          </Key>
+          <Property Name="fileid" Type="String" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="saletypeid" Type="Int32" Nullable="false" />
+          <Property Name="fileclassid" Type="Int32" Nullable="false" />
+          <Property Name="filevstype" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="filedevlan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="downid" Type="Int32" Nullable="false" />
+          <Property Name="filedownnum" Type="Int32" />
+          <Property Name="filepics" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="filename" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="codeplftype" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="devtool" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="filedatabase" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="frameworkversion" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="tagid" Type="Int32" Nullable="false" />
+          <Property Name="linkurl" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="createuser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="contract" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="usermsg" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="codedes" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="codelang" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -311,32 +349,6 @@
                 <ScalarProperty Name="downurl" ColumnName="downurl" />
                 <ScalarProperty Name="downsyseul" ColumnName="downsyseul" />
                 <ScalarProperty Name="downfileid" ColumnName="downfileid" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="my_fileinfo">
-            <EntityTypeMapping TypeName="commyaspxdbModel.my_fileinfo">
-              <MappingFragment StoreEntitySet="my_fileinfo">
-                <ScalarProperty Name="codedes" ColumnName="codedes" />
-                <ScalarProperty Name="usermsg" ColumnName="usermsg" />
-                <ScalarProperty Name="contract" ColumnName="contract" />
-                <ScalarProperty Name="createuser" ColumnName="createuser" />
-                <ScalarProperty Name="linkurl" ColumnName="linkurl" />
-                <ScalarProperty Name="tagid" ColumnName="tagid" />
-                <ScalarProperty Name="frameworkversion" ColumnName="frameworkversion" />
-                <ScalarProperty Name="filedatabase" ColumnName="filedatabase" />
-                <ScalarProperty Name="devtool" ColumnName="devtool" />
-                <ScalarProperty Name="codeplftype" ColumnName="codeplftype" />
-                <ScalarProperty Name="goldid" ColumnName="goldid" />
-                <ScalarProperty Name="filename" ColumnName="filename" />
-                <ScalarProperty Name="fileid" ColumnName="fileid" />
-                <ScalarProperty Name="fileclassid" ColumnName="fileclassid" />
-                <ScalarProperty Name="filevstype" ColumnName="filevstype" />
-                <ScalarProperty Name="filedevlan" ColumnName="filedevlan" />
-                <ScalarProperty Name="downid" ColumnName="downid" />
-                <ScalarProperty Name="fileremark" ColumnName="fileremark" />
-                <ScalarProperty Name="filedownnum" ColumnName="filedownnum" />
-                <ScalarProperty Name="filepics" ColumnName="filepics" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -427,6 +439,51 @@
                 <ScalarProperty Name="usersex" ColumnName="usersex" />
                 <ScalarProperty Name="userremark" ColumnName="userremark" />
                 <ScalarProperty Name="uselogopic" ColumnName="uselogopic" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="my_filecost">
+            <EntityTypeMapping TypeName="commyaspxdbModel.my_filecost">
+              <MappingFragment StoreEntitySet="my_filecost">
+                <ScalarProperty Name="score" ColumnName="score" />
+                <ScalarProperty Name="fileid" ColumnName="fileid" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="my_saletype">
+            <EntityTypeMapping TypeName="commyaspxdbModel.my_saletype">
+              <MappingFragment StoreEntitySet="my_saletype">
+                <ScalarProperty Name="createmanage" ColumnName="createmanage" />
+                <ScalarProperty Name="createdate" ColumnName="createdate" />
+                <ScalarProperty Name="saletype" ColumnName="saletype" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="my_fileinfo">
+            <EntityTypeMapping TypeName="commyaspxdbModel.my_fileinfo">
+              <MappingFragment StoreEntitySet="my_fileinfo">
+                <ScalarProperty Name="codelang" ColumnName="codelang" />
+                <ScalarProperty Name="codedes" ColumnName="codedes" />
+                <ScalarProperty Name="usermsg" ColumnName="usermsg" />
+                <ScalarProperty Name="contract" ColumnName="contract" />
+                <ScalarProperty Name="createuser" ColumnName="createuser" />
+                <ScalarProperty Name="linkurl" ColumnName="linkurl" />
+                <ScalarProperty Name="tagid" ColumnName="tagid" />
+                <ScalarProperty Name="frameworkversion" ColumnName="frameworkversion" />
+                <ScalarProperty Name="filedatabase" ColumnName="filedatabase" />
+                <ScalarProperty Name="devtool" ColumnName="devtool" />
+                <ScalarProperty Name="codeplftype" ColumnName="codeplftype" />
+                <ScalarProperty Name="filename" ColumnName="filename" />
+                <ScalarProperty Name="filepics" ColumnName="filepics" />
+                <ScalarProperty Name="filedownnum" ColumnName="filedownnum" />
+                <ScalarProperty Name="downid" ColumnName="downid" />
+                <ScalarProperty Name="filedevlan" ColumnName="filedevlan" />
+                <ScalarProperty Name="filevstype" ColumnName="filevstype" />
+                <ScalarProperty Name="fileclassid" ColumnName="fileclassid" />
+                <ScalarProperty Name="saletypeid" ColumnName="saletypeid" />
+                <ScalarProperty Name="fileid" ColumnName="fileid" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

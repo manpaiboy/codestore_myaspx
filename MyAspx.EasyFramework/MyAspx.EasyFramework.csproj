@@ -91,6 +91,9 @@
     <Compile Include="EntityFramework\my_downurl.cs">
       <DependentUpon>MyAspxEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="EntityFramework\my_filecost.cs">
+      <DependentUpon>MyAspxEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="EntityFramework\my_fileinfo.cs">
       <DependentUpon>MyAspxEntities.tt</DependentUpon>
     </Compile>
@@ -107,6 +110,9 @@
       <DependentUpon>MyAspxEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\my_role.cs">
+      <DependentUpon>MyAspxEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EntityFramework\my_saletype.cs">
       <DependentUpon>MyAspxEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\my_siteconf.cs">
@@ -178,6 +184,10 @@
     </EntityDeploy>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MyAspx.Framework.Common\MyAspx.Framework.Common.csproj">
+      <Project>{678291d1-3f86-4ff6-9eeb-1c8eb0c4b67f}</Project>
+      <Name>MyAspx.Framework.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MyAspx.Json\MyAspx.Json.csproj">
       <Project>{c928461d-ed26-4cbc-90fc-ef55702ff1d7}</Project>
       <Name>MyAspx.Json</Name>

@@ -18,7 +18,9 @@ using System;
 public partial class my_fileinfo
 {
 
-    public int fileid { get; set; }
+    public string fileid { get; set; }
+
+    public int saletypeid { get; set; }
 
     public int fileclassid { get; set; }
 
@@ -28,15 +30,11 @@ public partial class my_fileinfo
 
     public int downid { get; set; }
 
-    public string fileremark { get; set; }
-
     public Nullable<int> filedownnum { get; set; }
 
     public string filepics { get; set; }
 
     public string filename { get; set; }
-
-    public int goldid { get; set; }
 
     public string codeplftype { get; set; }
 
@@ -57,6 +55,8 @@ public partial class my_fileinfo
     public string usermsg { get; set; }
 
     public string codedes { get; set; }
+
+    public string codelang { get; set; }
 
 }
 

@@ -97,7 +97,7 @@
 													<hr />
                                                         --%>
                                                            <span> 源码名称：<input type="text" id="txtCodeName" /> <label class="errtooptip" id="e1"></label> </span>
-                                                           <span> 授权类别： 
+                                                           <span class="radSaleType"> 授权类别： 
                                                                <input type="radio" name="radSaleType" value="免费版" id="radFree" checked="checked" /><label for="radFree">免费版</label>
                                                                <input type="radio" name="radSaleType" value="积分" id="radScore" /><label for="radScore">积分</label>
                                           
@@ -461,6 +461,7 @@
                                                         <script>
                                                             $("#submitSendCode").click(function () {
                                                                 //获取上传源码的相关信息
+                                                                $(".radSaleType").find("")
                                                                 var codedata = {
                                                                     name: $("#txtCodeName").val(),
                                                                     paynub: $("#txtCodePayNub").val(),
