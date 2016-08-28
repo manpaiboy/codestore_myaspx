@@ -7,12 +7,15 @@
     background-color:#3bafda;
     cursor:pointer;
 }
+.toptablestyle{
+    font-size:13px;
+}
 -->
 </style>
 <script src="../Scripts/jquery-2.2.3.js"></script>
 <%--<script src="../Scripts/jquery-2.2.3.intellisense.js"></script>--%>
 <center>
-<table width="1005" border="0" cellpadding="0" cellspacing="0">
+<table width="1005" border="0" cellpadding="0" cellspacing="0"  class="toptablestyle">
  
   <tr style="height:30px">
     <td width="152"  valign="top" class="telphone">电话</td>
@@ -28,7 +31,7 @@
 <table width="1005" border="0" cellpadding="0" cellspacing="0">
  
   <tr style="width:100%">
-    <td width="259" height="85" valign="top"><table width="100%" border="0" cellpadding="0" cellspacing="0">
+    <td width="259" height="85" valign="top"><table width="100%" border="0" cellpadding="0" cellspacing="0" class="toptablestyle">
  
       <tr>
         <td width="21" rowspan="3">&nbsp;</td>
