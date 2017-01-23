@@ -13,5 +13,19 @@ namespace WebUI.Form
         {
            
         }
+
+        public string ImgUrl(string imgs)
+        {
+            //<br>~/Upfiles/CodePics/admin/2017012318362093_india  flag orb.bmp<br>~/Upfiles/CodePics/admin/2017012318362301_110255_230124ef_355590.png
+            string[] imgArray = imgs.Split('>');
+            string firImg = imgs[0].ToString();
+            firImg = firImg.Replace("<br", "");
+            return Server.MapPath(firImg);
+        }
+
+        protected void RepeaterCodeLists_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        {
+             
+        }
     }
 }

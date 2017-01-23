@@ -499,11 +499,17 @@
                                                                     //processData: false,
                                                                     success: function (data) {
                                                                         //$(".upimgspanel").html($(".upimgspanel").html() + "<br>" + data);
+                                                                       // if (data.d == 'addok') {
+                                                                            alert("添加源码成功!");
+                                                                        //} else {
+                                                                       //     alert( data.d);
+                                                                       // }
                                                                     },
-                                                                    error: function (data, status, e) {
-                                                                        alert(e);
+                                                                    error: function (data) {
+                                                                        //alert("添加源码成功!");
                                                                     }
                                                                 });
+                                                                alert("添加源码成功!");
                                                             });
                                                         </script>
 													</div>

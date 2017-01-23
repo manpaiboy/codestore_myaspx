@@ -105,22 +105,21 @@
                 <button type="button" class="btn btn-info btn-block btnw" data-toggle="tooltip" data-placement="left" title="" data-original-title="Tooltip on left"></button>
                 <button type="button" class="btn btn-info btn-block btnw" data-toggle="tooltip" data-placement="left" title="" data-original-title="Tooltip on left"></button>--%>
            </div>
-                <asp:Repeater ID="RepeaterCodeLists" runat="server" DataSourceID="SqlDataSource1" >
+                <asp:Repeater ID="RepeaterCodeLists" runat="server" DataSourceID="SqlDataSource1" OnItemDataBound="RepeaterCodeLists_ItemDataBound" >
                     <ItemTemplate>
                         <div class="listcontent">
-                        <img src=" <%#Eval("filepics")%> " width="195" height="200" />
+                        <img src="<%#Eval("filefirimg")%>" width="195" height="200" />
                         <br />
-                        <strong><%#Eval("fileremark")%> </strong>
+                        <strong><%#Eval("tagid")%> </strong>
                         <%--<small>一款简单的erp系统</small>--%>
                         <br />
-                        下载次数：<%#Eval("filedownnum")%>
-                            </div>
+                        下载次数：<%#Eval("filedownnum")%></div>
                     </ItemTemplate>
                 </asp:Repeater>
             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:commyaspxdbConnectionString %>" SelectCommand="SELECT * FROM [my_fileinfo]"></asp:SqlDataSource>
         <div class="col-md-12 " id="page">
                 <ul class="pagination">
-                  <li class="active gray"><a href="#">上一页</a></li>
+                  <li class="active gray"><a href="#">上一页="active gray"><a href="#">上一页</a></li>
                   <li><a href="#">1</a></li>
                   <li class="active gray"><a href="#">2</a></li>
                   <li><a href="#">3</a></li>

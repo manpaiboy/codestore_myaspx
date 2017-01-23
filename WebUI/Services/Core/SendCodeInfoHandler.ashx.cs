@@ -5,6 +5,7 @@ using System.Runtime.InteropServices;
 using System.Web;
 using MyAspx.EasyFramework.DAL3;
 using MyAspx.EasyFramework.EntityFramework;
+using MyAspx.Framework.Common;
 
 namespace WebUI.Services.Core
 {
@@ -52,9 +53,11 @@ namespace WebUI.Services.Core
                 context.Request.Form["preview"]          //1
 
             };
+            string errMes = "";
             //源码基础详细入库
             int exec = _fileInfoDal.AddNewCodeBaseInfo(new my_fileinfo()
             {
+                fileid = GuidString.CreateNewGuidStr(),
                 filename = result[0],
                 filedatabase = result[7],
                 filedevlan = result[6],
@@ -67,8 +70,16 @@ namespace WebUI.Services.Core
                 codeplftype = result[5],
                 devtool = result[5],
                 frameworkversion = result[8],
-              }); 
+              },out errMes); 
             //结束
+            if (exec == 1)
+            {
+                context.Response.Write("addok");
+            }
+            else
+            {
+                context.Response.Write(errMes);
+             }
             context.Response.End();
         }
 

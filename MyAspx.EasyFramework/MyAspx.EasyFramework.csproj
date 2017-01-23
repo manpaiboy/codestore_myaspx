@@ -72,19 +72,19 @@
     <Compile Include="DalBase.cs" />
     <Compile Include="EasyFrameworkBase.cs" />
     <Compile Include="EntityFramework\MyAspxEntities.Context.cs">
-      <DependentUpon>MyAspxEntities.Context.tt</DependentUpon>
-      <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MyAspxEntities.Context.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\MyAspxEntities.cs">
-      <DependentUpon>MyAspxEntities.tt</DependentUpon>
-      <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MyAspxEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\MyAspxEntities.Designer.cs">
-      <DependentUpon>MyAspxEntities.edmx</DependentUpon>
-      <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MyAspxEntities.edmx</DependentUpon>
     </Compile>
     <Compile Include="EntityFramework\my_class.cs">
       <DependentUpon>MyAspxEntities.tt</DependentUpon>
@@ -153,21 +153,23 @@
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
-    <None Include="EntityFramework\App.Config" />
+    <EntityDeploy Include="EntityFramework\MyAspxEntities.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>MyAspxEntities.Designer.cs</LastGenOutput>
+    </EntityDeploy>
     <None Include="EntityFramework\MyAspxEntities.Context.tt">
-      <DependentUpon>MyAspxEntities.edmx</DependentUpon>
       <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MyAspxEntities.edmx</DependentUpon>
       <LastGenOutput>MyAspxEntities.Context.cs</LastGenOutput>
     </None>
     <None Include="EntityFramework\MyAspxEntities.edmx.diagram">
       <DependentUpon>MyAspxEntities.edmx</DependentUpon>
     </None>
     <None Include="EntityFramework\MyAspxEntities.tt">
-      <DependentUpon>MyAspxEntities.edmx</DependentUpon>
       <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MyAspxEntities.edmx</DependentUpon>
       <LastGenOutput>MyAspxEntities.cs</LastGenOutput>
     </None>
-    <None Include="EntityFramework\packages.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -177,12 +179,6 @@
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <EntityDeploy Include="EntityFramework\MyAspxEntities.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>MyAspxEntities.Designer.cs</LastGenOutput>
-    </EntityDeploy>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MyAspx.Framework.Common\MyAspx.Framework.Common.csproj">
