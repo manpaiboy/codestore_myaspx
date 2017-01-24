@@ -111,7 +111,7 @@
                         <div class="listcontent">
                         <img src="<%#Eval("filefirimg")%>" width="195" height="200" />
                         <br />
-                        <strong><%#Eval("tagid")%> </strong>
+                        <strong><%#Eval("filename")%> </strong>
                         <%--<small>一款简单的erp系统</small>--%>
                         <br />
                         下载次数：<%#Eval("filedownnum")%><br /></div>
