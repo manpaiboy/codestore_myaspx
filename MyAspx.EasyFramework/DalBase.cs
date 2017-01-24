@@ -11,6 +11,8 @@
 //----------------------------------------------------------------*/
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Text;
 using IBatisNet.DataMapper;
 using IBatisNet.Common;
@@ -37,4 +39,79 @@ namespace MyAspx.EasyFramework.DAL
             return objMapper.GetMapper().DataSource.ConnectionString;
         }
     }
+    public class DBAccess
+    {
+
+        private SqlConnection con;
+        private string DBName = "commyaspxdb";
+
+        //创建连接对象并打开
+        public void Open()
+        {
+            if (con == null)
+                con = new SqlConnection("server=.;uid=sa;pwd=1;database=" + DBName);
+            if (con.State == ConnectionState.Closed)
+                con.Open();
+        }
+        //创建一个命令对象并返回该对象
+        public SqlCommand CreateCommand(string sqlStr)
+        {
+            Open();
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = sqlStr;
+            cmd.Connection = con;
+            return cmd;
+        }
+        //生成一个对象并返回该结果集第一行第一列
+        public object GetScalar(string sqlStr)
+        {
+            SqlCommand cmd = CreateCommand(sqlStr);
+            object obj = cmd.ExecuteScalar();
+            //CommadnBehavior.CloseConnection是将于DataReader的数据库链接关联起来 
+            //当关闭DataReader对象时候也自动关闭链接
+            return obj;
+        }
+        //执行数据库查询并返回一个数据集 [当前页码,每页记录条数]
+        public DataSet GetCurrentPage(int pageIndex, int pageSize,string tablename,string ordercol)
+        {
+            //设置导入的起始地址
+            int firstPage = pageIndex * pageSize;
+            string sqlStr = "select * from "+tablename+" order by "+ordercol+" desc";
+            SqlCommand cmd = CreateCommand(sqlStr);
+            DataSet dataset = new DataSet();
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(cmd);
+            dataAdapter.Fill(dataset, firstPage, pageSize, "tablename");
+            cmd.Dispose();
+            Close();
+            dataAdapter.Dispose();
+            return dataset;
+        }
+        //获得查询数据的总条数
+        public object GetAllCount(string tablename)
+        {
+            string sqlStr = "select count(*) from "+tablename;
+            object obj = GetScalar(sqlStr);
+            return obj;
+        }
+
+        //关闭数据库
+        public void Close()
+        {
+            if (con != null)
+            {
+                con.Close();
+            }
+        }
+        //释放资源
+        public void Dispose()
+        {
+            if (con != null)
+            {
+                con.Dispose();
+                con = null;
+            }
+        }
+    }
+
 }

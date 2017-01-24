@@ -35,5 +35,6 @@ namespace MyAspx.EasyFramework.EntityFramework
         public string codedes { get; set; }
         public string codelang { get; set; }
         public string filefirimg { get; set; }
+        public string addtime { get; set; }
     }
 }

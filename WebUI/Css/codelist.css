@@ -19,3 +19,9 @@
 #page li .gray { }
 .toggli{text-align:center;margin: 0 auto;}
 .addspan{margin-left:3px;cursor:pointer;}
+.listcontent{ margin-bottom: 5px;font-size: 12px;
+
+                  -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}

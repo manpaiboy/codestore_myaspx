@@ -1,10 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage/UI/SiteUI.Master" AutoEventWireup="true" CodeBehind="FreeCodes.aspx.cs" Inherits="WebUI.Form.FreeCodes" %>
+<%@ Register Assembly="AspNetPager" Namespace="Wuqi.Webdiyer" TagPrefix="webdiyer" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
                <script>
                    $(function () {
                        $("#bannertable tr td:eq(2)").css("background-color", "#3bafda");
                    });
-    </script>
+               </script>
 <link href="../Css/codelist.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">  
@@ -34,7 +35,7 @@
                          $("#togg").click(function () {
                              var curtoggval=$("#togg").html();
                              if 
-                               (curtoggval == "收缩") {
+                             (curtoggval == "收缩") {
                                  $(".showtogg").css("display", "none");
                                  $("#togg").html("展开");
                              }
@@ -47,33 +48,33 @@
                    <script>
                        $("li .label").click(function () {
                            //if ($(this).hasClass("label")) {
-                               var curhtml = $(this).html();
+                           var curhtml = $(this).html();
                            //alert(curhtml);
                            /* <div class="checkbox">
                                <div class="icheckbox_flat checked" style="position: relative;"><input type="checkbox" id="flat-checkbox-2" checked="" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);"><ins class="iCheck-helper" style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);"></ins></div>
                                <label for="flat-checkbox-2" class="">checked</label>
                              </div>*/
-                               var addhtml = "<div class=\"checkbox\"><div class=\"icheckbox_flat checked\" style=\"position: relative;\"><input type=\"checkbox\" id=\"flat-checkbox-2\" style=\"position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);\"><ins class=\"iCheck-helper\" style=\"position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);\"></ins></div><label for=\"flat-checkbox-2\">" + curhtml + "</label></div>"
-                               var addhtml2 = "<div class=\"alert-success alert-dismissable\" style=\"width:150px;height:20px;\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">×</button>"+curhtml+"</div>";
-                               var addhtml3 = "<span class=\"tag\">" + curhtml + "<button type=\"button\" class=\"close\">×</button></span>";
+                           var addhtml = "<div class=\"checkbox\"><div class=\"icheckbox_flat checked\" style=\"position: relative;\"><input type=\"checkbox\" id=\"flat-checkbox-2\" style=\"position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);\"><ins class=\"iCheck-helper\" style=\"position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; border: 0px; opacity: 0; background: rgb(255, 255, 255);\"></ins></div><label for=\"flat-checkbox-2\">" + curhtml + "</label></div>"
+                           var addhtml2 = "<div class=\"alert-success alert-dismissable\" style=\"width:150px;height:20px;\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">×</button>"+curhtml+"</div>";
+                           var addhtml3 = "<span class=\"tag\">" + curhtml + "<button type=\"button\" class=\"close\">×</button></span>";
                            //获取父元素class
-                               var curspanpar = $(this).parent();
-                               if ($(curspanpar).is("div")) { curspanpar = $(curspanpar).parent(); }
-                               var parclassname = $(curspanpar).attr("class");
-                               parclassname = parclassname.split(" ")[1];
+                           var curspanpar = $(this).parent();
+                           if ($(curspanpar).is("div")) { curspanpar = $(curspanpar).parent(); }
+                           var parclassname = $(curspanpar).attr("class");
+                           parclassname = parclassname.split(" ")[1];
                      
-                               var addhtml4 = "<span class=\"label addspan " + parclassname + "\" onclick=\"hide(this)\">" + curhtml + "  ×" + "</span>";
-                               //alert($(".panel-heading").html());
-                               var html = $(".panel-heading").html().toString();
+                           var addhtml4 = "<span class=\"label addspan " + parclassname + "\" onclick=\"hide(this)\">" + curhtml + "  ×" + "</span>";
+                           //alert($(".panel-heading").html());
+                           var html = $(".panel-heading").html().toString();
                             
-                               //alert(html);
-                               //$(".panel-heading").html($(".panel-heading").html() + addhtml4);
-                               if (html.indexOf(curhtml)<=0) {
-                                   if (!$(".panel-heading span").hasClass(parclassname)) {
-                                       $(".panel-heading").html($(".panel-heading").html() + addhtml4);
-                                   }
-                                   
+                           //alert(html);
+                           //$(".panel-heading").html($(".panel-heading").html() + addhtml4);
+                           if (html.indexOf(curhtml)<=0) {
+                               if (!$(".panel-heading span").hasClass(parclassname)) {
+                                   $(".panel-heading").html($(".panel-heading").html() + addhtml4);
                                }
+                                   
+                           }
                            //}
                        });
 
@@ -105,7 +106,7 @@
                 <button type="button" class="btn btn-info btn-block btnw" data-toggle="tooltip" data-placement="left" title="" data-original-title="Tooltip on left"></button>
                 <button type="button" class="btn btn-info btn-block btnw" data-toggle="tooltip" data-placement="left" title="" data-original-title="Tooltip on left"></button>--%>
            </div>
-                <asp:Repeater ID="RepeaterCodeLists" runat="server" DataSourceID="SqlDataSource1" OnItemDataBound="RepeaterCodeLists_ItemDataBound" >
+                <asp:Repeater ID="RepeaterCodeLists" runat="server" OnItemDataBound="RepeaterCodeLists_ItemDataBound" >
                     <ItemTemplate>
                         <div class="listcontent">
                         <img src="<%#Eval("filefirimg")%>" width="195" height="200" />
@@ -113,12 +114,12 @@
                         <strong><%#Eval("tagid")%> </strong>
                         <%--<small>一款简单的erp系统</small>--%>
                         <br />
-                        下载次数：<%#Eval("filedownnum")%></div>
+                        下载次数：<%#Eval("filedownnum")%><br /></div>
                     </ItemTemplate>
                 </asp:Repeater>
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:commyaspxdbConnectionString %>" SelectCommand="SELECT * FROM [my_fileinfo]"></asp:SqlDataSource>
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:commyaspxdbConnectionString %>" SelectCommand="SELECT * FROM [my_fileinfo] ORDER BY [addtime] DESC"></asp:SqlDataSource>
         <div class="col-md-12 " id="page">
-                <ul class="pagination">
+              <%--  <ul class="pagination">
                   <li class="active gray"><a href="#">上一页="active gray"><a href="#">上一页</a></li>
                   <li><a href="#">1</a></li>
                   <li class="active gray"><a href="#">2</a></li>
@@ -126,8 +127,19 @@
                   <li><a href="#">4</a></li>
                   <li class="disabled"><a href="#">5</a></li>
                   <li class="active gray"><a href="#">下一页</a></li>
-                </ul>
+                </ul>--%>
+             <webdiyer:AspNetPager ID="AspNetPager1" runat="server"     NumericButtonCount="6" UrlPaging="true" NumericButtonTextFormatString="[{0}]" CustomInfoHTML="第 <font color='red'><b>%CurrentPageIndex%</b></font> 页 共 %PageCount% 页 显示 %StartRecordIndex%-%EndRecordIndex% 条" ShowCustomInfoSection="left" 
+FirstPageText="首页" LastPageText="末页" NextPageText="下页" PrevPageText="上页" Font-Names="Arial" BackColor="#F8B500" AlwaysShow="true" ShowInputBox="Always" SubmitButtonText="跳转" SubmitButtonStyle="botton" OnPageChanged="AspNetPager1_PageChanged" PageSize="15" >
+              </webdiyer:AspNetPager>
               </div>
+            <script>
+                $('.listcontent').mouseenter(function() {
+                    $(this).css("background-color", "whitesmoke");
+                });
+                $('.listcontent').mouseleave(function () {
+                    $(this).css("background-color", "white");
+                });
+            </script>
         </div>
         </div>
 </asp:Content>

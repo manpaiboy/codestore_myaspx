@@ -23,8 +23,9 @@ namespace MyAspx.EasyFramework.DAL3
         {
             //<br>~/Upfiles/CodePics/admin/2017012318362093_india  flag orb.bmp<br>~/Upfiles/CodePics/admin/2017012318362301_110255_230124ef_355590.png
             string[] imgArray = imgs.Split('>');
-            string firImg = imgs[0].ToString();
+            string firImg = imgArray[1].ToString();
             firImg = firImg.Replace("<br", "");
+            firImg = firImg.Replace("~", "");
             return firImg;
         }
         /// <summary>
@@ -55,7 +56,8 @@ namespace MyAspx.EasyFramework.DAL3
                 contract = _my_fileinfo.contract,
                 createuser =  _my_fileinfo.createuser,
                 codeplftype = _my_fileinfo.frameworkversion,
-                filefirimg = ImgUrl(_my_fileinfo.filepics)
+                filefirimg = ImgUrl(_my_fileinfo.filepics),
+                addtime = DateTime.Now.ToString()
             });
             //S.
             try

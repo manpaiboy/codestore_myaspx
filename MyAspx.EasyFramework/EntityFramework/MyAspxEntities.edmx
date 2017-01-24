@@ -60,6 +60,7 @@
           <Property Name="codedes" Type="varchar(max)" />
           <Property Name="codelang" Type="varchar" MaxLength="50" />
           <Property Name="filefirimg" Type="varchar" MaxLength="50" />
+          <Property Name="addtime" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="my_gold">
           <Key>
@@ -220,7 +221,8 @@
           <Property Name="usermsg" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="codedes" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="codelang" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="filefirimg" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="filefirimg" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="addtime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="my_gold">
           <Key>
@@ -367,6 +369,7 @@
           <EntitySetMapping Name="my_fileinfo">
             <EntityTypeMapping TypeName="commyaspxdbModel.my_fileinfo">
               <MappingFragment StoreEntitySet="my_fileinfo">
+                <ScalarProperty Name="addtime" ColumnName="addtime" />
                 <ScalarProperty Name="filefirimg" ColumnName="filefirimg" />
                 <ScalarProperty Name="fileid" ColumnName="fileid" />
                 <ScalarProperty Name="saletypeid" ColumnName="saletypeid" />
