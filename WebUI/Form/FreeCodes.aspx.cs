@@ -39,7 +39,7 @@ namespace WebUI.Form
         {
             AspNetPager1.RecordCount = Int32.Parse(db.GetAllCount("my_fileinfo").ToString());
             int pageIndex = AspNetPager1.CurrentPageIndex - 1;
-            int pageSize = AspNetPager1.PageSize = 20;
+            int pageSize = AspNetPager1.PageSize = 15;
             RepeaterCodeLists.DataSource = db.GetCurrentPage(pageIndex, pageSize,"my_fileinfo","addtime");
             RepeaterCodeLists.DataBind();
         }

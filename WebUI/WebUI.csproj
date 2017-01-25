@@ -1003,6 +1003,8 @@
     <Content Include="Css\login.css" />
     <Content Include="Css\Mix\Footer.css" />
     <Content Include="Css\Mix\Top.css" />
+    <Content Include="Css\PlugIn\css\imagehover.css" />
+    <Content Include="Css\PlugIn\css\imagehover.min.css" />
     <Content Include="Css\Third\51aspxBase.css" />
     <Content Include="Css\Third\51aspxList.css" />
     <Content Include="default.aspx" />

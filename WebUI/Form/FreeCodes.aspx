@@ -8,7 +8,8 @@
                </script>
 <link href="../Css/codelist.css" rel="stylesheet" />
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">  
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <link href="../Css/PlugIn/css/imagehover.min.css" rel="stylesheet" />
     <div id="topNav">当前位置：首页 > 源码列表</div>
   
     <div id="content">
@@ -106,21 +107,37 @@
                 <button type="button" class="btn btn-info btn-block btnw" data-toggle="tooltip" data-placement="left" title="" data-original-title="Tooltip on left"></button>
                 <button type="button" class="btn btn-info btn-block btnw" data-toggle="tooltip" data-placement="left" title="" data-original-title="Tooltip on left"></button>--%>
            </div>
-                <asp:Repeater ID="RepeaterCodeLists" runat="server" OnItemDataBound="RepeaterCodeLists_ItemDataBound" >
+                <asp:Repeater ID="RepeaterCodeLists" runat="server" OnItemDataBound="RepeaterCodeLists_ItemDataBound"  >
                     <ItemTemplate>
+                        	<div class="spbq">
+		<div class="biankuang biankuang_1"></div>
+		<div class="biankuang biankuang_2"></div>
+		<div class="biankuang biankuang_3"></div>
+		<div class="biankuang biankuang_4"></div>
+                        <%--<figure class="imghvr-reveal-up">--%>
                         <div class="listcontent">
                         <img src="<%#Eval("filefirimg")%>" width="195" height="200" />
                         <br />
                         <strong><%#Eval("filename")%> </strong>
+                              <%-- <figcaption>
+                                Hover Content
+                               </figcaption>--%>
                         <%--<small>一款简单的erp系统</small>--%>
                         <br />
-                        下载次数：<%#Eval("filedownnum")%><br /></div>
+                        下载次数：<%#Eval("filedownnum")%><br /><%--    <a href="<%#Eval("linkurl")%>"></a>--%></div>
+                            <%--</figure>--%>
+                              	<div class="text_gobuy">
+			<br/>
+			<p>9小时17分钟 | 初级</p>
+			<br/>
+		</div>
+	</div>
                     </ItemTemplate>
                 </asp:Repeater>
             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:commyaspxdbConnectionString %>" SelectCommand="SELECT * FROM [my_fileinfo] ORDER BY [addtime] DESC"></asp:SqlDataSource>
         <div class="col-md-12 " id="page">
-              <%--  <ul class="pagination">
-                  <li class="active gray"><a href="#">上一页="active gray"><a href="#">上一页</a></li>
+               <%-- <ul class="pagination">
+                  <li class="active gray"><a href="#">上一页</a></li>
                   <li><a href="#">1</a></li>
                   <li class="active gray"><a href="#">2</a></li>
                   <li><a href="#">3</a></li>
@@ -128,10 +145,27 @@
                   <li class="disabled"><a href="#">5</a></li>
                   <li class="active gray"><a href="#">下一页</a></li>
                 </ul>--%>
-             <webdiyer:AspNetPager ID="AspNetPager1" runat="server"     NumericButtonCount="6" UrlPaging="true" NumericButtonTextFormatString="[{0}]" CustomInfoHTML="第 <font color='red'><b>%CurrentPageIndex%</b></font> 页 共 %PageCount% 页 显示 %StartRecordIndex%-%EndRecordIndex% 条" ShowCustomInfoSection="left" 
-FirstPageText="首页" LastPageText="末页" NextPageText="下页" PrevPageText="上页" Font-Names="Arial" BackColor="#F8B500" AlwaysShow="true" ShowInputBox="Always" SubmitButtonText="跳转" SubmitButtonStyle="botton" OnPageChanged="AspNetPager1_PageChanged" PageSize="15" >
-              </webdiyer:AspNetPager>
-              </div>
+            <ul class="pagination">
+                <webdiyer:AspNetPager ID="AspNetPager1" runat="server"  CssClass="pagination"   PagingButtonLayoutType="UnorderedList" PagingButtonSpacing="0" CurrentPageButtonClass="active"
+                                          NumericButtonCount="6"
+                                          UrlPaging="true"
+                                          NumericButtonTextFormatString="{0}"
+
+                                          FirstPageText="首页"
+                                          LastPageText="末页" 
+                                          NextPageText="下页" 
+                                          PrevPageText="上页" 
+                                          Font-Names="Arial"
+                                          BackColor="#F8B500"
+                                          AlwaysShow="true"
+                                          ShowInputBox="Always"
+                                          SubmitButtonText="跳转"
+                                          SubmitButtonStyle="botton"
+                                          OnPageChanged="AspNetPager1_PageChanged"
+                                          PageSize="15"  >
+                    </webdiyer:AspNetPager>
+            </ul>
+        </div>
             <script>
                 $('.listcontent').mouseenter(function() {
                     $(this).css("background-color", "whitesmoke");
@@ -140,6 +174,54 @@ FirstPageText="首页" LastPageText="末页" NextPageText="下页" PrevPageText=
                     $(this).css("background-color", "white");
                 });
             </script>
+            <script type="text/javascript">
+                //边框效果--移入
+                function biankuang(obj) {
+                    $(obj).find('.biankuang_1').stop(true).animate({
+                        height: '305px'
+                    }, 300)
+                    $(obj).find('.biankuang_2').stop(true).delay(300).animate({
+                        width: '360px'
+                    }, 300)
+                    $(obj).find('.biankuang_3').stop(true).animate({
+                        height: '305px'
+                    }, 300)
+                    $(obj).find('.biankuang_4').stop(true).delay(300).animate({
+                        width: '360px'
+                    }, 300)
+                }
+                //边框效果--移出
+                function biankuang1(obj) {
+
+                    $(obj).find('.biankuang_1').stop(true).delay(100).animate({
+                        height: '0px'
+                    }, 100)
+                    $(obj).find('.biankuang_2').stop(true).animate({
+                        width: '0px'
+                    }, 100)
+                    $(obj).find('.biankuang_3').stop(true).delay(100).animate({
+                        height: '0px'
+                    }, 100)
+                    $(obj).find('.biankuang_4').stop(true).animate({
+                        width: '0px'
+                    }, 100)
+                }
+                //触发
+                $('.spbq').hover(
+                    function () {
+                        var obj = $(this);
+                        $(obj).find('.text_gobuy').addClass('text_gobuy_show');
+                        $(obj).find('.search_y').animate({ left: '150', opacity: 1 }, 300);
+                        biankuang(obj);
+                    },
+                    function () {
+                        var obj = $(this);
+                        $(obj).find('.text_gobuy').removeClass('text_gobuy_show');
+                        $(obj).find('.search_y').animate({ left: '100', opacity: 0 }, 300);
+                        biankuang1(obj);
+                    }
+                );
+</script>
         </div>
         </div>
 </asp:Content>
