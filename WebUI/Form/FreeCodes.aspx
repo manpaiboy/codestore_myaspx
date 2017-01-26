@@ -128,7 +128,8 @@
                             <%--</figure>--%>
                               	<div class="text_gobuy">
 			<br/>
-			<p>9小时17分钟 | 初级</p>
+                              
+			<p><%#Eval("usermsg")%></p>
 			<br/>
 		</div>
 	</div>
@@ -167,12 +168,12 @@
             </ul>
         </div>
             <script>
-                $('.listcontent').mouseenter(function() {
-                    $(this).css("background-color", "whitesmoke");
-                });
-                $('.listcontent').mouseleave(function () {
-                    $(this).css("background-color", "white");
-                });
+                //$('.listcontent').mouseenter(function() {
+                //    $(this).css("background-color", "whitesmoke");
+                //});
+                //$('.listcontent').mouseleave(function () {
+                //    $(this).css("background-color", "white");
+                //});
             </script>
             <script type="text/javascript">
                 //边框效果--移入
@@ -211,12 +212,14 @@
                     function () {
                         var obj = $(this);
                         $(obj).find('.text_gobuy').addClass('text_gobuy_show');
+                        $(obj).find('.listcontent').css("background-color", "#f2f2f2");
                         $(obj).find('.search_y').animate({ left: '150', opacity: 1 }, 300);
                         biankuang(obj);
                     },
                     function () {
                         var obj = $(this);
                         $(obj).find('.text_gobuy').removeClass('text_gobuy_show');
+                        $(obj).find('.listcontent').css("background-color", "white");
                         $(obj).find('.search_y').animate({ left: '100', opacity: 0 }, 300);
                         biankuang1(obj);
                     }
