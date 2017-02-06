@@ -124,7 +124,10 @@
                                </figcaption>--%>
                         <%--<small>一款简单的erp系统</small>--%>
                         <br />
-                        下载次数：<%#Eval("filedownnum")%><br /><%--    <a href="<%#Eval("linkurl")%>"></a>--%></div>
+                        下载次数：<%#Eval("filedownnum")%><br /><%--    <a href="<%#Eval("linkurl")%>"></a>--%>
+                              <br />
+                       <%#Eval("tagname")%>
+                        </div>
                             <%--</figure>--%>
                               	<div class="text_gobuy">
 			<br/>
@@ -135,7 +138,7 @@
 	</div>
                     </ItemTemplate>
                 </asp:Repeater>
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:commyaspxdbConnectionString %>" SelectCommand="SELECT * FROM [my_fileinfo] ORDER BY [addtime] DESC"></asp:SqlDataSource>
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:commyaspxdbConnectionString %>" SelectCommand="SELECT a.*,b.tagname as tagname FROM [my_fileinfo] as a left join [my_tag] as b on a.fileid=b.fileinfoid ORDER BY [addtime] DESC"></asp:SqlDataSource>
         <div class="col-md-12 " id="page">
                <%-- <ul class="pagination">
                   <li class="active gray"><a href="#">上一页</a></li>

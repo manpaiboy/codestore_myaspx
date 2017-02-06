@@ -77,7 +77,8 @@ namespace MyAspx.EasyFramework.DAL
         {
             //设置导入的起始地址
             int firstPage = pageIndex * pageSize;
-            string sqlStr = "select * from "+tablename+" order by "+ordercol+" desc";
+            //SELECT a.*,b.tagname as tagname FROM [my_fileinfo] as a left join [my_tag] as b on a.fileid=b.fileinfoid ORDER BY [addtime] DESC
+            string sqlStr = "SELECT a.*,b.tagname as tagname FROM  " + tablename + " as a left join [my_tag] as b on a.fileid=b.fileinfoid  order by " + ordercol + " desc";
             SqlCommand cmd = CreateCommand(sqlStr);
             DataSet dataset = new DataSet();
             SqlDataAdapter dataAdapter = new SqlDataAdapter(cmd);

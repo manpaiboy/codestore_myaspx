@@ -59,7 +59,7 @@
           <Property Name="usermsg" Type="varchar" MaxLength="50" />
           <Property Name="codedes" Type="varchar(max)" />
           <Property Name="codelang" Type="varchar" MaxLength="50" />
-          <Property Name="filefirimg" Type="varchar" MaxLength="50" />
+          <Property Name="filefirimg" Type="varchar(max)" />
           <Property Name="addtime" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="my_gold">
@@ -137,7 +137,7 @@
           <Property Name="tagid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="tagname" Type="varchar" MaxLength="50" />
           <Property Name="tagcreatedate" Type="varchar" MaxLength="50" />
-          <Property Name="fileinfoid" Type="int" />
+          <Property Name="fileinfoid" Type="varchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="my_users">
           <Key>
@@ -299,7 +299,7 @@
           <Property Name="tagid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="tagname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="tagcreatedate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="fileinfoid" Type="Int32" />
+          <Property Name="fileinfoid" Type="String" MaxLength="100" />
         </EntityType>
         <EntityType Name="my_users">
           <Key>

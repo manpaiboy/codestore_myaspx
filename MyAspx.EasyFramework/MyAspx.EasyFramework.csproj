@@ -69,6 +69,7 @@
     <Compile Include="DAL3\CodeDAL.cs" />
     <Compile Include="DAL3\FileInfoDAL.cs" />
     <Compile Include="DAL3\SeoDAL.cs" />
+    <Compile Include="DAL3\TagDAL.cs" />
     <Compile Include="DalBase.cs" />
     <Compile Include="EasyFrameworkBase.cs" />
     <Compile Include="EntityFramework\MyAspxEntities.Context.cs">

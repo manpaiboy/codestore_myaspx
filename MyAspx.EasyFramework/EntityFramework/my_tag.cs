@@ -17,6 +17,6 @@ namespace MyAspx.EasyFramework.EntityFramework
         public int tagid { get; set; }
         public string tagname { get; set; }
         public string tagcreatedate { get; set; }
-        public Nullable<int> fileinfoid { get; set; }
+        public string fileinfoid { get; set; }
     }
 }

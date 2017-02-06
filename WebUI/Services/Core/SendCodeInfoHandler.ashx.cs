@@ -15,6 +15,7 @@ namespace WebUI.Services.Core
     public class SendCodeInfoHandler : IHttpHandler, System.Web.SessionState.IRequiresSessionState
     {
         FileInfoDAL _fileInfoDal = new FileInfoDAL();
+        TagDAL _tagDal = new TagDAL();
         public void ProcessRequest(HttpContext context)
         {
             context.Response.ContentType = "text/plain";
@@ -54,10 +55,11 @@ namespace WebUI.Services.Core
 
             };
             string errMes = "";
-            //源码基础详细入库
-            int exec = _fileInfoDal.AddNewCodeBaseInfo(new my_fileinfo()
+            string curfid = GuidString.CreateNewGuidStr();
+            my_fileinfo curFileinfo = new my_fileinfo()
             {
-                fileid = GuidString.CreateNewGuidStr(),
+                fileid = curfid,
+
                 filename = result[0],
                 filedatabase = result[7],
                 filedevlan = result[6],
@@ -70,8 +72,45 @@ namespace WebUI.Services.Core
                 codeplftype = result[5],
                 devtool = result[5],
                 frameworkversion = result[8],
-              },out errMes); 
+            };
+            //源码基础详细入库
+            int exec = _fileInfoDal.AddNewCodeBaseInfo(curFileinfo,out errMes); 
             //结束
+
+            //源码标签入库
+            if (result[9].IndexOf(' ') > 0)
+            {
+                var tags = result[9].Split(' ');
+                foreach (string tag in tags)
+                {
+                var curTag = tag;
+                //遍历插入当前源码的TAG信息
+                int tagexec = _tagDal.AddNewCodeTagInfo(new my_tag()
+            {
+                fileinfoid = curfid,
+                tagname = tag,
+                tagcreatedate = DateTime.Now.ToString()
+
+            });
+                 }
+            }
+            if (result[9].IndexOf(',') > 0)
+            {
+                var tags = result[9].Split(',');
+                foreach (string tag in tags)
+                {
+                var curTag = tag;
+                //遍历插入当前源码的TAG信息
+                int tagexec = _tagDal.AddNewCodeTagInfo(new my_tag()
+                {
+                    fileinfoid = curfid,
+                    tagname = tag,
+                    tagcreatedate = DateTime.Now.ToString()
+
+                });
+                }
+            }
+            
             if (exec == 1)
             {
                 context.Response.Write("addok");
