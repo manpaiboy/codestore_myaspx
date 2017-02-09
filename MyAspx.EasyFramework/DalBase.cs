@@ -78,8 +78,12 @@ namespace MyAspx.EasyFramework.DAL
             //设置导入的起始地址
             int firstPage = pageIndex * pageSize;
             //SELECT a.*,b.tagname as tagname FROM [my_fileinfo] as a left join [my_tag] as b on a.fileid=b.fileinfoid ORDER BY [addtime] DESC
+            string nSql =
+                " SELECT a.*, tagname = (SELECT '<font class=tagonly>'+ tagname + '</font> ' FROM my_tag WHERE fileinfoid = a.fileid FOR XML PATH('')) FROM " +
+                tablename + " as a ORDER BY " + ordercol + " DESC ";
+            ;
             string sqlStr = "SELECT a.*,b.tagname as tagname FROM  " + tablename + " as a left join [my_tag] as b on a.fileid=b.fileinfoid  order by " + ordercol + " desc";
-            SqlCommand cmd = CreateCommand(sqlStr);
+            SqlCommand cmd = CreateCommand(nSql);
             DataSet dataset = new DataSet();
             SqlDataAdapter dataAdapter = new SqlDataAdapter(cmd);
             dataAdapter.Fill(dataset, firstPage, pageSize, "tablename");

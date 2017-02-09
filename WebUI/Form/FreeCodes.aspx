@@ -125,8 +125,8 @@
                         <%--<small>一款简单的erp系统</small>--%>
                         <br />
                         下载次数：<%#Eval("filedownnum")%><br /><%--    <a href="<%#Eval("linkurl")%>"></a>--%>
-                              <br />
-                       <%#Eval("tagname")%>
+                           <span style="color: gray;font-size: 7px; margin-top: 0px; margin-bottom: -1px;">
+                       标签：<%# Server.HtmlDecode(Eval("tagname").ToString())%></span>
                         </div>
                             <%--</figure>--%>
                               	<div class="text_gobuy">
@@ -230,4 +230,9 @@
 </script>
         </div>
         </div>
+    <style>
+        .tagonly {
+            border:1px solid #3bafda; font-size:7px;padding-left:3px;padding-right:3px;color:#3bafda;font-family: 微软雅黑;
+        }
+    </style>
 </asp:Content>
